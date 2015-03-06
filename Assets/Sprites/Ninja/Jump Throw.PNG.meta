@@ -1,0 +1,157 @@
+fileFormatVersion: 2
+guid: c4c244bb5d6da234f97c5ef4426014fd
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Jump Throw_0
+    21300002: Jump Throw_1
+    21300004: Jump Throw_2
+    21300006: Jump Throw_3
+    21300008: Jump Throw_4
+    21300010: Jump Throw_5
+    21300012: Jump Throw_6
+    21300014: Jump Throw_7
+    21300016: Jump Throw_8
+    21300018: Jump Throw_9
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -3
+  maxTextureSize: 1024
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: Jump Throw_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1293
+        width: 360
+        height: 431
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Jump Throw_1
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 1293
+        width: 360
+        height: 431
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Jump Throw_2
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 1293
+        width: 360
+        height: 431
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Jump Throw_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 862
+        width: 360
+        height: 431
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Jump Throw_4
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 862
+        width: 360
+        height: 431
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Jump Throw_5
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 862
+        width: 360
+        height: 431
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Jump Throw_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 431
+        width: 360
+        height: 431
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Jump Throw_7
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 431
+        width: 360
+        height: 431
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Jump Throw_8
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 431
+        width: 360
+        height: 431
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Jump Throw_9
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 360
+        height: 431
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
