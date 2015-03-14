@@ -10,13 +10,14 @@ public class CharacterControllerAuto : MonoBehaviour {
 	
 	bool grounded = false;//est-il au sol?
 	bool wall = false; // vérification du mur
+	bool wallInvisible=false;
 	public Transform groundCheck; //composant pour vérifier le sol
 	public Transform playerCheck; //composant pour vérifier la position du joueur
 	public float groundRadius = 0.2f; //à quelle distance on vérifie le sol
 	public float playerRadius = 0.5f;//vérification du joueur
 	public float hazardRadius = 0.1f;
 	public LayerMask whatIsGroundAndWall; //masque "Qu'est-ce que le sol?"
-	public LayerMask whatIsEnd; //masque "Qu'est ce qui est la fin?"
+	public LayerMask whatisWallInvisible;
 
 	bool alreadyFlip=false;
 	bool alreadyJump=false;
@@ -49,6 +50,10 @@ public class CharacterControllerAuto : MonoBehaviour {
 
 		grounded = Physics2D.OverlapCircle(groundCheck.position, groundRadius, whatIsGroundAndWall); 		
 		wall=Physics2D.OverlapCircle(playerCheck.position, playerRadius, whatIsGroundAndWall);
+		wallInvisible=Physics2D.OverlapCircle(playerCheck.position, playerRadius, whatisWallInvisible);
+
+		if(wallInvisible)
+			move=0f;
 
 		if (wall && !alreadyFlip)
 			Flip ();

@@ -3,8 +3,8 @@ using System.Collections;
 
 public class MenuScript : MonoBehaviour {
 
-	public void LanceProto()
+	public void DeletSave()
 	{
-		Application.LoadLevel("ProtoAuto");
+		PlayerPrefs.DeleteAll();
 	}
 }

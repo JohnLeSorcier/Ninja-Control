@@ -9,17 +9,32 @@ public class LevelController : MonoBehaviour {
 	public Text GoRText;
 	public Text GoLText;
 
+
+
 	public Text tryText;
 	public Text timeText;
 
 	public Text bestScore;
 
+	public Button nextButton;
+
 	public string[] tagTab={"JumpLeft","JumpRight", "GoLeft", "GoRight"};
+
+	public int scoreStars1;
+	public int scoreStars2;
+	public int scoreStars3;
 
 	public int nbJumpR=10;
 	public int nbJumpL=10;
 	public int nbGoR=10;
 	public int nbGoL=10;
+
+	public GameObject jumpR;
+	public GameObject jumpL;
+	public GameObject goR;
+	public GameObject goL;
+
+
 	bool end=false;
 	int nbPlatform;
 	int nbTry;
@@ -69,13 +84,25 @@ public class LevelController : MonoBehaviour {
 		else
 		    scoreBefore=0;
 
-		bestScore.text="Best= "+scoreBefore;
+		bestScore.text=""+scoreBefore;
 
 		nbTry=0;
 		tryText.text="Attemps: "+nbTry;
 
 		timer=0;
 		timeText.text="Time: 0.00";
+
+		if (nbJumpR==0)
+			jumpR.SetActive(false);
+		if (nbJumpL==0)
+			jumpL.SetActive(false);
+		if (nbGoR==0)
+			goR.SetActive(false);
+		if (nbGoL==0)
+			goL.SetActive(false);
+
+
+		MaJNbText ();
 	}
 
 	void Update()
@@ -88,12 +115,26 @@ public class LevelController : MonoBehaviour {
 		}
 	}
 
-	public void MaJNbText()
+	void MaJNbText()
 	{
-		JumpRText.text="Jump Right x" + nbJumpR;
-		JumpLText.text="Jump Left x" + nbJumpL;
-		GoRText.text="Turn Right x" + nbGoR;
-		GoLText.text="Turn Left x" + nbGoL;
+		string jrTxt="";
+		string jlTxt="";
+		string grTxt="";
+		string glTxt="";
+
+		if (nbJumpR>0)
+			jrTxt="Jump Right x" + nbJumpR;
+		if (nbJumpL>0)
+			jlTxt="Jump Left x" + nbJumpL;
+		if (nbGoR>0)
+			grTxt="Turn Right x" + nbGoR;
+		if (nbGoL>0)
+			glTxt="Turn Left x" + nbGoL;
+
+		JumpRText.text=jrTxt;
+		JumpLText.text=jlTxt;
+		GoRText.text=grTxt;
+		GoLText.text=glTxt;
 	}
 
 	//on passe les tag des objets
@@ -151,24 +192,39 @@ public class LevelController : MonoBehaviour {
 	{
 		int nbPan=0;
 		int total=0;
+		int nbStars=0;
+		bool passed=false;
+
 		if (endType==0)
 		{
+			passed=true;
 			playerController.End();
 			nbPan=PanRest();
-			total =gameController.Score(nbPan,nbTry,timer);
+			total = gameController.Score(nbPan,nbTry,timer);
+
+			if (total>scoreStars3)
+				nbStars=3;
+			else if (total>scoreStars2)
+				nbStars=2;
+			else if (total>scoreStars1)
+				nbStars=1;
+			else
+				passed=false;
+
 			if (total>scoreBefore)
 			{
-				bestScore.text="Best= "+total;
-				PlayerPrefs.SetInt(Application.loadedLevelName, total);
+				bestScore.text=""+total;
+				PlayerPrefs.SetInt(Application.loadedLevel+"_score", total);
+				PlayerPrefs.SetInt(Application.loadedLevel+"_stars", nbStars);
 				PlayerPrefs.Save();
 			}
+			nextButton.interactable=true;
 		}
 		else if (endType==1)
 			playerController.Dead();
 
 		end=true;
-
-		interfaceController.GameOver(endType, nbPan, nbTry, timer, total);
+		interfaceController.GameOver(endType, nbPan, nbTry, timer, total, nbStars, passed);
 	}
 
 	public void ChangeMove()
@@ -200,7 +256,7 @@ public class LevelController : MonoBehaviour {
 
 	void ResetPositions()
 	{
-		playerCanMove=false;
+		StartCoroutine(waitAMoment());
 		panelCanMove=true;
 		playerController.ReturnToPosition();
 
@@ -214,6 +270,13 @@ public class LevelController : MonoBehaviour {
 			foreach (PlatformController platForm in platformControllers)
 				platForm.Desactive();
 		}
+	}
+
+	//Permet de laisser le temps que totu se remette en place
+	IEnumerator waitAMoment()
+	{
+		yield return new WaitForSeconds(0.2f);
+		playerCanMove=false;
 	}
 
 	void ResetInstruct()

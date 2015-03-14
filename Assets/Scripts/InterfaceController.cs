@@ -5,17 +5,19 @@ using UnityEngine.UI;
 public class InterfaceController : MonoBehaviour {
 	
 	public Text gameOverText;
-	private LevelController levelController;
 	public GameObject gameOverPanel;
-	public GameObject[] GoPauseButton;
+	public Button[] GoPauseButton;
+
+	public Button nextLevel;
+
+	public Image[] stars;
+	public Image[] nStars;
 
 
 
 	void Start () 
 	{
-		levelController = GetComponent <LevelController>();
 		gameOverText.text="";
-		levelController.MaJNbText();
 		gameOverPanel.SetActive(false);
 	}
 
@@ -26,22 +28,45 @@ public class InterfaceController : MonoBehaviour {
 	}
 
 	//affiche un message différent suivant le type de fin: 0 pour réussite, 1 pour une mort
-	public void GameOver(int endType, int nbPan, int nbTry, float timer, int score)
+	public void GameOver(int endType, int nbPan, int nbTry, float timer, int score, int nbStars, bool passed)
 	{
+		nextLevel.interactable=false;
+		string textAffich;
+
 		if (endType == 0)
 		{
-			gameOverText.text="You win!\n"+"Unused Panels: "+nbPan+"\nAttemps: "+nbTry+"\nTime: "+timer+"s\nTotal Score: "+score;
+			textAffich="Unused Panels: "+nbPan+"\nAttemps: "+nbTry+"\nTime: "+timer+"s\nTotal Score: "+score;
+
+			if(passed && !(Application.loadedLevel == Application.levelCount-1))
+				nextLevel.interactable=true;
+
+			if (passed)
+				textAffich+="\n\nYou win!";
+			else
+				textAffich+="\n\nScore too low";
+
+
+			if (nbStars>0)
+				stars[0].enabled=true;
+			if (nbStars>1)
+				stars[1].enabled=true;
+			if (nbStars>2)
+				stars[2].enabled=true;
+
 		}
 		else if (endType == 1)
-			gameOverText.text="You are dead...";
-		else
-			gameOverText.text="This end is not the good one...";
-
-		Button button;
-
-		foreach(GameObject GPbutton in GoPauseButton)
 		{
-			button=GPbutton.GetComponent<Button>();
+			textAffich="You are dead...";
+			foreach (Image nstar in nStars)
+				nstar.enabled=false;
+		}
+		else
+			textAffich="This end is not the good one...";
+
+		gameOverText.text=textAffich;
+
+		foreach(Button button in GoPauseButton)
+		{
 			button.interactable=false;
 		}
 
@@ -52,6 +77,12 @@ public class InterfaceController : MonoBehaviour {
 	{
 		Application.LoadLevel("MenuPrincipal");
 	}
+
+	public void NextLevel()
+	{
+		Application.LoadLevel(Application.loadedLevel+1);
+	}
+
 
 	IEnumerator DisplayEnd()
 	{
