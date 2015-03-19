@@ -20,6 +20,8 @@ public class LevelController : MonoBehaviour {
 
 	public string[] tagTab={"JumpLeft","JumpRight", "GoLeft", "GoRight"};
 
+	public int timeAllowed;
+
 	public int scoreStars1;
 	public int scoreStars2;
 	public int scoreStars3;
@@ -56,6 +58,9 @@ public class LevelController : MonoBehaviour {
 
 	void Start ()
 	{
+
+		Time.timeScale=1.0f;
+
 		interfaceController = GetComponent<InterfaceController>();
 
 		GameObject playerObject = GameObject.FindWithTag ("Player");
@@ -79,8 +84,8 @@ public class LevelController : MonoBehaviour {
 		else
 			Debug.Log ("Cannot find 'GameController' script");
 
-		if (PlayerPrefs.HasKey(Application.loadedLevelName))
-		    scoreBefore=PlayerPrefs.GetInt(Application.loadedLevelName);
+		if (PlayerPrefs.HasKey(Application.loadedLevel+"_score"))
+			scoreBefore=PlayerPrefs.GetInt(Application.loadedLevel+"_score");
 		else
 		    scoreBefore=0;
 
@@ -90,7 +95,7 @@ public class LevelController : MonoBehaviour {
 		tryText.text="Attemps: "+nbTry;
 
 		timer=0;
-		timeText.text="Time: 0.00";
+		timeText.text="Time: "+timeAllowed+"\'\'00";//redondant avec l'update, mais par sécurité...
 
 		if (nbJumpR==0)
 			jumpR.SetActive(false);
@@ -107,11 +112,25 @@ public class LevelController : MonoBehaviour {
 
 	void Update()
 	{
+		if (!playerCanMove)
+			timeText.text="Time: "+timeAllowed+"\'\'00";
+
+		int sec;
+		int milli;
 		if (playerCanMove && !end)
 		{
 			float timerTemp=Time.time-startTime;
-			timer=Mathf.Floor(timerTemp*100)/100;
-			timeText.text="Time: "+timer;
+			timer=timeAllowed-Mathf.Floor(timerTemp*100)/100;
+			sec=Mathf.FloorToInt(timer);
+			milli=Mathf.FloorToInt((timer-sec)*100);
+			timeText.text="Time: "+sec+"\'\'"+milli;
+		}
+
+		if(timer<0)
+		{
+			end=true;
+			timeText.text="Time: 0\'\'00" ;
+			GameOver(3);
 		}
 	}
 
@@ -187,7 +206,7 @@ public class LevelController : MonoBehaviour {
 		return nbPan;
 	}
 
-
+	//0 pour réussite, 1 pour une mort, 2 pour une sortie de niveau, 3 pour manque de temps
 	public void GameOver(int endType)
 	{
 		int nbPan=0;
@@ -220,8 +239,10 @@ public class LevelController : MonoBehaviour {
 			}
 			nextButton.interactable=true;
 		}
-		else if (endType==1)
+		else if (endType==1 || endType==2)
 			playerController.Dead();
+		else if (endType==3)
+			playerController.End();
 
 		end=true;
 		interfaceController.GameOver(endType, nbPan, nbTry, timer, total, nbStars, passed);
@@ -236,6 +257,7 @@ public class LevelController : MonoBehaviour {
 		else if (!end)
 		{
 			ResetPositions ();
+			interfaceController.waitForGoButton();
 		}
 	}
 
@@ -254,14 +276,12 @@ public class LevelController : MonoBehaviour {
 		startTime=Time.time;
 	}
 
-	void ResetPositions()
+	public void ResetPositions()
 	{
 		StartCoroutine(waitAMoment());
 		panelCanMove=true;
 		playerController.ReturnToPosition();
-
-		timer=0;
-		timeText.text="Time: 0.00";
+		end=false;
 
 		ResetInstruct();
 
@@ -270,9 +290,10 @@ public class LevelController : MonoBehaviour {
 			foreach (PlatformController platForm in platformControllers)
 				platForm.Desactive();
 		}
+		timer=0;
 	}
 
-	//Permet de laisser le temps que totu se remette en place
+	//Permet de laisser le temps que tout se remette en place
 	IEnumerator waitAMoment()
 	{
 		yield return new WaitForSeconds(0.2f);
@@ -298,5 +319,15 @@ public class LevelController : MonoBehaviour {
 				}
 			}
 		}
+	}
+
+	public void Pause()
+	{
+		Time.timeScale=0.0f;
+	}
+
+	public void Relauch()
+	{
+		Time.timeScale=1.0f;
 	}
 }

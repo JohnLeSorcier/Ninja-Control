@@ -22,6 +22,14 @@ public class HazardController : MonoBehaviour {
 		{
 			hazarded=true;
 			levelController.GameOver(1);
+			StartCoroutine(waitForHazard());
 		}
+
+	}
+
+	IEnumerator waitForHazard()
+	{
+		yield return new WaitForSeconds(0.5f);
+		hazarded=false;
 	}
 }

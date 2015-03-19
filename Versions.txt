@@ -2,7 +2,8 @@
 (seuls les builds importantes sont notées)
 
 Remerciements pour les sprites et UI:
-licence CC0: pzUH, idoh40, CamTatz -->OpenGameArt
+licence CC0: pzUH, idoh40, CamTatz, bevouliin -->OpenGameArt
+licence CC-BY 3.0 2D Retrospectives
 Fonts: Gang of Three, (Knewave), survivant
 
 
@@ -33,9 +34,13 @@ Version 0.1 : Alpha 1
 
 Version 0.0 : Prototype
 ===========================
-0.0.x
+0.0.6 (PreAlpha 3 et 4)
+-Niveaux de tutoriel
+-Enregistrement des scores
+-Choix du niveau
+-Petite animation du menu
 
-0.0.5
+0.0.5 (PreAlpha 1 et 2)
 -Compatibilité Web/PC/Android
 -Nouvelle UI
 -Ajout d'un compteur d'essai et d'un timer

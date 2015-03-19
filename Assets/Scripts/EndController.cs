@@ -5,7 +5,8 @@ public class EndController : MonoBehaviour {
 
 	private LevelController levelController;
 	// Use this for initialization
-	void Start () {
+	void Start () 
+	{
 		GameObject levelControllerObject = GameObject.FindWithTag ("LevelController");
 		if (levelControllerObject != null)
 			levelController = levelControllerObject.GetComponent <LevelController>();

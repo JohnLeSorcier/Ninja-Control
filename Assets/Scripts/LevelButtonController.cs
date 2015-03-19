@@ -13,15 +13,20 @@ public class LevelButtonController : MonoBehaviour {
 
 	int stars=0;
 
-	void Start () 
+	void Start() 
+	{
+		DisplayButton ();
+	}
+
+	public void DisplayButton()
 	{
 		Button button=GetComponent<Button>();
-
+		
 		for(int i=0;i<3;i++)
 		{
 			starsImage[i].enabled=false;
 		}
-
+		
 		int prevLevelIndex=levelIndex-1;
 		if(levelIndex==1 || PlayerPrefs.HasKey(prevLevelIndex+"_stars"))
 		{
@@ -30,14 +35,14 @@ public class LevelButtonController : MonoBehaviour {
 		}
 		else
 			button.interactable=false;
-
+		
 		if(PlayerPrefs.HasKey(levelIndex+"_stars"))
 		{
 			stars=PlayerPrefs.GetInt(levelIndex+"_stars");
 		}
-
-
-
+		
+		
+		
 		if(stars>0)
 		{
 			cash.enabled=false;
