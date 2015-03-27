@@ -13,12 +13,31 @@ public class InterfaceController : MonoBehaviour {
 	public Image[] stars;
 	public Image[] nStars;
 
+	private GameController gameController;
+
+	public Button soundOn;
+	public Button soundOff;
+
 
 
 	void Start () 
 	{
 		gameOverText.text="";
 		gameOverPanel.SetActive(false);
+
+		GameObject gameControllerObject = GameObject.FindWithTag ("GameController");
+		if (gameControllerObject != null)
+			gameController = gameControllerObject.GetComponent <GameController>();
+		else
+			Debug.Log ("Cannot find 'GameController' script");
+
+		AudioSource audioS=gameController.GetComponent<AudioSource>();
+
+		//activer ou desactiver les boutons de son
+		soundOff.gameObject.SetActive(audioS.mute);
+		soundOn.gameObject.SetActive(!audioS.mute);
+
+
 	}
 
 
@@ -34,15 +53,16 @@ public class InterfaceController : MonoBehaviour {
 		string textAffich;
 
 		//désactivez les étoiles 'noirs ou jaunes) si pas fini
-		if (endType!=0)
-		{
-			foreach (Image nstar in nStars)
-				nstar.enabled=false;
-		}
+		foreach (Image nstar in nStars)
+			nstar.enabled=false;
+		foreach (Image star in stars)
+			star.enabled=false;
+
+
 
 		if (endType == 0)
 		{
-			textAffich="Unused Panels: "+nbPan+"\nAttemps: "+nbTry+"\nTime left: "+timer+"s\nTotal Score: "+score;
+			textAffich="Unused Panels: "+nbPan+"\nAttempts: "+nbTry+"\nTime left: "+timer+"s\nTotal Score: "+score;
 
 			if(passed && !(Application.loadedLevel == Application.levelCount-1))
 				nextLevel.interactable=true;
@@ -52,6 +72,8 @@ public class InterfaceController : MonoBehaviour {
 			else
 				textAffich+="\n\nScore too low...";
 
+			foreach (Image nstar in nStars)
+				nstar.enabled=true;
 
 			if (nbStars>0)
 				stars[0].enabled=true;

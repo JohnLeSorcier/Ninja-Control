@@ -5,7 +5,7 @@ public class GameController : MonoBehaviour {
 
 	int finishScore=500;
 	int scorePanRest=250;
-	int scoreTry=150;
+	int scoreTry=100;
 	int scoreTime=200;
 
 	public static GameController control;

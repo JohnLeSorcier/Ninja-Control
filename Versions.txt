@@ -2,9 +2,10 @@
 (seuls les builds importantes sont notées)
 
 Remerciements pour les sprites et UI:
-licence CC0: pzUH, idoh40, CamTatz, bevouliin -->OpenGameArt
+licence CC0: pzUH, idoh40, CamTatz, bevouliin, mishonis -->OpenGameArt
 licence CC-BY 3.0 2D Retrospectives
 Fonts: Gang of Three, (Knewave), survivant
+Musique: WrathGames Studio http://wrathgames.com/blog
 
 
 Version 1.0 et 1.X
@@ -29,16 +30,23 @@ Version 0.X: Alpha X
 
 Version 0.1 : Alpha 1
 ==========================
-0.1.x
+0.1.0 (Alpha 1)
+-Ajout d'une musique
+-Corrections de bug d'interface
+-Ajout d'un menu avec les instructions
+-7 niveaux inclus
 
 
 Version 0.0 : Prototype
-===========================
+==========================
+
+
 0.0.6 (PreAlpha 3 et 4)
 -Niveaux de tutoriel
 -Enregistrement des scores
 -Choix du niveau
 -Petite animation du menu
+-Animations corrigées
 
 0.0.5 (PreAlpha 1 et 2)
 -Compatibilité Web/PC/Android

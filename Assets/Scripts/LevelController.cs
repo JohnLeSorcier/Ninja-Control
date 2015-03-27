@@ -53,8 +53,7 @@ public class LevelController : MonoBehaviour {
 
 	[HideInInspector] public bool playerCanMove=false;
 	[HideInInspector] public bool panelCanMove=true;
-
-
+	
 
 	void Start ()
 	{
@@ -92,9 +91,9 @@ public class LevelController : MonoBehaviour {
 		bestScore.text=""+scoreBefore;
 
 		nbTry=0;
-		tryText.text="Attemps: "+nbTry;
+		tryText.text="Attempts: "+nbTry;
 
-		timer=0;
+		timer=timeAllowed;//eviter une bétise de vérif.
 		timeText.text="Time: "+timeAllowed+"\'\'00";//redondant avec l'update, mais par sécurité...
 
 		if (nbJumpR==0)
@@ -126,7 +125,7 @@ public class LevelController : MonoBehaviour {
 			timeText.text="Time: "+sec+"\'\'"+milli;
 		}
 
-		if(timer<0)
+		if(timer<0 && !end)
 		{
 			end=true;
 			timeText.text="Time: 0\'\'00" ;
@@ -272,17 +271,15 @@ public class LevelController : MonoBehaviour {
 				platForm.Active();
 		}
 		nbTry+=1;
-		tryText.text="Attemps: "+nbTry;
+		tryText.text="Attempts: "+nbTry;
 		startTime=Time.time;
 	}
 
 	public void ResetPositions()
 	{
-		StartCoroutine(waitAMoment());
-		panelCanMove=true;
+		timer=timeAllowed;//éviter une bétise de vérif
 		playerController.ReturnToPosition();
 		end=false;
-
 		ResetInstruct();
 
 		if (nbPlatform>0)
@@ -290,15 +287,10 @@ public class LevelController : MonoBehaviour {
 			foreach (PlatformController platForm in platformControllers)
 				platForm.Desactive();
 		}
-		timer=0;
-	}
-
-	//Permet de laisser le temps que tout se remette en place
-	IEnumerator waitAMoment()
-	{
-		yield return new WaitForSeconds(0.2f);
+		panelCanMove=true;
 		playerCanMove=false;
 	}
+	
 
 	void ResetInstruct()
 	{
@@ -329,5 +321,11 @@ public class LevelController : MonoBehaviour {
 	public void Relauch()
 	{
 		Time.timeScale=1.0f;
+	}
+
+	public void SoundGest()
+	{
+		AudioSource audioS=gameController.GetComponent<AudioSource>();
+		audioS.mute=!audioS.mute;
 	}
 }

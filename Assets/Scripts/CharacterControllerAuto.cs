@@ -118,6 +118,7 @@ public class CharacterControllerAuto : MonoBehaviour {
 		gameObject.transform.position=playerOrigin;
 		canIMove=false;
 		alreadyJump=false;
+		end=false;
 		move=0f;
 		if (dead)
 			Reanim ();
@@ -144,9 +145,7 @@ public class CharacterControllerAuto : MonoBehaviour {
 	void Reanim()
 	{
 		dead=false;
-		end=false;
 		anim.SetTrigger ("isAliveTrigger");
-	
 	}
 
 	IEnumerator waitForFlip()
