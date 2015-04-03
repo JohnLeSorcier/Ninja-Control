@@ -41,6 +41,11 @@ public class TutoController : MonoBehaviour {
 					placeC.enabled=true;
 			}
 		}
+		foreach(Button button in listButton)
+		{
+			if(button!=null)
+				button.interactable=true;
+		}
 	}
 
 }

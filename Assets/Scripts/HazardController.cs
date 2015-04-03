@@ -6,7 +6,8 @@ public class HazardController : MonoBehaviour {
 	
 	private LevelController levelController;
 	private bool hazarded=false;//éviter les bugs de double entrée dans le collider.
-	// Use this for initialization
+
+
 	void Start () {
 		GameObject levelControllerObject = GameObject.FindWithTag ("LevelController");
 		if (levelControllerObject != null)
@@ -29,7 +30,7 @@ public class HazardController : MonoBehaviour {
 
 	IEnumerator waitForHazard()
 	{
-		yield return new WaitForSeconds(0.5f);
+		yield return new WaitForSeconds(1f);
 		hazarded=false;
 	}
 }

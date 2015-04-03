@@ -47,7 +47,7 @@ public class InterfaceController : MonoBehaviour {
 	}
 
 	//affiche un message différent suivant le type de fin: 0 pour réussite, 1 pour une mort, 2 pour une sortie de niveau, 3 pour manque de temps
-	public void GameOver(int endType, int nbPan, int nbTry, float timer, int score, int nbStars, bool passed)
+	public void GameOver(int endType, int nbPan, int nbTry, int nbPieces, float timer, int score, int nbStars, bool passed)
 	{
 		nextLevel.interactable=false;
 		string textAffich;
@@ -62,7 +62,7 @@ public class InterfaceController : MonoBehaviour {
 
 		if (endType == 0)
 		{
-			textAffich="Unused Panels: "+nbPan+"\nAttempts: "+nbTry+"\nTime left: "+timer+"s\nTotal Score: "+score;
+			textAffich="Unused Panels: "+nbPan+"\nAttempts: "+nbTry+"\nCoins: "+nbPieces+"\nTime left: "+timer+"s\nTotal Score: "+score;
 
 			if(passed && !(Application.loadedLevel == Application.levelCount-1))
 				nextLevel.interactable=true;

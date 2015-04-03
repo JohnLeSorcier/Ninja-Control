@@ -12,6 +12,7 @@ public class PlaceController : MonoBehaviour {
 	public LayerMask whatIsGround;
 	public Transform groundCheck;
 
+	public float panelRadius;
 	public LayerMask whatIsPanel;
 
 	public float playerRadius;
@@ -101,7 +102,7 @@ public class PlaceController : MonoBehaviour {
 	void OnMouseUp()
 	{
 		Collider2D solTemp = Physics2D.OverlapCircle(groundCheck.position, groundRadius, whatIsGround);
-		Collider2D[] panelCollider = Physics2D.OverlapCircleAll(groundCheck.position, groundRadius, whatIsPanel);
+		Collider2D[] panelCollider = Physics2D.OverlapCircleAll(groundCheck.position, panelRadius, whatIsPanel);
 		bool playerCollider = Physics2D.OverlapCircle(groundCheck.position, playerRadius, whatIsPlayer);
 
 		foreach (Collider2D panelC in panelCollider)
@@ -109,7 +110,6 @@ public class PlaceController : MonoBehaviour {
 			if (!onGround && panelC.gameObject != gameObject)
 				otherPanel=true;
 		}
-
 
 		if(solTemp == null || otherPanel || playerCollider)
 			Enlever();
@@ -131,7 +131,10 @@ public class PlaceController : MonoBehaviour {
 	{
 		levelController.TakePanel(gameObject.tag);
 		if (levelController.VerifPanel(gameObject.tag))
-			Instantiate(gameObject,originPoint,transform.rotation);
+		{
+			GameObject newFO=(GameObject) GameObject.Instantiate(gameObject,originPoint,transform.rotation);
+			newFO.transform.parent=gameObject.transform.parent;
+		}
 		newbie=true;
 	}
 	
@@ -151,5 +154,10 @@ public class PlaceController : MonoBehaviour {
 	public void Replace()
 	{
 		transform.position=posePoint;
+	}
+
+	public bool isOnGround()
+	{
+		return onGround;
 	}
 }

@@ -11,7 +11,8 @@ public class CharacterControllerAuto : MonoBehaviour {
 	bool grounded = false;//est-il au sol?
 	bool wall = false; // vérification du mur
 	public Transform groundCheck; //composant pour vérifier le sol
-	public Transform playerCheck; //composant pour vérifier la position du joueur
+	public Transform playerCheckOne;
+	public Transform playerCheckTwo;//composant pour vérifier la position du joueur
 	public float groundRadius = 0.2f; //à quelle distance on vérifie le sol
 	public float playerRadius = 0.5f;//vérification du joueur
 	public float hazardRadius = 0.1f;
@@ -19,6 +20,8 @@ public class CharacterControllerAuto : MonoBehaviour {
 
 	bool alreadyFlip=false;
 	bool alreadyJump=false;
+	bool alreadySlide=false;
+	bool jumpSignal=false;
 	float offsetY=0f;
 	float offsetX=0f;
 
@@ -31,6 +34,9 @@ public class CharacterControllerAuto : MonoBehaviour {
 
 	private Vector2 playerOrigin;
 
+	CircleCollider2D circleCol;
+	BoxCollider2D boxCol;
+
 
 	
 	void Start ()
@@ -38,6 +44,9 @@ public class CharacterControllerAuto : MonoBehaviour {
 
 		playerOrigin=gameObject.transform.position;
 		anim=GetComponent<Animator>();//on récupère l'animator de l'objet
+
+		circleCol = GetComponent<CircleCollider2D>();
+		boxCol = GetComponent<BoxCollider2D>();
 
 	}
 		
@@ -47,7 +56,8 @@ public class CharacterControllerAuto : MonoBehaviour {
 			return;
 
 		grounded = Physics2D.OverlapCircle(groundCheck.position, groundRadius, whatIsGroundAndWall); 		
-		wall=Physics2D.OverlapCircle(playerCheck.position, playerRadius, whatIsGroundAndWall);
+		//wall=Physics2D.OverlapCircle(playerCheck.position, playerRadius, whatIsGroundAndWall);
+		wall=Physics2D.OverlapArea(playerCheckOne.position,playerCheckTwo.position,whatIsGroundAndWall);
 
 
 		if (wall && !alreadyFlip)
@@ -118,6 +128,8 @@ public class CharacterControllerAuto : MonoBehaviour {
 		gameObject.transform.position=playerOrigin;
 		canIMove=false;
 		alreadyJump=false;
+		if(alreadySlide)
+			Debout ();
 		end=false;
 		move=0f;
 		if (dead)
@@ -171,5 +183,62 @@ public class CharacterControllerAuto : MonoBehaviour {
 	{
 		canIMove=true;
 	}
-		
+
+	public void StopWait()
+	{
+		canIMove=false;
+		move=0f;
+		if(alreadySlide)
+			Debout ();
+	}
+
+	public void GoWait()
+	{
+		canIMove=true;
+	}
+
+	public void Slide()
+	{
+
+		if (!alreadySlide)
+		{
+			anim.SetTrigger("isSlideTrigger");
+			circleCol.radius=0.01f;
+			boxCol.center = new Vector2 (boxCol.center.x, -0.35f);
+			boxCol.size = new Vector2 (2.7f,2.2f);
+			playerCheckOne.transform.localPosition=new Vector2(-1.33f, 0.76f);
+			playerCheckTwo.transform.localPosition=new Vector2(1.37f, -1.2f);
+			alreadySlide=true;
+			StartCoroutine(WaitForSlide());
+		}
+		else
+		{
+			//continuer le slide plus longtemps
+			jumpSignal=true;
+			StartCoroutine(WaitForSlide());
+		}
+
+	}
+
+	IEnumerator WaitForSlide()
+	{
+		yield return new WaitForSeconds(0.6f);
+		if (!jumpSignal)
+		{
+			Debout();
+		}
+		jumpSignal=false;
+	}
+
+	void Debout()
+	{
+		anim.SetTrigger("endSlideTrigger");
+		circleCol.radius=0.7f;
+		playerCheckOne.transform.localPosition=new Vector2(-0.68f, 1.94f);
+		playerCheckTwo.transform.localPosition=new Vector2(0.79f, -1.2f);
+		boxCol.center = new Vector2 (boxCol.center.x, 0.43f);
+		boxCol.size = new Vector2 (1.4f,3.15f);
+		alreadySlide=false;
+	}
+	
 }

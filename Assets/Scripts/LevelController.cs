@@ -8,17 +8,20 @@ public class LevelController : MonoBehaviour {
 	public Text JumpLText;
 	public Text GoRText;
 	public Text GoLText;
+	public Text SGText;
+	public Text DWText;
 
 
 
 	public Text tryText;
 	public Text timeText;
+	public Text pieceText;
 
 	public Text bestScore;
 
 	public Button nextButton;
 
-	public string[] tagTab={"JumpLeft","JumpRight", "GoLeft", "GoRight"};
+	private string[] tagTab={"JumpLeft","JumpRight", "GoLeft", "GoRight", "StopGo","Slide"};
 
 	public int timeAllowed;
 
@@ -30,11 +33,15 @@ public class LevelController : MonoBehaviour {
 	public int nbJumpL=10;
 	public int nbGoR=10;
 	public int nbGoL=10;
+	public int nbSG=10;
+	public int nbDW=10;
 
 	public GameObject jumpR;
 	public GameObject jumpL;
 	public GameObject goR;
 	public GameObject goL;
+	public GameObject SG;
+	public GameObject DW;
 
 
 	bool end=false;
@@ -42,6 +49,7 @@ public class LevelController : MonoBehaviour {
 	int nbTry;
 	float timer;
 	float startTime;
+	int nbPieces;
 
 
 	private GameController gameController;
@@ -104,7 +112,13 @@ public class LevelController : MonoBehaviour {
 			goR.SetActive(false);
 		if (nbGoL==0)
 			goL.SetActive(false);
+		if (nbSG==0)
+			SG.SetActive(false);
+		if (nbDW==0)
+			DW.SetActive(false);
 
+		nbPieces=0;
+		pieceText.text="Coins: "+nbPieces;
 
 		MaJNbText ();
 	}
@@ -139,6 +153,8 @@ public class LevelController : MonoBehaviour {
 		string jlTxt="";
 		string grTxt="";
 		string glTxt="";
+		string sgTxt="";
+		string dwTxt="";
 
 		if (nbJumpR>0)
 			jrTxt="Jump Right x" + nbJumpR;
@@ -148,11 +164,17 @@ public class LevelController : MonoBehaviour {
 			grTxt="Turn Right x" + nbGoR;
 		if (nbGoL>0)
 			glTxt="Turn Left x" + nbGoL;
+		if (nbSG>0)
+			sgTxt="Wait x" + nbSG;
+		if (nbDW>0)
+			dwTxt="Slide x" + nbDW;
 
 		JumpRText.text=jrTxt;
 		JumpLText.text=jlTxt;
 		GoRText.text=grTxt;
 		GoLText.text=glTxt;
+		SGText.text=sgTxt;
+		DWText.text=dwTxt;
 	}
 
 	//on passe les tag des objets
@@ -166,6 +188,10 @@ public class LevelController : MonoBehaviour {
 			nbGoR -=1;
 		if (tagPanel == "GoLeft")
 			nbGoL-=1;
+		if (tagPanel == "StopGo")
+			nbSG-=1;
+		if (tagPanel == "Slide")
+			nbDW-=1;
 
 		MaJNbText();
 	}
@@ -180,6 +206,10 @@ public class LevelController : MonoBehaviour {
 			nbGoR +=1;
 		if (tagPanel == "GoLeft")
 			nbGoL+=1;
+		if (tagPanel == "StopGo")
+			nbSG+=1;
+		if (tagPanel == "Slide")
+			nbDW+=1;
 		
 		MaJNbText();
 	}
@@ -194,6 +224,10 @@ public class LevelController : MonoBehaviour {
 			return false;
 		if (tagPanel == "GoLeft"&& nbGoL==0)
 			return false;
+		if (tagPanel == "StopGo"&& nbSG==0)
+			return false;
+		if (tagPanel == "Slide"&& nbDW==0)
+			return false;
 
 		return true;
 
@@ -201,7 +235,7 @@ public class LevelController : MonoBehaviour {
 
 	public int PanRest()
 	{
-		int nbPan=nbJumpR+nbJumpL+nbGoR+nbGoL;
+		int nbPan=nbJumpR+nbJumpL+nbGoR+nbGoL+nbSG+nbDW;
 		return nbPan;
 	}
 
@@ -218,7 +252,7 @@ public class LevelController : MonoBehaviour {
 			passed=true;
 			playerController.End();
 			nbPan=PanRest();
-			total = gameController.Score(nbPan,nbTry,timer);
+			total = gameController.Score(nbPan,nbTry,nbPieces,timer);
 
 			if (total>scoreStars3)
 				nbStars=3;
@@ -244,7 +278,7 @@ public class LevelController : MonoBehaviour {
 			playerController.End();
 
 		end=true;
-		interfaceController.GameOver(endType, nbPan, nbTry, timer, total, nbStars, passed);
+		interfaceController.GameOver(endType, nbPan, nbTry, nbPieces, timer, total, nbStars, passed);
 	}
 
 	public void ChangeMove()
@@ -281,6 +315,8 @@ public class LevelController : MonoBehaviour {
 		playerController.ReturnToPosition();
 		end=false;
 		ResetInstruct();
+		nbPieces=0;
+		pieceText.text="Coins: "+nbPieces;
 
 		if (nbPlatform>0)
 		{
@@ -289,6 +325,7 @@ public class LevelController : MonoBehaviour {
 		}
 		panelCanMove=true;
 		playerCanMove=false;
+
 	}
 	
 
@@ -300,9 +337,9 @@ public class LevelController : MonoBehaviour {
 			InstructObject = GameObject.FindGameObjectsWithTag(tag);
 			if (InstructObject !=null)
 			{
-				int nbJump = InstructObject.Length;
-				PlaceController[] PlaceControllers=new PlaceController[nbJump];
-				for (int i=0; i<nbPlatform;i++)
+				int nbInstruct = InstructObject.Length;
+				PlaceController[] PlaceControllers=new PlaceController[nbInstruct];
+				for (int i=0; i<nbInstruct;i++)
 					PlaceControllers.SetValue(InstructObject[i].GetComponent<PlaceController>(),i);
 				foreach (PlaceController PlaceC in PlaceControllers)
 				{
@@ -321,6 +358,12 @@ public class LevelController : MonoBehaviour {
 	public void Relauch()
 	{
 		Time.timeScale=1.0f;
+	}
+
+	public void RamassePiece()
+	{
+		nbPieces++;
+		pieceText.text="Coins: "+nbPieces;
 	}
 
 	public void SoundGest()

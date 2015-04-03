@@ -24,7 +24,7 @@ public class JumpController : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D other)
 	{
-		if(other.CompareTag("Player") && levelController.playerCanMove)
+		if(other is BoxCollider2D && other.CompareTag("Player") && levelController.playerCanMove)
 		{
 			if (gameObject.tag == "JumpRight" && !playerController.facingRight)
 				playerController.Flip();
@@ -37,7 +37,7 @@ public class JumpController : MonoBehaviour {
 
 	void OnTriggerExit2D(Collider2D other)
 	{
-		if(other.CompareTag("Player") && levelController.playerCanMove)
+		if(other is BoxCollider2D && other.CompareTag("Player") && levelController.playerCanMove)
 		{
 			if (gameObject.tag == "JumpRight" && !playerController.facingRight)
 				playerController.Flip();

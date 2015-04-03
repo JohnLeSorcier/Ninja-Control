@@ -23,7 +23,7 @@ public class TurnController : MonoBehaviour {
 	
 	void OnTriggerEnter2D(Collider2D other)
 	{
-		if(other.CompareTag("Player") && levelController.playerCanMove)
+		if(other is BoxCollider2D && other.CompareTag("Player") && levelController.playerCanMove)
 		{
 			if (gameObject.tag == "GoRight" && !playerController.facingRight)
 				playerController.Flip();

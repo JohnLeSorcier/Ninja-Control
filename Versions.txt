@@ -3,7 +3,7 @@
 
 Remerciements pour les sprites et UI:
 licence CC0: pzUH, idoh40, CamTatz, bevouliin, mishonis -->OpenGameArt
-licence CC-BY 3.0 2D Retrospectives
+licence CC-BY 3.0: 2D Retrospectives, JM.Atencia
 Fonts: Gang of Three, (Knewave), survivant
 Musique: WrathGames Studio http://wrathgames.com/blog
 
@@ -30,11 +30,24 @@ Version 0.X: Alpha X
 
 Version 0.1 : Alpha 1
 ==========================
+0.1.2
+-Correction d'un bug d'affichage sur le panneau de Stop&Go
+-Correction d'un bug de placement des panneaux sur une plateforme mobile
+-Deux niveaux supplémentaires de tutoriel
+
+0.1.1
+-Ajout de pièces à ramasser
+-Ajout d'un panneau de Stop&Go
+-Ajout d'un panneau de slide
+-Modification du système de collision sur les murs
+-Ajout d'un niveau de test avec tous les panneaux
+-Retouche de l'interface
+
 0.1.0 (Alpha 1)
 -Ajout d'une musique
 -Corrections de bug d'interface
 -Ajout d'un menu avec les instructions
--7 niveaux inclus
+-7 niveaux inclus (dont 2 de tutoriel)
 
 
 Version 0.0 : Prototype
@@ -42,7 +55,7 @@ Version 0.0 : Prototype
 
 
 0.0.6 (PreAlpha 3 et 4)
--Niveaux de tutoriel
+-Deux niveaux de tutoriel
 -Enregistrement des scores
 -Choix du niveau
 -Petite animation du menu

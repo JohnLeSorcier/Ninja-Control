@@ -7,6 +7,7 @@ public class GameController : MonoBehaviour {
 	int scorePanRest=250;
 	int scoreTry=100;
 	int scoreTime=200;
+	int scorePiece=100;
 
 	public static GameController control;
 
@@ -23,9 +24,9 @@ public class GameController : MonoBehaviour {
 		}
 	}
 
-	public int Score(int nbPanel, int nbTry, float timer)
+	public int Score(int nbPanel, int nbTry, int nbPieces, float timer)
 	{
-		float score=finishScore + timer*scoreTime + nbPanel*scorePanRest - nbTry *scoreTry;
+		float score=finishScore + timer*scoreTime + nbPanel*scorePanRest + nbPieces*scorePiece - nbTry *scoreTry;
 		return Mathf.FloorToInt(score);
 	}
 
