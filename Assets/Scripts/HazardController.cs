@@ -6,7 +6,8 @@ public class HazardController : MonoBehaviour {
 	
 	private LevelController levelController;
 	private bool hazarded=false;//éviter les bugs de double entrée dans le collider.
-
+	private Vector2 startPosition;
+	Rigidbody2D body;
 
 	void Start () {
 		GameObject levelControllerObject = GameObject.FindWithTag ("LevelController");
@@ -14,12 +15,15 @@ public class HazardController : MonoBehaviour {
 			levelController = levelControllerObject.GetComponent <LevelController>();
 		else
 			Debug.Log ("Cannot find 'GameController' script");
+
+		startPosition=transform.position;
+		body = GetComponent<Rigidbody2D>();
 	}
 	
 		
 	void OnTriggerEnter2D(Collider2D other)
 	{
-		if(other.CompareTag("Player") && !hazarded)
+		if(other is BoxCollider2D && other.CompareTag("Player") && !hazarded)
 		{
 			hazarded=true;
 			levelController.GameOver(1);
@@ -30,7 +34,19 @@ public class HazardController : MonoBehaviour {
 
 	IEnumerator waitForHazard()
 	{
-		yield return new WaitForSeconds(1f);
+		yield return new WaitForSeconds(0.3f);
 		hazarded=false;
 	}
+
+
+
+	public void resetPosition()
+	{
+		if(body != null)
+			body.isKinematic=true;
+		transform.position=startPosition;
+	}
+
+
 }
+

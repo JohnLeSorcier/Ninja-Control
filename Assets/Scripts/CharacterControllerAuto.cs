@@ -152,6 +152,10 @@ public class CharacterControllerAuto : MonoBehaviour {
 		if (!dead)
 			anim.SetTrigger ("isDeadTrigger");
 		dead=true;
+		rigidbody2D.velocity = new Vector2 (0f, rigidbody2D.velocity.y);
+		rigidbody2D.isKinematic=true;
+		circleCol.enabled=false;
+		boxCol.enabled=false;
 	}
 
 	void Reanim()

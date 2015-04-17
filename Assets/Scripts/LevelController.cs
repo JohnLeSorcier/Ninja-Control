@@ -45,7 +45,6 @@ public class LevelController : MonoBehaviour {
 
 
 	bool end=false;
-	int nbPlatform;
 	int nbTry;
 	float timer;
 	float startTime;
@@ -55,7 +54,11 @@ public class LevelController : MonoBehaviour {
 	private GameController gameController;
 	private InterfaceController interfaceController;
 	private CharacterControllerAuto playerController;
+
 	private PlatformController[] platformControllers;
+	private HazardController[] hazardControllers;
+	int nbPlatform;
+	int nbHazard;
 
 	private int scoreBefore;
 
@@ -83,6 +86,15 @@ public class LevelController : MonoBehaviour {
 			platformControllers=new PlatformController[nbPlatform];
 			for (int i=0; i<nbPlatform;i++)
 				platformControllers.SetValue(platformObject[i].GetComponent<PlatformController>(),i);
+		}
+
+		GameObject[] hazardObject = GameObject.FindGameObjectsWithTag("Hazard");
+		if (hazardObject !=null)
+		{
+			nbHazard = hazardObject.Length;
+			hazardControllers=new HazardController[nbHazard];
+			for (int i=0; i<nbHazard;i++)
+				hazardControllers.SetValue(hazardObject[i].GetComponent<HazardController>(),i);
 		}
 
 		GameObject gameControllerObject = GameObject.FindWithTag ("GameController");
@@ -323,6 +335,12 @@ public class LevelController : MonoBehaviour {
 			foreach (PlatformController platForm in platformControllers)
 				platForm.Desactive();
 		}
+		if (nbHazard>0)
+		{
+			foreach (HazardController hazard in hazardControllers)
+				hazard.resetPosition();
+		}
+
 		panelCanMove=true;
 		playerCanMove=false;
 
