@@ -26,7 +26,10 @@ public class HazardController : MonoBehaviour {
 		if(other is BoxCollider2D && other.CompareTag("Player") && !hazarded)
 		{
 			hazarded=true;
-			levelController.GameOver(1);
+			if (gameObject.layer==4)
+				levelController.GameOver(4);
+			else
+				levelController.GameOver(1);
 			StartCoroutine(waitForHazard());
 		}
 

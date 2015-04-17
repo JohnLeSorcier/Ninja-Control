@@ -68,6 +68,8 @@ public class LevelController : MonoBehaviour {
 
 	void Start ()
 	{
+		nbPlatform=0;
+		nbHazard=0;
 
 		Time.timeScale=1.0f;
 
@@ -251,7 +253,7 @@ public class LevelController : MonoBehaviour {
 		return nbPan;
 	}
 
-	//0 pour réussite, 1 pour une mort, 2 pour une sortie de niveau, 3 pour manque de temps
+	//0 pour réussite, 1 pour une mort, 2 pour une sortie de niveau, 3 pour manque de temps, 4 pour noyade
 	public void GameOver(int endType)
 	{
 		int nbPan=0;
@@ -285,7 +287,9 @@ public class LevelController : MonoBehaviour {
 			nextButton.interactable=true;
 		}
 		else if (endType==1 || endType==2)
-			playerController.Dead();
+			playerController.Dead(0);
+		else if (endType==4)
+			playerController.Dead(1);
 		else if (endType==3)
 			playerController.End();
 
@@ -335,6 +339,7 @@ public class LevelController : MonoBehaviour {
 			foreach (PlatformController platForm in platformControllers)
 				platForm.Desactive();
 		}
+
 		if (nbHazard>0)
 		{
 			foreach (HazardController hazard in hazardControllers)

@@ -33,6 +33,8 @@ Version 0.1 : Alpha 1
 0.1.3
 -Ajout d'un plafond piégé
 -Ajout d'un pique du plafond
+-Modification de la vérification des sauts
+-Corrections de plusieurs bugs mineurs
 
 0.1.2
 -Correction d'un bug d'affichage sur le panneau de Stop&Go
