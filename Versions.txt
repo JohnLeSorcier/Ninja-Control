@@ -30,6 +30,10 @@ Version 0.X: Alpha X
 
 Version 0.1 : Alpha 1
 ==========================
+0.1.4
+-Ajout d'une porte automatique
+-Ajout d'une porte avec interrupteur
+
 0.1.3
 -Ajout d'un plafond piégé
 -Ajout d'un pique du plafond

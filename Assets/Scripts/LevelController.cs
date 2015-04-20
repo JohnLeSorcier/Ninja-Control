@@ -57,8 +57,12 @@ public class LevelController : MonoBehaviour {
 
 	private PlatformController[] platformControllers;
 	private HazardController[] hazardControllers;
+	private AutoDoorController[] AutoDoorControllers;
+	private DoorController[] DoorControllers;
 	int nbPlatform;
 	int nbHazard;
+	int nbAutoDoor;
+	int nbDoor;
 
 	private int scoreBefore;
 
@@ -70,6 +74,7 @@ public class LevelController : MonoBehaviour {
 	{
 		nbPlatform=0;
 		nbHazard=0;
+		nbAutoDoor=0;
 
 		Time.timeScale=1.0f;
 
@@ -97,6 +102,24 @@ public class LevelController : MonoBehaviour {
 			hazardControllers=new HazardController[nbHazard];
 			for (int i=0; i<nbHazard;i++)
 				hazardControllers.SetValue(hazardObject[i].GetComponent<HazardController>(),i);
+		}
+
+		GameObject[] AutoDoorObject = GameObject.FindGameObjectsWithTag("AutoDoor");
+		if (AutoDoorObject !=null)
+		{
+			nbAutoDoor = AutoDoorObject.Length;
+			AutoDoorControllers=new AutoDoorController[nbAutoDoor];
+			for (int i=0; i<nbAutoDoor;i++)
+				AutoDoorControllers.SetValue(AutoDoorObject[i].GetComponent<AutoDoorController>(),i);
+		}
+
+		GameObject[] DoorObject = GameObject.FindGameObjectsWithTag("Door");
+		if (DoorObject !=null)
+		{
+			nbDoor = DoorObject.Length;
+			DoorControllers=new DoorController[nbDoor];
+			for (int i=0; i<nbDoor;i++)
+				DoorControllers.SetValue(DoorObject[i].GetComponent<DoorController>(),i);
 		}
 
 		GameObject gameControllerObject = GameObject.FindWithTag ("GameController");
@@ -320,6 +343,13 @@ public class LevelController : MonoBehaviour {
 			foreach (PlatformController platForm in platformControllers)
 				platForm.Active();
 		}
+
+		if (nbAutoDoor>0)
+		{
+			foreach (AutoDoorController autoDoor in AutoDoorControllers)
+				autoDoor.Active();
+		}
+
 		nbTry+=1;
 		tryText.text="Attempts: "+nbTry;
 		startTime=Time.time;
@@ -344,6 +374,18 @@ public class LevelController : MonoBehaviour {
 		{
 			foreach (HazardController hazard in hazardControllers)
 				hazard.resetPosition();
+		}
+
+		if (nbAutoDoor>0)
+		{
+			foreach (AutoDoorController autoDoor in AutoDoorControllers)
+				autoDoor.Desactive();
+		}
+
+		if (nbDoor>0)
+		{
+			foreach (DoorController Door in DoorControllers)
+				Door.Desactive();
 		}
 
 		panelCanMove=true;
