@@ -6,18 +6,22 @@ public class HazardController : MonoBehaviour {
 	
 	private LevelController levelController;
 	private bool hazarded=false;//éviter les bugs de double entrée dans le collider.
-	private Vector2 startPosition;
+	private Vector3 startPosition;
 	Rigidbody2D body;
+	SliderJoint2D slideJoint;
 
 	void Start () {
 		GameObject levelControllerObject = GameObject.FindWithTag ("LevelController");
 		if (levelControllerObject != null)
 			levelController = levelControllerObject.GetComponent <LevelController>();
 		else
-			Debug.Log ("Cannot find 'GameController' script");
+			Debug.Log ("Cannot find 'LevelController' script");
 
 		startPosition=transform.position;
 		body = GetComponent<Rigidbody2D>();
+		slideJoint=GetComponent<SliderJoint2D>();
+		if (slideJoint !=null)
+			slideJoint.enabled=false;
 	}
 	
 		
@@ -45,9 +49,18 @@ public class HazardController : MonoBehaviour {
 
 	public void resetPosition()
 	{
-		if(body != null)
+		if(body != null && slideJoint == null)
 			body.isKinematic=true;
+		else if (slideJoint !=null)
+			slideJoint.enabled=false;
+
 		transform.position=startPosition;
+	}
+
+	public void nonGraviticMove()
+	{
+		if (slideJoint !=null)
+			slideJoint.enabled=true;
 	}
 
 

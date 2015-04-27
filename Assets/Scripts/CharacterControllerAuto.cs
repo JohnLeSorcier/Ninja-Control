@@ -16,12 +16,14 @@ public class CharacterControllerAuto : MonoBehaviour {
 	public float groundRadius = 0.2f; //à quelle distance on vérifie le sol
 	public float playerRadius = 0.5f;//vérification du joueur
 	public float hazardRadius = 0.1f;
-	public LayerMask whatIsGroundAndWall; //masque "Qu'est-ce que le sol?"
+	public LayerMask whatIsGround;
+	public LayerMask whatIsWall;
 
 	bool alreadyFlip=false;
 	bool alreadyJump=false;
 	bool alreadySlide=false;
 	bool jumpSignal=false;
+	bool justSlide=false;
 	float offsetY=0f;
 	float offsetX=0f;
 
@@ -32,15 +34,22 @@ public class CharacterControllerAuto : MonoBehaviour {
 	[HideInInspector] public float move=0f;
 	private bool canIMove;
 
-	private Vector2 playerOrigin;
+	private Vector3 playerOrigin;
 
 	CircleCollider2D circleCol;
 	BoxCollider2D boxCol;
+
+	LevelController levelController;
 
 
 	
 	void Start ()
 	{
+		GameObject levelControllerObject = GameObject.FindWithTag ("LevelController");
+		if (levelControllerObject != null)
+			levelController = levelControllerObject.GetComponent <LevelController>();
+		else
+			Debug.Log ("Cannot find 'LevelController' script");
 
 		playerOrigin=gameObject.transform.position;
 		anim=GetComponent<Animator>();//on récupère l'animator de l'objet
@@ -55,9 +64,9 @@ public class CharacterControllerAuto : MonoBehaviour {
 		if (dead || end)
 			return;
 
-		grounded = Physics2D.OverlapCircle(groundCheck.position, groundRadius, whatIsGroundAndWall); 		
+		grounded = Physics2D.OverlapCircle(groundCheck.position, groundRadius, whatIsGround); 		
 		//wall=Physics2D.OverlapCircle(playerCheck.position, playerRadius, whatIsGroundAndWall);
-		wall=Physics2D.OverlapArea(playerCheckOne.position,playerCheckTwo.position,whatIsGroundAndWall);
+		wall=Physics2D.OverlapArea(playerCheckOne.position,playerCheckTwo.position,whatIsWall);
 
 
 		if (wall && !alreadyFlip)
@@ -71,21 +80,29 @@ public class CharacterControllerAuto : MonoBehaviour {
 		
 		rigidbody2D.velocity = new Vector2 (maxSpeed * move, rigidbody2D.velocity.y);
 
+		if (wall && justSlide)
+			Assome();
+
+
+
 	}
 	
 	void Update()
 	{
-		if (canIMove && move == 0f)
+		if (canIMove && move == 0f && !dead)
 			move=1f;
 
 		if (grounded && !canIMove)
 		{
 			//pour qu'il suive la plateforme en idle (utile pour le système de pause)
-			Collider2D SolTemp = Physics2D.OverlapCircle(groundCheck.position, groundRadius, whatIsGroundAndWall);
+			Collider2D SolTemp = Physics2D.OverlapCircle(groundCheck.position, groundRadius, whatIsGround);
+			float OldPosition;
 			if (SolTemp !=null)
 			{
-				if (offsetX==0)
-					offsetX=transform.position.x-SolTemp.transform.position.x;
+				/*if (offsetX==0)
+					offsetX=transform.position.x-SolTemp.transform.position.x;*/
+				OldPosition=SolTemp.transform.position.x;
+				offsetX=SolTemp.transform.position.x-OldPosition;
 
 				offsetY=transform.position.y-SolTemp.transform.position.y;
 
@@ -123,6 +140,9 @@ public class CharacterControllerAuto : MonoBehaviour {
 
 	public void ReturnToPosition()
 	{
+		rigidbody2D.isKinematic=false;
+		circleCol.enabled=true;
+		boxCol.enabled=true;
 		if (!facingRight) //Regarde toujours vers la droite au début
 			Flip ();
 		gameObject.transform.position=playerOrigin;
@@ -139,7 +159,8 @@ public class CharacterControllerAuto : MonoBehaviour {
 	public void End()
 	{
 		resetAnim();
-		if (!end){
+		if (!end)
+		{
 			anim.SetFloat("Speed", 0f);
 			rigidbody2D.velocity = new Vector2 (rigidbody2D.velocity.x/2, rigidbody2D.velocity.y);
 		}
@@ -153,7 +174,7 @@ public class CharacterControllerAuto : MonoBehaviour {
 		if (!dead)
 			anim.SetTrigger ("isDeadTrigger");
 		dead=true;
-		rigidbody2D.velocity = new Vector2 (0f, rigidbody2D.velocity.y);
+		rigidbody2D.velocity = new Vector2 (0f, 0f);
 		if (type !=1)
 		{
 			rigidbody2D.isKinematic=true;
@@ -164,8 +185,9 @@ public class CharacterControllerAuto : MonoBehaviour {
 
 	void Reanim()
 	{
+		anim.SetBool("isAlive", true);
 		dead=false;
-		anim.SetTrigger ("isAliveTrigger");
+		StartCoroutine(WaitForDeath());
 	}
 
 	IEnumerator waitForFlip()
@@ -240,13 +262,33 @@ public class CharacterControllerAuto : MonoBehaviour {
 
 	void Debout()
 	{
-		anim.SetTrigger("endSlideTrigger");
+		anim.SetBool("endSlide", true);
 		circleCol.radius=0.7f;
 		playerCheckOne.transform.localPosition=new Vector2(-0.68f, 1.94f);
 		playerCheckTwo.transform.localPosition=new Vector2(0.79f, -1.2f);
 		boxCol.center = new Vector2 (boxCol.center.x, 0.43f);
 		boxCol.size = new Vector2 (1.4f,3.15f);
 		alreadySlide=false;
+		justSlide=true;
+		StartCoroutine(WaitForVerifSlide());
+	}
+
+	IEnumerator WaitForVerifSlide()
+	{
+		yield return new WaitForSeconds(0.1f);
+		anim.SetBool("endSlide", false);
+		justSlide=false;
+	}
+
+	IEnumerator WaitForDeath()
+	{
+		yield return new WaitForSeconds(0.1f);
+		anim.SetBool("isAlive", false);
+	}
+
+	void Assome()
+	{
+		levelController.GameOver(5);
 	}
 	
 }

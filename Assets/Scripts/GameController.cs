@@ -29,5 +29,5 @@ public class GameController : MonoBehaviour {
 		float score=finishScore + timer*scoreTime + nbPanel*scorePanRest + nbPieces*scorePiece - nbTry *scoreTry;
 		return Mathf.FloorToInt(score);
 	}
-
+	
 }

@@ -33,6 +33,11 @@ Version 0.1 : Alpha 1
 0.1.4
 -Ajout d'une porte automatique
 -Ajout d'une porte avec interrupteur
+-Ajout de piques qui surgissent des murs
+-Corrections de plusieurs bugs mineurs
+-Nouvelle apparence du paneau de fin
+-Ajout d'un bouton "cheat" pour accéder à tous les niveaux
+-Ajout d'un niveau
 
 0.1.3
 -Ajout d'un plafond piégé

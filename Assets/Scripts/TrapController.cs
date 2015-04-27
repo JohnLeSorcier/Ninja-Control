@@ -4,12 +4,15 @@ using System.Collections;
 public class TrapController : MonoBehaviour {
 
 	Rigidbody2D rigidParent;
-	public GameObject hazard;
+	public GameObject hazardG;
+	HazardController hazard;
 	Animator anim;
+	public bool gravitic;
 
 	void Start ()
 	{
-		rigidParent=hazard.GetComponent<Rigidbody2D>();
+		rigidParent=hazardG.GetComponent<Rigidbody2D>();
+		hazard=hazardG.GetComponent<HazardController>();
 		anim=GetComponent<Animator>();
 	}
 
@@ -17,8 +20,11 @@ public class TrapController : MonoBehaviour {
 	{
 		if(other.CompareTag("Player"))
 		{
-			rigidParent.isKinematic=false;
 			anim.SetTrigger("SwitchOn");
+			if (gravitic)
+				rigidParent.isKinematic=false;
+			else
+				hazard.nonGraviticMove();
 		}
 	}
 
