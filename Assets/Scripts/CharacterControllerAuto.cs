@@ -167,7 +167,7 @@ public class CharacterControllerAuto : MonoBehaviour {
 		end=true;
 	}
 
-	//type== 0 pour une mort normale, 1 pour une noyade
+	//type== 0 pour une mort normale, 1 pour une noyade, 2 une mort écrasée
 	public void Dead(int type)
 	{
 		resetAnim();
@@ -175,7 +175,7 @@ public class CharacterControllerAuto : MonoBehaviour {
 			anim.SetTrigger ("isDeadTrigger");
 		dead=true;
 		rigidbody2D.velocity = new Vector2 (0f, 0f);
-		if (type !=1)
+		if (type == 2)
 		{
 			rigidbody2D.isKinematic=true;
 			circleCol.enabled=false;

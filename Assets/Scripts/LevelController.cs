@@ -276,7 +276,7 @@ public class LevelController : MonoBehaviour {
 		return nbPan;
 	}
 
-	//0 pour réussite, 1 pour une mort, 2 pour une sortie de niveau, 3 pour manque de temps, 4 pour noyade, 5 pour assomé
+	//0 pour réussite, 1 pour une mort, 2 pour une sortie de niveau, 3 pour manque de temps, 4 pour noyade, 5 pour assomé, 6 pour écrasé
 	public void GameOver(int endType)
 	{
 		int nbPan=0;
@@ -313,6 +313,8 @@ public class LevelController : MonoBehaviour {
 			playerController.Dead(0);
 		else if (endType==4)
 			playerController.Dead(1);
+		else if (endType==6)
+			playerController.Dead(2);
 		else if (endType==3)
 			playerController.End();
 

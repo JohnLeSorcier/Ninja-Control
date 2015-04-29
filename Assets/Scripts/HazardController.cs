@@ -30,10 +30,15 @@ public class HazardController : MonoBehaviour {
 		if(other is BoxCollider2D && other.CompareTag("Player") && !hazarded)
 		{
 			hazarded=true;
+			//le layer 4, c'est l'eau
 			if (gameObject.layer==4)
 				levelController.GameOver(4);
+			else if (body != null && slideJoint == null)
+				levelController.GameOver(6);
 			else
 				levelController.GameOver(1);
+			//en cas de noyade->gameOver 4, en cas d'écrasement par un truc qui tombe->gameOver 6, sinon gameOver 1
+		
 			StartCoroutine(waitForHazard());
 		}
 

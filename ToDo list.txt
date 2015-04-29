@@ -1,0 +1,24 @@
+-Panneaux unidirectionnels (pour le saut, etc...)
+-Portes à casser, ennemis?
+-Pièges qui bouge en tournant (comem un moulin)
+-Commander un deuxième ninja (elle?)
+
+-panneau d'attaque (un au corps à corps, un en lancer)
+-panneau d'inversion de gravité (penser à mettre les panneaux à l'envers??)
+
+-Trouver des objets à mettre dans le décor
+
+-Ajouter au moins un niveau tuto pour rebondir sur le mur
+-Penser à modifier els instructions pour la liste des pièges
+
+-Recalculer les scores
+-revoir el fichier Excel des niveaux
+
+-Niveau avec une porte à activer dont le bouton est sur une plateforme à part
+
+
+(si problème sur différents écrans mobiles: Fit to Screen Size sur le store)
+
+
+
+

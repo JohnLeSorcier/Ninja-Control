@@ -11,6 +11,7 @@ public class PlaceController : MonoBehaviour {
 	public float groundRadius;
 	public LayerMask whatIsGround;
 	public Transform groundCheck;
+	public Transform playerCheck;
 
 	public float panelRadius;
 	public LayerMask whatIsPanel;
@@ -49,9 +50,6 @@ public class PlaceController : MonoBehaviour {
 		CerclePlacement=GetComponent<CircleCollider2D>();
 
 		CerclePlacement.enabled=true;
-
-
-
 	}
 
 	void Update()
@@ -103,7 +101,7 @@ public class PlaceController : MonoBehaviour {
 	{
 		Collider2D solTemp = Physics2D.OverlapCircle(groundCheck.position, groundRadius, whatIsGround);
 		Collider2D[] panelCollider = Physics2D.OverlapCircleAll(groundCheck.position, panelRadius, whatIsPanel);
-		bool playerCollider = Physics2D.OverlapCircle(groundCheck.position, playerRadius, whatIsPlayer);
+		bool playerCollider = Physics2D.OverlapCircle(playerCheck.position, playerRadius, whatIsPlayer);
 
 		foreach (Collider2D panelC in panelCollider)
 		{
@@ -124,6 +122,10 @@ public class PlaceController : MonoBehaviour {
 			solY= surface+offsetY;
 			transform.position = new Vector3 (solX, solY, 1); //z=1 pour rester derrière le décor
 			posePoint=transform.position;
+			//revérifier el placement derrière le ninja
+			playerCollider = Physics2D.OverlapCircle(playerCheck.position, playerRadius, whatIsPlayer);
+			if (playerCollider)
+				Enlever ();
 		}
 	}
 

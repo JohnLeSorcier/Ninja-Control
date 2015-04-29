@@ -46,7 +46,7 @@ public class InterfaceController : MonoBehaviour {
 		Application.LoadLevel(Application.loadedLevelName);
 	}
 
-	//affiche un message différent suivant le type de fin: 0 pour réussite, 1 pour une mort, 2 pour une sortie de niveau, 3 pour manque de temps, 4 pour noyade, 5 pour assomé
+	//affiche un message différent suivant le type de fin: 0 pour réussite, 1 pour une mort, 2 pour une sortie de niveau, 3 pour manque de temps, 4 pour noyade, 5 pour assomé, 6 pour écrasé (comme mort normale)
 	public void GameOver(int endType, int nbPan, int nbTry, int nbPieces, float timer, int score, int nbStars, bool passed)
 	{
 		nextLevel.interactable=false;
@@ -83,7 +83,7 @@ public class InterfaceController : MonoBehaviour {
 				stars[2].enabled=true;
 
 		}
-		else if (endType == 1) 
+		else if (endType == 1 || endType == 6) 
 			textAffich="You are dead...";
 		else if (endType == 4)
 			textAffich="You are drowned...";
