@@ -23,8 +23,8 @@ public class HazardController : MonoBehaviour {
 		if (slideJoint !=null)
 			slideJoint.enabled=false;
 	}
-	
-		
+
+
 	void OnTriggerEnter2D(Collider2D other)
 	{
 		if(other is BoxCollider2D && other.CompareTag("Player") && !hazarded)
@@ -50,16 +50,22 @@ public class HazardController : MonoBehaviour {
 		hazarded=false;
 	}
 
-
+	IEnumerator waitForSlide()
+	{
+		yield return new WaitForSeconds(0.1f);
+		slideJoint.enabled=false;
+		transform.position=startPosition;
+	}
 
 	public void resetPosition()
 	{
 		if(body != null && slideJoint == null)
+		{
 			body.isKinematic=true;
+			transform.position=startPosition;
+		}
 		else if (slideJoint !=null)
-			slideJoint.enabled=false;
-
-		transform.position=startPosition;
+			StartCoroutine(waitForSlide()); //permet d'attendre que le slide ne bouge plus et éviter qu'il parte dans el vide
 	}
 
 	public void nonGraviticMove()
