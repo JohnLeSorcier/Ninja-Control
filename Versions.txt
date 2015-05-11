@@ -31,7 +31,7 @@ Version 0.X: Alpha X
 Version 0.1 : Alpha 1
 ==========================
 0.1.5
--Ajout de 5 niveaux (16 au total, plus un niveau de test)
+-Ajout de 7 niveaux (18 au total, plus un niveau de test)
 
 0.1.4
 -Ajout d'une porte automatique

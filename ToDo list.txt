@@ -1,7 +1,9 @@
 -Panneaux unidirectionnels (pour le saut, etc...)
 -Portes à casser, ennemis?
 -Pièges qui bouge en tournant (comem un moulin)
+-Piège qui s'arrête quand on appuie sur un bouton
 -Commander un deuxième ninja (elle?)
+-sable mouvant qui ralentit, rochers qui roulent, flèchettes déclenchés apr bouton
 
 -panneau d'attaque (un au corps à corps, un en lancer)
 -panneau d'inversion de gravité (penser à mettre les panneaux à l'envers??)
@@ -14,7 +16,18 @@
 -Recalculer les scores
 -revoir el fichier Excel des niveaux
 
--Niveau avec une porte à activer dont le bouton est sur une plateforme à part
+-Niveau où on doit faire le tour par le haut puis rentrer et remonter
+
+-Donner des noms aux niveaux et l'afficher dans l'interface
+
+-Faire un score général
+-Afficher le Highscore de chaque niveau dans le menu?
+-Prendre en compte plus de try dans el score des niveaux difficiles?
+
+-Pouvoir lancer le niveau en cliquant sur le ninja. Recommencer en double-cliquant n'importe où dans le niveau
+
+
+
 
 
 (si problème sur différents écrans mobiles: Fit to Screen Size sur le store)
