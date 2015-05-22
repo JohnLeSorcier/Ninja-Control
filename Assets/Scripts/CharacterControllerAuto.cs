@@ -5,6 +5,7 @@ public class CharacterControllerAuto : MonoBehaviour {
 	
 	public float maxSpeed; //multiplicateur de vitesse
 	public bool facingRight=true;
+	bool facingRightInit;
 	Animator anim;
 	
 	
@@ -20,7 +21,7 @@ public class CharacterControllerAuto : MonoBehaviour {
 	public LayerMask whatIsWall;
 
 	bool alreadyFlip=false;
-	bool alreadyJump=false;
+	//bool alreadyJump=false;
 	bool alreadySlide=false;
 	bool jumpSignal=false;
 	bool justSlide=false;
@@ -56,6 +57,7 @@ public class CharacterControllerAuto : MonoBehaviour {
 
 		circleCol = GetComponent<CircleCollider2D>();
 		boxCol = GetComponent<BoxCollider2D>();
+		facingRightInit = facingRight;
 
 	}
 		
@@ -65,9 +67,7 @@ public class CharacterControllerAuto : MonoBehaviour {
 			return;
 
 		grounded = Physics2D.OverlapCircle(groundCheck.position, groundRadius, whatIsGround); 		
-		//wall=Physics2D.OverlapCircle(playerCheck.position, playerRadius, whatIsGroundAndWall);
 		wall=Physics2D.OverlapArea(playerCheckOne.position,playerCheckTwo.position,whatIsWall);
-
 
 		if (wall && !alreadyFlip)
 			Flip ();
@@ -82,57 +82,44 @@ public class CharacterControllerAuto : MonoBehaviour {
 
 		if (wall && justSlide)
 			Assome();
-
-
-
 	}
-	
+
+
 	void Update()
 	{
 		if (canIMove && move == 0f && !dead)
 			move=1f;
 
 		if (grounded && !canIMove)
-		{
-			//pour qu'il suive la plateforme en idle (utile pour le système de pause)
+		{	//pour qu'il suive la plateforme en idle (utile pour le système de pause)
 			Collider2D SolTemp = Physics2D.OverlapCircle(groundCheck.position, groundRadius, whatIsGround);
 			float OldPosition;
-			if (SolTemp !=null)
+			if (SolTemp !=null && SolTemp.gameObject.CompareTag("PlatformSprite"))
 			{
-				/*if (offsetX==0)
-					offsetX=transform.position.x-SolTemp.transform.position.x;*/
 				OldPosition=SolTemp.transform.position.x;
 				offsetX=SolTemp.transform.position.x-OldPosition;
 
 				offsetY=transform.position.y-SolTemp.transform.position.y;
-
-				if(SolTemp.gameObject.CompareTag("PlatformSprite"))
-				{
-					transform.position=new Vector3(SolTemp.transform.position.x+offsetX,SolTemp.transform.position.y+offsetY, transform.position.z);	
-				}
+				transform.position=new Vector3(SolTemp.transform.position.x+offsetX,SolTemp.transform.position.y+offsetY, transform.position.z);	
 			}
 		}
 	}
 
 	public void Jump()
 	{
-		if (grounded && !alreadyJump)
-		{
-			anim.SetBool("Ground", false);
-			rigidbody2D.AddForce(new Vector2 (0, jumpForce));
-			alreadyJump=true;
-			StartCoroutine(waitForJump());
-		}		
+		rigidbody2D.velocity=new Vector2(rigidbody2D.velocity.x,0);
+
+		anim.SetBool("Ground", false);
+		rigidbody2D.AddForce(new Vector2 (0, jumpForce));
+	
 	}
 	
 	public void Flip()
 	{
 		facingRight = !facingRight;
-		//retourner selon l'axe des x (utiliser l'échelle)
 		Vector3 theScale = transform.localScale;
 		theScale.x *=-1;
 		transform.localScale = theScale;
-		//courir dans l'autre sens
 		move *=-1;
 		alreadyFlip=true;
 		StartCoroutine(waitForFlip());
@@ -141,13 +128,14 @@ public class CharacterControllerAuto : MonoBehaviour {
 	public void ReturnToPosition()
 	{
 		rigidbody2D.isKinematic=false;
+		rigidbody2D.velocity = new Vector2 (0, 0);
 		circleCol.enabled=true;
 		boxCol.enabled=true;
-		if (!facingRight) //Regarde toujours vers la droite au début
+		if (facingRight != facingRightInit)
 			Flip ();
 		gameObject.transform.position=playerOrigin;
 		canIMove=false;
-		alreadyJump=false;
+		//alreadyJump=false;
 		if(alreadySlide)
 			Debout ();
 		end=false;
@@ -196,11 +184,11 @@ public class CharacterControllerAuto : MonoBehaviour {
 		alreadyFlip=false;
 	}
 	
-	IEnumerator waitForJump()
+/*	IEnumerator waitForJump()
 	{
 		yield return new WaitForSeconds(0.1f);
 		alreadyJump=false;
-	}
+	}*/
 
 	void resetAnim()
 	{

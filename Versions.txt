@@ -28,10 +28,32 @@ Version 0.X: Alpha X
 0.X.x
 
 
+Version 0.2 : Alpha 2
+==========================
+0.2.0
+-Correction d'un problème du menu de choix des niveaux
+-On ne peut plus placer de panneaux sur un piège, un bouton ou au fond de l'eau
+-Retouche cosmétique pour les panneaux (plus foncés)
+-Correction d'un bug de replacement du ninja
+-Correction d'un bug de disparitions des panneaux
+-Correction d'un bug qui faisait grossir les panenaux (Android)
+-La vérification de sortie de niveau a été modifié
+-La taille du trigger des piques fixes a été retouchée
+-Le trigger du panneau de saut a été modifié
+-La détection des collisions a été modifiée
+-La gestion des sauts a été améliorée pour permettre de plus facilement enchainer les sauts
+-Plusieurs niveaux retouchés
+
+
 Version 0.1 : Alpha 1
 ==========================
+0.1.6
+-Ajout de 4 niveaux (20 au total, plus un niveau de test)
+-Modification de l'ordre des niveaux
+-Ajout d'un nom à chaque niveau
+
 0.1.5
--Ajout de 7 niveaux (18 au total, plus un niveau de test)
+-Ajout de 5 niveaux (16 au total, plus un niveau de test)
 
 0.1.4
 -Ajout d'une porte automatique

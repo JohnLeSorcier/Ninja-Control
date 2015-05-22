@@ -13,7 +13,7 @@ public class InvisibleWallController : MonoBehaviour {
 			Debug.Log ("Cannot find 'GameController' script");
 	}
 
-	void OnTriggerEnter2D(Collider2D other)
+	void OnTriggerExit2D(Collider2D other)
 	{
 		if(other.CompareTag("Player"))
 		{

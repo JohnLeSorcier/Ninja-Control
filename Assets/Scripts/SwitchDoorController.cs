@@ -13,9 +13,11 @@ public class SwitchDoorController : MonoBehaviour {
 		anim=GetComponent<Animator>();
 	}
 
+
+
 	void OnTriggerEnter2D(Collider2D other)
 	{
-		if(other.CompareTag("Player"))
+		if(other is BoxCollider2D && other.CompareTag("Player"))
 		{
 			anim.SetTrigger("SwitchOn");
 			door.Active();
@@ -24,9 +26,11 @@ public class SwitchDoorController : MonoBehaviour {
 
 	void OnTriggerExit2D(Collider2D other)
 	{
-		if(other.CompareTag("Player"))
+		if(other is BoxCollider2D && other.CompareTag("Player"))
 		{
 			anim.SetTrigger("SwitchOff");
 		}
+
 	}
+	
 }

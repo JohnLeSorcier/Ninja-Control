@@ -13,12 +13,11 @@
 -Ajouter au moins un niveau tuto pour rebondir sur le mur
 -Penser à modifier els instructions pour la liste des pièges
 
--Recalculer les scores
--revoir el fichier Excel des niveaux
+-Faire des niveaux avec des panneaux déjà en place
 
--Niveau où on doit faire le tour par le haut puis rentrer et remonter
 
--Donner des noms aux niveaux et l'afficher dans l'interface
+
+
 
 -Faire un score général
 -Afficher le Highscore de chaque niveau dans le menu?
@@ -26,6 +25,15 @@
 
 -Pouvoir lancer le niveau en cliquant sur le ninja. Recommencer en double-cliquant n'importe où dans le niveau
 
+-Niveau intermédiaire poru passer sous les pièges avant porte et plafond
+-Niveau où on doit faire le tour par le haut puis rentrer et remonter
+
+
+Sauts aléatoires notés:
+Niveau 9 (panneau de la dernière plate-forme isolée)
+Niveau 11 (panneau plate-f 1)
+Niveau "Saut de la foi" (premier panneau)
+niveau "Un grand trésor" (rebondit sur la plate-forme)
 
 
 

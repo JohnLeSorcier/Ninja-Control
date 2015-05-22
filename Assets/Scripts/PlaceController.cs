@@ -19,6 +19,11 @@ public class PlaceController : MonoBehaviour {
 	public float playerRadius;
 	public LayerMask whatIsPlayer;
 
+	private float hazardRadius=0.3f;
+	public LayerMask whatIsHazard;
+	private float waterRadius=0.1f;
+	public LayerMask whatIsWater;
+
 	private bool newbie=false;
 	
 	private bool onGround= false;
@@ -72,8 +77,8 @@ public class PlaceController : MonoBehaviour {
 	void OnMouseDown()
 	{
 		if (!levelController.panelCanMove)
-			return;
-					
+			return;		
+
 		screenPoint = Camera.main.WorldToScreenPoint(gameObject.transform.position);
 		offset = gameObject.transform.position - Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z));
 	}
@@ -85,14 +90,15 @@ public class PlaceController : MonoBehaviour {
 
 		if (!onGround && !levelController.VerifPanel(gameObject.tag) && !newbie)
 			return;
-		
+
 		Vector3 curScreenPoint = new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z);
 		Vector3 curPosition = Camera.main.ScreenToWorldPoint(curScreenPoint) + offset;
 		transform.position = curPosition;
 
 		onGround=false;
 		
-		if (curPosition.y!=originPoint.y && !newbie)
+		//if (curPosition.y!=originPoint.y && !newbie)
+		if(!newbie)
 			Prendre();
 	}
 
@@ -102,6 +108,9 @@ public class PlaceController : MonoBehaviour {
 		Collider2D solTemp = Physics2D.OverlapCircle(groundCheck.position, groundRadius, whatIsGround);
 		Collider2D[] panelCollider = Physics2D.OverlapCircleAll(groundCheck.position, panelRadius, whatIsPanel);
 		bool playerCollider = Physics2D.OverlapCircle(playerCheck.position, playerRadius, whatIsPlayer);
+		bool hazardCollider =Physics2D.OverlapCircle(groundCheck.position, hazardRadius, whatIsHazard);
+		bool waterCollider =Physics2D.OverlapCircle(groundCheck.position, waterRadius, whatIsWater) || Physics2D.OverlapCircle(playerCheck.position, waterRadius, whatIsWater);
+
 
 		foreach (Collider2D panelC in panelCollider)
 		{
@@ -109,7 +118,7 @@ public class PlaceController : MonoBehaviour {
 				otherPanel=true;
 		}
 
-		if(solTemp == null || otherPanel || playerCollider)
+		if(solTemp == null || otherPanel || playerCollider || hazardCollider || waterCollider)
 			Enlever();
 		else 
 		{
@@ -136,6 +145,7 @@ public class PlaceController : MonoBehaviour {
 		{
 			GameObject newFO=(GameObject) GameObject.Instantiate(gameObject,originPoint,transform.rotation);
 			newFO.transform.parent=gameObject.transform.parent;
+			newFO.transform.localScale=gameObject.transform.localScale;
 		}
 		newbie=true;
 	}
