@@ -131,9 +131,11 @@ public class PlaceController : MonoBehaviour {
 			solY= surface+offsetY;
 			transform.position = new Vector3 (solX, solY, 1); //z=1 pour rester derrière le décor
 			posePoint=transform.position;
-			//revérifier el placement derrière le ninja
+			//revérifier el placement derrière le ninja ou un bouton ou un piège
 			playerCollider = Physics2D.OverlapCircle(playerCheck.position, playerRadius, whatIsPlayer);
-			if (playerCollider)
+			hazardCollider =Physics2D.OverlapCircle(playerCheck.position, hazardRadius, whatIsHazard);
+			Debug.Log (""+hazardCollider);
+			if (playerCollider || hazardCollider)
 				Enlever ();
 		}
 	}

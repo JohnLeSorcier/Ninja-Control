@@ -86,7 +86,7 @@ public class InterfaceController : MonoBehaviour {
 		else if (endType == 1 || endType == 6) 
 			textAffich="You are dead...";
 		else if (endType == 4)
-			textAffich="You are drowned...";
+			textAffich="You have drowned...";
 		else if (endType == 5)
 			textAffich="You are knocked...";
 		else if (endType == 2)
@@ -150,5 +150,7 @@ public class InterfaceController : MonoBehaviour {
 		yield return new WaitForSeconds(0.1f);
 		ActivButton();
 	}
+
+
 
 }

@@ -5,6 +5,10 @@ using UnityEngine.UI;
 public class MenuScript : MonoBehaviour {
 
 	public Text cheatText;
+	public Button soundOn;
+	public Button soundOff;
+	private GameController gameController;
+	AudioSource audioS;
 
 	void Start()
 	{
@@ -18,6 +22,20 @@ public class MenuScript : MonoBehaviour {
 			cheatText.enabled=true;
 		else
 			cheatText.enabled=false;
+
+
+		GameObject gameControllerObject = GameObject.FindWithTag ("GameController");
+		if (gameControllerObject != null)
+			gameController = gameControllerObject.GetComponent <GameController>();
+		else
+			Debug.Log ("Cannot find 'GameController' script");
+		
+		audioS=gameController.GetComponent<AudioSource>();
+		
+		//activer ou desactiver les boutons de son
+		soundOff.gameObject.SetActive(audioS.mute);
+		soundOn.gameObject.SetActive(!audioS.mute);
+
 	}
 
 
@@ -43,6 +61,16 @@ public class MenuScript : MonoBehaviour {
 		PlayerPrefs.SetString("Cheats_Enabled",newCheatC);
 		PlayerPrefs.Save ();
 		Application.LoadLevel(Application.loadedLevelName);
+	}
+
+	public void SoundOn()
+	{
+		audioS.mute = false;
+	}
+	
+	public void SoundOff()
+	{
+		audioS.mute = true;
 	}
 
 }

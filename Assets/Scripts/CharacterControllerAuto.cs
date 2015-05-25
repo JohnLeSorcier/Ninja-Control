@@ -77,8 +77,9 @@ public class CharacterControllerAuto : MonoBehaviour {
 		anim.SetFloat("vSpeed", rigidbody2D.velocity.y);//vitesse verticale envoyer à l'animator
 
 		anim.SetFloat("Speed", Mathf.Abs(move)); //on met la variable speed de l'animator à la valeur absolu du mouvement
-		
-		rigidbody2D.velocity = new Vector2 (maxSpeed * move, rigidbody2D.velocity.y);
+
+		if (canIMove)
+			rigidbody2D.velocity = new Vector2 (maxSpeed * move, rigidbody2D.velocity.y);
 
 		if (wall && justSlide)
 			Assome();
@@ -205,6 +206,7 @@ public class CharacterControllerAuto : MonoBehaviour {
 	public void StopWait()
 	{
 		canIMove=false;
+		rigidbody2D.velocity = new Vector2 (0f, 0f);
 		move=0f;
 		if(alreadySlide)
 			Debout ();

@@ -30,10 +30,18 @@ Version 0.X: Alpha X
 
 Version 0.2 : Alpha 2
 ==========================
+0.2.1
+-Retouches cosmétiques des panneaux
+-Correction d'un bug où le ninja se coinçait dans le décor
+-Correction d'un bug de placement des panneaux sur les boutons ou pièges
+-Correction d'un bug du bouton de contrôle de la musique
+-Correction d'un bug de noms des niveaux et de panneaux disponibles
+
+
 0.2.0
 -Correction d'un problème du menu de choix des niveaux
 -On ne peut plus placer de panneaux sur un piège, un bouton ou au fond de l'eau
--Retouche cosmétique pour les panneaux (plus foncés)
+-Retouche cosmétique pour les panneaux
 -Correction d'un bug de replacement du ninja
 -Correction d'un bug de disparitions des panneaux
 -Correction d'un bug qui faisait grossir les panenaux (Android)

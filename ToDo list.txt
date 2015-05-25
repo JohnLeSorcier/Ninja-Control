@@ -8,15 +8,11 @@
 -panneau d'attaque (un au corps à corps, un en lancer)
 -panneau d'inversion de gravité (penser à mettre les panneaux à l'envers??)
 
--Trouver des objets à mettre dans le décor
-
--Ajouter au moins un niveau tuto pour rebondir sur le mur
 -Penser à modifier els instructions pour la liste des pièges
 
 -Faire des niveaux avec des panneaux déjà en place
 
-
-
+-Faire en sorte qu'en revenant sur le menu, on reviennet au menu de sélection des niveaux, sur la page correspondate au numéro du menu
 
 
 -Faire un score général
@@ -27,14 +23,8 @@
 
 -Niveau intermédiaire poru passer sous les pièges avant porte et plafond
 -Niveau où on doit faire le tour par le haut puis rentrer et remonter
-
-
-Sauts aléatoires notés:
-Niveau 9 (panneau de la dernière plate-forme isolée)
-Niveau 11 (panneau plate-f 1)
-Niveau "Saut de la foi" (premier panneau)
-niveau "Un grand trésor" (rebondit sur la plate-forme)
-
+-Niveau tuto sur les boutons rouges et bleus
+-Niveau tuto sur le rebond sur le nmur?
 
 
 
