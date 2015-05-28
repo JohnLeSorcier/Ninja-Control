@@ -9,6 +9,8 @@ public class GameController : MonoBehaviour {
 	int scoreTime=200;
 	int scorePiece=100;
 
+	public int lastLevel;
+
 	public static GameController control;
 
 	void Awake()
@@ -17,6 +19,7 @@ public class GameController : MonoBehaviour {
 		{
 			DontDestroyOnLoad(gameObject);
 			control=this;
+			lastLevel=0;
 		}
 		else if (control != this)
 		{
@@ -29,5 +32,11 @@ public class GameController : MonoBehaviour {
 	{
 		float score=finishScore + timer*scoreTime + nbPanel*scorePanRest + nbPieces*scorePiece - nbTry *scoreTry;
 		return Mathf.FloorToInt(score);
+	}
+
+	public void retourMenu()
+	{
+		lastLevel = Application.loadedLevel;
+		Application.LoadLevel("MenuPrincipal");
 	}
 }

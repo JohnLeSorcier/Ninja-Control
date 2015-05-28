@@ -134,7 +134,6 @@ public class PlaceController : MonoBehaviour {
 			//revérifier el placement derrière le ninja ou un bouton ou un piège
 			playerCollider = Physics2D.OverlapCircle(playerCheck.position, playerRadius, whatIsPlayer);
 			hazardCollider =Physics2D.OverlapCircle(playerCheck.position, hazardRadius, whatIsHazard);
-			Debug.Log (""+hazardCollider);
 			if (playerCollider || hazardCollider)
 				Enlever ();
 		}

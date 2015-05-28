@@ -68,6 +68,12 @@ public class LevelController : MonoBehaviour {
 
 	[HideInInspector] public bool playerCanMove=false;
 	[HideInInspector] public bool panelCanMove=true;
+
+	bool one_click = false;
+	bool timer_running;
+	float timer_for_double_click;
+	
+	float delay=0.20f;
 	
 
 	void Start ()
@@ -182,6 +188,27 @@ public class LevelController : MonoBehaviour {
 			timeText.text="Time: 0\'\'00" ;
 			GameOver(3);
 		}
+
+		if(Input.GetMouseButtonDown(0))
+		{
+			if(!one_click) 
+			{
+				one_click = true;
+				timer_for_double_click = Time.time; 
+			} 
+			else
+			{
+				one_click = false; 				
+				if (playerCanMove)
+					ChangeMove();
+			}
+		}
+		if(one_click)
+		{
+			if((Time. time - timer_for_double_click) > delay)
+				one_click = false;				
+		}
+
 	}
 
 	void MaJNbText()
@@ -302,7 +329,9 @@ public class LevelController : MonoBehaviour {
 
 			if (total>scoreBefore)
 			{
+				Debug.Log (""+timeAllowed+" "+timer);
 				bestScore.text=""+total;
+				PlayerPrefs.SetFloat(Application.loadedLevel+"_time", timeAllowed-timer);
 				PlayerPrefs.SetInt(Application.loadedLevel+"_score", total);
 				PlayerPrefs.SetInt(Application.loadedLevel+"_stars", nbStars);
 				PlayerPrefs.Save();

@@ -280,5 +280,11 @@ public class CharacterControllerAuto : MonoBehaviour {
 	{
 		levelController.GameOver(5);
 	}
+
+	void OnMouseUp()
+	{
+		if (!canIMove)
+			levelController.ChangeMove ();
+	}
 	
 }

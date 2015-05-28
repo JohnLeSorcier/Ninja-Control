@@ -12,14 +12,8 @@
 
 -Faire des niveaux avec des panneaux déjà en place
 
--Faire en sorte qu'en revenant sur le menu, on reviennet au menu de sélection des niveaux, sur la page correspondate au numéro du menu
-
-
--Faire un score général
--Afficher le Highscore de chaque niveau dans le menu?
 -Prendre en compte plus de try dans el score des niveaux difficiles?
 
--Pouvoir lancer le niveau en cliquant sur le ninja. Recommencer en double-cliquant n'importe où dans le niveau
 
 -Niveau intermédiaire poru passer sous les pièges avant porte et plafond
 -Niveau où on doit faire le tour par le haut puis rentrer et remonter
@@ -29,6 +23,11 @@
 
 
 (si problème sur différents écrans mobiles: Fit to Screen Size sur le store)
+
+Stockage dans le save:
+indexniveau_time (float en seconde)
+indexniveau_total (int)
+indexniveau_stars (int)
 
 
 

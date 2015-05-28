@@ -30,6 +30,15 @@ Version 0.X: Alpha X
 
 Version 0.2 : Alpha 2
 ==========================
+
+0.2.2
+-Lors d'un retour au menu, celui-ci affiche désormais la liste des niveaux
+-On peut lancer le ninja en cliquant dessus
+-On peut remettre le ninja au départ en double cliquant n'importe où sur le niveau
+-Affichage des scores dans le menu principal
+-Retouche cosmétique du panneau de fin
+-Introduction d'une option pour changer de langue (français/anglais)
+
 0.2.1
 -Retouches cosmétiques des panneaux
 -Correction d'un bug où le ninja se coinçait dans le décor

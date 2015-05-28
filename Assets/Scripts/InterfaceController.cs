@@ -105,7 +105,7 @@ public class InterfaceController : MonoBehaviour {
 
 	public void ReturnMenu()
 	{
-		Application.LoadLevel("MenuPrincipal");
+		gameController.retourMenu ();
 	}
 
 	public void NextLevel()
