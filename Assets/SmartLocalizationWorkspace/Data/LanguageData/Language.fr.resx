@@ -116,10 +116,229 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+	<data name="HowToPlay.EndPanel" xml:space="preserve">
+		<value>Panneau de fin</value>
+	</data>
+	<data name="HowToPlay.GoPanel" xml:space="preserve">
+		<value>Changer de sens</value>
+	</data>
+	<data name="HowToPlay.JumpPanel" xml:space="preserve">
+		<value>Sauter</value>
+	</data>
+	<data name="HowToPlay.Score.Text" xml:space="preserve">
+		<value>Fin: 500 pts
+
+Panneau inutilisé: 250 pts
+
+Temps restant: 200 pts/second
+
+Pièce: 100 pts
+
+Tentative: -100 pts</value>
+	</data>
+	<data name="HowToPlay.Score.Title" xml:space="preserve">
+		<value>Score</value>
+	</data>
+	<data name="HowToPlay.SlidePanel" xml:space="preserve">
+		<value>Glisser</value>
+	</data>
 	<data name="HowToPlay.Text" xml:space="preserve">
-		<value>Texte à traduire</value>
+		<value>Aidez le ninja à atteindre le niveau en plaçant des panneaux pour lui dire où aller, quand tourner ou sauter, etc...
+
+Puis pressez le bouton "go" et regardez-le suivre vos instructions.
+
+Essaye de faire le meilleur score possible!</value>
+	</data>
+	<data name="HowToPlay.Text2" xml:space="preserve">
+		<value>Le ninja tourne quand il rencontre un mur, mais meurt si il atteint els limites du niveau.
+
+Ramassez des pièces mais essayez d'éviter les pièges ou de tomber dans l'eau: le ninja mourrait.</value>
 	</data>
 	<data name="HowToPlay.Title" xml:space="preserve">
-		<value>Comment jouer?</value>
+		<value>Comment jouer</value>
+	</data>
+	<data name="HowToPlay.WaitPanel" xml:space="preserve">
+		<value>Stop et attendre</value>
+	</data>
+	<data name="Interface.Attempt" xml:space="preserve">
+		<value>Essais</value>
+	</data>
+	<data name="Interface.BadEnd" xml:space="preserve">
+		<value>Cette fin n'est pas la bonne...</value>
+	</data>
+	<data name="Interface.Coin" xml:space="preserve">
+		<value>Pièces</value>
+	</data>
+	<data name="Interface.Dead" xml:space="preserve">
+		<value>Vous êtes mort...</value>
+	</data>
+	<data name="Interface.Drowned" xml:space="preserve">
+		<value>Vous vous êtes noyés...</value>
+	</data>
+	<data name="Interface.GoLeft" xml:space="preserve">
+		<value>Aller à gauche</value>
+	</data>
+	<data name="Interface.GoRight" xml:space="preserve">
+		<value>Aller à droite</value>
+	</data>
+	<data name="Interface.JumpLeft" xml:space="preserve">
+		<value>Saut gauche</value>
+	</data>
+	<data name="Interface.JumpRight" xml:space="preserve">
+		<value>Saut droit</value>
+	</data>
+	<data name="Interface.Knocked" xml:space="preserve">
+		<value>Vous êtes assomé...</value>
+	</data>
+	<data name="Interface.LeftTime" xml:space="preserve">
+		<value>Temps restant</value>
+	</data>
+	<data name="Interface.OutofLevel" xml:space="preserve">
+		<value>Vous êtes en dehors du niveau</value>
+	</data>
+	<data name="Interface.ScoreLow" xml:space="preserve">
+		<value>Score trop bas...</value>
+	</data>
+	<data name="Interface.Slide" xml:space="preserve">
+		<value>Glisser</value>
+	</data>
+	<data name="Interface.Time" xml:space="preserve">
+		<value>Temps</value>
+	</data>
+	<data name="Interface.TimeOver" xml:space="preserve">
+		<value>Le temps est terminé!</value>
+	</data>
+	<data name="Interface.TotalScore" xml:space="preserve">
+		<value>Score total</value>
+	</data>
+	<data name="Interface.UnusedPanel" xml:space="preserve">
+		<value>Panneaux Inutilisés</value>
+	</data>
+	<data name="Interface.Wait" xml:space="preserve">
+		<value>Stop</value>
+	</data>
+	<data name="Interface.Win" xml:space="preserve">
+		<value>Gagné!</value>
+	</data>
+	<data name="Level.2Mt" xml:space="preserve">
+		<value>Deux montées</value>
+	</data>
+	<data name="Level.AbrTer" xml:space="preserve">
+		<value>Arbres de Terre</value>
+	</data>
+	<data name="Level.Cavrn" xml:space="preserve">
+		<value>Dans la caverne</value>
+	</data>
+	<data name="Level.DmTrn" xml:space="preserve">
+		<value>Demi-Tour</value>
+	</data>
+	<data name="Level.Engm" xml:space="preserve">
+		<value>Enigma</value>
+	</data>
+	<data name="Level.Error" xml:space="preserve">
+		<value>Erreur!
+
+Le niveau n'existe pas!</value>
+	</data>
+	<data name="Level.GdTsr" xml:space="preserve">
+		<value>Un grand trésor</value>
+	</data>
+	<data name="Level.Idem" xml:space="preserve">
+		<value>Idem</value>
+	</data>
+	<data name="Level.JstDess" xml:space="preserve">
+		<value>Juste au dessus</value>
+	</data>
+	<data name="Level.MiniSc" xml:space="preserve">
+		<value>Scene Minimale</value>
+	</data>
+	<data name="Level.ObstTll" xml:space="preserve">
+		<value>Obstacle de Taille</value>
+	</data>
+	<data name="Level.Plls" xml:space="preserve">
+		<value>Piliers</value>
+	</data>
+	<data name="Level.Pqt" xml:space="preserve">
+		<value>Piquant</value>
+	</data>
+	<data name="Level.PrtPlfd" xml:space="preserve">
+		<value>Portes et Plafond</value>
+	</data>
+	<data name="Level.Rsq" xml:space="preserve">
+		<value>Risques</value>
+	</data>
+	<data name="Level.SlPieg" xml:space="preserve">
+		<value>Sol Piégé</value>
+	</data>
+	<data name="Level.SrtDs" xml:space="preserve">
+		<value>Sortie de Dos</value>
+	</data>
+	<data name="Level.StFoit" xml:space="preserve">
+		<value>Saut de la foi</value>
+	</data>
+	<data name="Level.TutoPltfrm" xml:space="preserve">
+		<value>Tuto Plateforme</value>
+	</data>
+	<data name="Level.TutoSld" xml:space="preserve">
+		<value>Tuto Slide</value>
+	</data>
+	<data name="Level.TutoSt" xml:space="preserve">
+		<value>Tuto Saut</value>
+	</data>
+	<data name="Level.VlHt" xml:space="preserve">
+		<value>Vol Haut</value>
+	</data>
+	<data name="Menu.Cheat.Enable" xml:space="preserve">
+		<value>Cheat Activé</value>
+	</data>
+	<data name="Menu.Credits.Title" xml:space="preserve">
+		<value>Credits</value>
+	</data>
+	<data name="Menu.Language" xml:space="preserve">
+		<value>Langue:</value>
+	</data>
+	<data name="Menu.Options.Title" xml:space="preserve">
+		<value>Options</value>
+	</data>
+	<data name="Menu.Play" xml:space="preserve">
+		<value>Jouer</value>
+	</data>
+	<data name="Menu.Score.Title" xml:space="preserve">
+		<value>Scores</value>
+	</data>
+	<data name="Options.Confirm.DelSave" xml:space="preserve">
+		<value>Voulez-vous supprimer la sauvergarde (niveaux débloqués, scores, égleages,...)? (Le menu sera rechargé)</value>
+	</data>
+	<data name="Options.DelSave" xml:space="preserve">
+		<value>Suppr. Save</value>
+	</data>
+	<data name="Tuto.Jump.ActionPanel" xml:space="preserve">
+		<value>Panneau d'action</value>
+	</data>
+	<data name="Tuto.Jump.EndPanel" xml:space="preserve">
+		<value>Panneau de fin</value>
+	</data>
+	<data name="Tuto.Jump.LaunchButton" xml:space="preserve">
+		<value>Bouton de lancement</value>
+	</data>
+	<data name="Tuto.Jump.Text" xml:space="preserve">
+		<value>Placez un panneau d'action pour sauter au dessus de l'eau et atteindre le panenau de fin.
+
+Prenez des pièces pour améliorer votre score.
+
+Lancez le ninja avec le bouton de lancement.</value>
+	</data>
+	<data name="Tuto.Platform.LaunchText" xml:space="preserve">
+		<value>Plateforme mobile</value>
+	</data>
+	<data name="Tuto.Platform.Text" xml:space="preserve">
+		<value>Utilisez le panneau d'attente pour minuter le saut sur la plateforme mobile.
+
+Cliquez pour ajouter des secondes (0-5) au panneau.
+
+La plateforme ne bouge que lorsque le ninja est lancé.</value>
+	</data>
+	<data name="Tuto.Slide.Text" xml:space="preserve">
+		<value>Utilisez le panneau de glisse pour... glisser sous les obstacles</value>
 	</data>
 </root>

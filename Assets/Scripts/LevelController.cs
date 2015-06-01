@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using SmartLocalization;
 
 public class LevelController : MonoBehaviour {
 
@@ -10,8 +11,16 @@ public class LevelController : MonoBehaviour {
 	public Text GoLText;
 	public Text SGText;
 	public Text DWText;
+	
+	public Text JumpRDesc;
+	public Text JumpLDesc;
+	public Text GoRDesc;
+	public Text GoLDesc;
+	public Text SGDesc;
+	public Text DWDesc;
 
-
+	public Text levelName;
+	public string levelNameIndex;
 
 	public Text tryText;
 	public Text timeText;
@@ -75,9 +84,30 @@ public class LevelController : MonoBehaviour {
 	
 	float delay=0.20f;
 	
+	LanguageManager languageManager;
+	
+	string baseTime;
+	string baseCoin;
+	string baseAttempt;
+
 
 	void Start ()
 	{
+		string language;
+		if(PlayerPrefs.HasKey("Language"))
+			language=PlayerPrefs.GetString("Language");
+		else
+			language = "en";
+		
+		languageManager= LanguageManager.Instance;
+		languageManager.ChangeLanguage(language);	
+		
+		levelName.text="1."+Application.loadedLevel+": "+languageManager.GetTextValue("Level."+levelNameIndex);
+	
+		baseTime=languageManager.GetTextValue("Interface.Time");
+		baseCoin=languageManager.GetTextValue("Interface.Coin");
+		baseAttempt=languageManager.GetTextValue("Interface.Attempt");
+	
 		nbPlatform=0;
 		nbHazard=0;
 		nbAutoDoor=0;
@@ -142,10 +172,10 @@ public class LevelController : MonoBehaviour {
 		bestScore.text=""+scoreBefore;
 
 		nbTry=0;
-		tryText.text="Attempts: "+nbTry;
+		tryText.text=baseAttempt+": "+nbTry;
 
 		timer=timeAllowed;//eviter une bétise de vérif.
-		timeText.text="Time: "+timeAllowed+"\'\'00";//redondant avec l'update, mais par sécurité...
+		timeText.text=baseTime+": "+timeAllowed+"\'\'00";//redondant avec l'update, mais par sécurité...
 
 		if (nbJumpR==0)
 			jumpR.SetActive(false);
@@ -161,7 +191,7 @@ public class LevelController : MonoBehaviour {
 			DW.SetActive(false);
 
 		nbPieces=0;
-		pieceText.text="Coins: "+nbPieces;
+		pieceText.text=baseCoin+": "+nbPieces;
 
 		MaJNbText ();
 	}
@@ -169,7 +199,7 @@ public class LevelController : MonoBehaviour {
 	void Update()
 	{
 		if (!playerCanMove)
-			timeText.text="Time: "+timeAllowed+"\'\'00";
+			timeText.text=baseTime+": "+timeAllowed+"\'\'00";
 
 		int sec;
 		int milli;
@@ -179,13 +209,13 @@ public class LevelController : MonoBehaviour {
 			timer=timeAllowed-Mathf.Floor(timerTemp*100)/100;
 			sec=Mathf.FloorToInt(timer);
 			milli=Mathf.FloorToInt((timer-sec)*100);
-			timeText.text="Time: "+sec+"\'\'"+milli;
+			timeText.text=baseTime+": "+sec+"\'\'"+milli;
 		}
 
 		if(timer<0 && !end)
 		{
 			end=true;
-			timeText.text="Time: 0\'\'00" ;
+			timeText.text=baseTime+": 0\'\'00" ;
 			GameOver(3);
 		}
 
@@ -219,19 +249,43 @@ public class LevelController : MonoBehaviour {
 		string glTxt="";
 		string sgTxt="";
 		string dwTxt="";
+		JumpRDesc.enabled=false;
+		JumpLDesc.enabled=false;
+		GoRDesc.enabled=false;
+		GoLDesc.enabled=false;
+		SGDesc.enabled=false;
+		DWDesc.enabled=false;
 
 		if (nbJumpR>0)
-			jrTxt="Jump Right x" + nbJumpR;
+		{
+			jrTxt="x" + nbJumpR;
+			JumpRDesc.enabled=true;
+		}
 		if (nbJumpL>0)
-			jlTxt="Jump Left x" + nbJumpL;
+		{
+			jlTxt="x" + nbJumpL;
+			JumpLDesc.enabled=true;
+		}
 		if (nbGoR>0)
-			grTxt="Turn Right x" + nbGoR;
+		{
+			grTxt="x" + nbGoR;
+			GoRDesc.enabled=true;
+		}
 		if (nbGoL>0)
-			glTxt="Turn Left x" + nbGoL;
+		{
+			glTxt="x" + nbGoL;
+			GoLDesc.enabled=true;
+		}
 		if (nbSG>0)
-			sgTxt="Wait x" + nbSG;
+		{
+			sgTxt="x" + nbSG;
+			SGDesc.enabled=true;
+		}
 		if (nbDW>0)
-			dwTxt="Slide x" + nbDW;
+		{
+			dwTxt="x" + nbDW;
+			DWDesc.enabled=true;
+		}
 
 		JumpRText.text=jrTxt;
 		JumpLText.text=jlTxt;
@@ -329,7 +383,6 @@ public class LevelController : MonoBehaviour {
 
 			if (total>scoreBefore)
 			{
-				Debug.Log (""+timeAllowed+" "+timer);
 				bestScore.text=""+total;
 				PlayerPrefs.SetFloat(Application.loadedLevel+"_time", timeAllowed-timer);
 				PlayerPrefs.SetInt(Application.loadedLevel+"_score", total);
@@ -382,7 +435,7 @@ public class LevelController : MonoBehaviour {
 		}
 
 		nbTry+=1;
-		tryText.text="Attempts: "+nbTry;
+		tryText.text=baseAttempt+": "+nbTry;
 		startTime=Time.time;
 	}
 
@@ -393,7 +446,7 @@ public class LevelController : MonoBehaviour {
 		end=false;
 		ResetInstruct();
 		nbPieces=0;
-		pieceText.text="Coins: "+nbPieces;
+		pieceText.text=baseCoin+": "+nbPieces;
 
 		if (nbPlatform>0)
 		{
@@ -459,7 +512,7 @@ public class LevelController : MonoBehaviour {
 	public void RamassePiece()
 	{
 		nbPieces++;
-		pieceText.text="Coins: "+nbPieces;
+		pieceText.text=baseCoin+": "+nbPieces;
 	}
 
 	public void SoundGest()

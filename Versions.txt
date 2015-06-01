@@ -30,6 +30,9 @@ Version 0.X: Alpha X
 
 Version 0.2 : Alpha 2
 ==========================
+0.2.3
+-Le jeu est disponible en deux langues (français/anglais)
+-Modification du menu options
 
 0.2.2
 -Lors d'un retour au menu, celui-ci affiche désormais la liste des niveaux

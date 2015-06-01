@@ -18,8 +18,7 @@
 -Niveau intermédiaire poru passer sous les pièges avant porte et plafond
 -Niveau où on doit faire le tour par le haut puis rentrer et remonter
 -Niveau tuto sur les boutons rouges et bleus
--Niveau tuto sur le rebond sur le nmur?
-
+-Niveau tuto sur le rebond sur le mur?
 
 
 (si problème sur différents écrans mobiles: Fit to Screen Size sur le store)

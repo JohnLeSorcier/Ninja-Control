@@ -116,10 +116,205 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-	<data name="HowToPlay.Title" xml:space="preserve">
-		<value>HowToPlay?</value>
+	<data name="HowToPlay.EndPanel" xml:space="preserve">
+		<value>End Panel</value>
+	</data>
+	<data name="HowToPlay.GoPanel" xml:space="preserve">
+		<value>GoPanel</value>
+	</data>
+	<data name="HowToPlay.JumpPanel" xml:space="preserve">
+		<value>JumpPanel</value>
+	</data>
+	<data name="HowToPlay.Score.Text" xml:space="preserve">
+		<value>Score Text</value>
+	</data>
+	<data name="HowToPlay.Score.Title" xml:space="preserve">
+		<value>Score</value>
+	</data>
+	<data name="HowToPlay.SlidePanel" xml:space="preserve">
+		<value>Slide Panel</value>
 	</data>
 	<data name="HowToPlay.Text" xml:space="preserve">
-		<value>Description du How to Play</value>
+		<value>Text How To PLay 1</value>
+	</data>
+	<data name="HowToPlay.Text2" xml:space="preserve">
+		<value>Text How To PLay 2</value>
+	</data>
+	<data name="HowToPlay.Title" xml:space="preserve">
+		<value>HowToPlay</value>
+	</data>
+	<data name="HowToPlay.WaitPanel" xml:space="preserve">
+		<value>Wait Panel</value>
+	</data>
+	<data name="Interface.Attempt" xml:space="preserve">
+		<value>Attempts</value>
+	</data>
+	<data name="Interface.BadEnd" xml:space="preserve">
+		<value>This end is not the good one...</value>
+	</data>
+	<data name="Interface.Coin" xml:space="preserve">
+		<value>Coins</value>
+	</data>
+	<data name="Interface.Dead" xml:space="preserve">
+		<value>You are dead...</value>
+	</data>
+	<data name="Interface.Drowned" xml:space="preserve">
+		<value>You have drowned...</value>
+	</data>
+	<data name="Interface.GoLeft" xml:space="preserve">
+		<value>Go Left</value>
+	</data>
+	<data name="Interface.GoRight" xml:space="preserve">
+		<value>Go Right</value>
+	</data>
+	<data name="Interface.JumpLeft" xml:space="preserve">
+		<value>Jump Left</value>
+	</data>
+	<data name="Interface.JumpRight" xml:space="preserve">
+		<value>Jump Right</value>
+	</data>
+	<data name="Interface.Knocked" xml:space="preserve">
+		<value>You are knocked...</value>
+	</data>
+	<data name="Interface.LeftTime" xml:space="preserve">
+		<value>Time Left</value>
+	</data>
+	<data name="Interface.OutofLevel" xml:space="preserve">
+		<value>You are out of level</value>
+	</data>
+	<data name="Interface.ScoreLow" xml:space="preserve">
+		<value>Score too low...</value>
+	</data>
+	<data name="Interface.Slide" xml:space="preserve">
+		<value>Slide</value>
+	</data>
+	<data name="Interface.Time" xml:space="preserve">
+		<value>Time</value>
+	</data>
+	<data name="Interface.TimeOver" xml:space="preserve">
+		<value>Time is over!</value>
+	</data>
+	<data name="Interface.TotalScore" xml:space="preserve">
+		<value>Total Score</value>
+	</data>
+	<data name="Interface.UnusedPanel" xml:space="preserve">
+		<value>Unused Panel</value>
+	</data>
+	<data name="Interface.Wait" xml:space="preserve">
+		<value>Wait</value>
+	</data>
+	<data name="Interface.Win" xml:space="preserve">
+		<value>You win!</value>
+	</data>
+	<data name="Level.2Mt" xml:space="preserve">
+		<value>Deux montées</value>
+	</data>
+	<data name="Level.AbrTer" xml:space="preserve">
+		<value>Arbres de Terre</value>
+	</data>
+	<data name="Level.Cavrn" xml:space="preserve">
+		<value>Dans la caverne</value>
+	</data>
+	<data name="Level.DmTrn" xml:space="preserve">
+		<value>Demi-Tour</value>
+	</data>
+	<data name="Level.Engm" xml:space="preserve">
+		<value>Enigma</value>
+	</data>
+	<data name="Level.Error" xml:space="preserve">
+		<value>Level.Error</value>
+	</data>
+	<data name="Level.GdTsr" xml:space="preserve">
+		<value>Un grand trésor</value>
+	</data>
+	<data name="Level.Idem" xml:space="preserve">
+		<value>Idem</value>
+	</data>
+	<data name="Level.JstDess" xml:space="preserve">
+		<value>Juste au dessus</value>
+	</data>
+	<data name="Level.MiniSc" xml:space="preserve">
+		<value>Minimal Scene</value>
+	</data>
+	<data name="Level.ObstTll" xml:space="preserve">
+		<value>Obstacle de Taille</value>
+	</data>
+	<data name="Level.Plls" xml:space="preserve">
+		<value>Piliers</value>
+	</data>
+	<data name="Level.Pqt" xml:space="preserve">
+		<value>Piquant</value>
+	</data>
+	<data name="Level.PrtPlfd" xml:space="preserve">
+		<value>Portes et Plafond</value>
+	</data>
+	<data name="Level.Rsq" xml:space="preserve">
+		<value>Risques</value>
+	</data>
+	<data name="Level.SlPieg" xml:space="preserve">
+		<value>Sol Piégé</value>
+	</data>
+	<data name="Level.SrtDs" xml:space="preserve">
+		<value>Sortie de Dos</value>
+	</data>
+	<data name="Level.StFoit" xml:space="preserve">
+		<value>Saut de la foi</value>
+	</data>
+	<data name="Level.TutoPltfrm" xml:space="preserve">
+		<value>Tuto Plateforme</value>
+	</data>
+	<data name="Level.TutoSld" xml:space="preserve">
+		<value>Tuto Slide</value>
+	</data>
+	<data name="Level.TutoSt" xml:space="preserve">
+		<value>Tuto Saut</value>
+	</data>
+	<data name="Level.VlHt" xml:space="preserve">
+		<value>Vol Haut</value>
+	</data>
+	<data name="Menu.Cheat.Enable" xml:space="preserve">
+		<value>Cheat Enable</value>
+	</data>
+	<data name="Menu.Credits.Title" xml:space="preserve">
+		<value>Credit Title</value>
+	</data>
+	<data name="Menu.Language" xml:space="preserve">
+		<value>Language:</value>
+	</data>
+	<data name="Menu.Options.Title" xml:space="preserve">
+		<value>Options Title</value>
+	</data>
+	<data name="Menu.Play" xml:space="preserve">
+		<value>Play</value>
+	</data>
+	<data name="Menu.Score.Title" xml:space="preserve">
+		<value>Score Title</value>
+	</data>
+	<data name="Options.Confirm.DelSave" xml:space="preserve">
+		<value>Delete Confirmation</value>
+	</data>
+	<data name="Options.DelSave" xml:space="preserve">
+		<value>Delete Save</value>
+	</data>
+	<data name="Tuto.Jump.ActionPanel" xml:space="preserve">
+		<value>Action Panel</value>
+	</data>
+	<data name="Tuto.Jump.EndPanel" xml:space="preserve">
+		<value>End Panel</value>
+	</data>
+	<data name="Tuto.Jump.LaunchButton" xml:space="preserve">
+		<value>Launch Button</value>
+	</data>
+	<data name="Tuto.Jump.Text" xml:space="preserve">
+		<value>Text Tuto Jump</value>
+	</data>
+	<data name="Tuto.Platform.LaunchText" xml:space="preserve">
+		<value>Moving Platform</value>
+	</data>
+	<data name="Tuto.Platform.Text" xml:space="preserve">
+		<value>Text Tuto Platform</value>
+	</data>
+	<data name="Tuto.Slide.Text" xml:space="preserve">
+		<value>Text Tuto Slide</value>
 	</data>
 </root>

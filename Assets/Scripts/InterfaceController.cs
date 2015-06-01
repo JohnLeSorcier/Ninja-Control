@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using SmartLocalization;
+
 
 public class InterfaceController : MonoBehaviour {
 	
@@ -18,10 +20,33 @@ public class InterfaceController : MonoBehaviour {
 	public Button soundOn;
 	public Button soundOff;
 
-
+	LanguageManager languageManager;
+	
+	string baseCoin;
+	string baseAttempt;
+	string baseLeftTime;
+	string baseUnusedPanel;
+	string baseTotalScore;
 
 	void Start () 
 	{
+	
+		string language;
+		if(PlayerPrefs.HasKey("Language"))
+			language=PlayerPrefs.GetString("Language");
+		else
+			language = "en";
+		
+		languageManager= LanguageManager.Instance;
+		languageManager.ChangeLanguage(language);	
+		
+		baseCoin=languageManager.GetTextValue("Interface.Coin");
+		baseAttempt=languageManager.GetTextValue("Interface.Attempt");
+		baseLeftTime=languageManager.GetTextValue("Interface.LeftTime");
+		baseUnusedPanel=languageManager.GetTextValue("Interface.UnusedPanel");
+		baseTotalScore=languageManager.GetTextValue("Interface.TotalScore");
+	
+		
 		gameOverText.text="";
 		gameOverPanel.SetActive(false);
 
@@ -62,15 +87,15 @@ public class InterfaceController : MonoBehaviour {
 
 		if (endType == 0)
 		{
-			textAffich="Unused Panels: "+nbPan+"\nAttempts: "+nbTry+"\nCoins: "+nbPieces+"\nTime left: "+timer+"s\nTotal Score: "+score;
+			textAffich=baseUnusedPanel+": "+nbPan+"\n"+baseAttempt+": "+nbTry+"\n"+baseCoin+": "+nbPieces+"\n"+baseLeftTime+": "+timer+"s\n"+baseTotalScore+": "+score;
 
 			if(passed && !(Application.loadedLevel == Application.levelCount-1))
 				nextLevel.interactable=true;
 
 			if (passed)
-				textAffich+="\n\nYou win!";
+				textAffich+="\n\n"+languageManager.GetTextValue("Interface.Win");
 			else
-				textAffich+="\n\nScore too low...";
+				textAffich+="\n\n"+languageManager.GetTextValue("Interface.ScoreLow");
 
 			foreach (Image nstar in nStars)
 				nstar.enabled=true;
@@ -84,17 +109,17 @@ public class InterfaceController : MonoBehaviour {
 
 		}
 		else if (endType == 1 || endType == 6) 
-			textAffich="You are dead...";
+			textAffich=languageManager.GetTextValue("Interface.Dead");
 		else if (endType == 4)
-			textAffich="You have drowned...";
+			textAffich=languageManager.GetTextValue("Interface.Drowned");
 		else if (endType == 5)
-			textAffich="You are knocked...";
+			textAffich=languageManager.GetTextValue("Interface.Knocked");
 		else if (endType == 2)
-			textAffich="You're out of the level";
+			textAffich=languageManager.GetTextValue("Interface.OutofLevel");
 		else if (endType == 3)
-			textAffich="Time is over!";
+			textAffich=languageManager.GetTextValue("Interface.TimeOver");
 		else
-			textAffich="This end is not the good one...";
+			textAffich=languageManager.GetTextValue("Interface.BadEnd");
 
 		gameOverText.text=textAffich;
 

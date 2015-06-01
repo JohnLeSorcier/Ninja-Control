@@ -14,6 +14,10 @@ public class MenuScript : MonoBehaviour {
 	public Toggle englishToggle;
 	public Toggle frenchToggle;
 	
+	public Toggle cheatToggle;
+	
+	public bool cheatEnable;
+	
 	LanguageManager languageManager;
 
 	void Start()
@@ -41,24 +45,27 @@ public class MenuScript : MonoBehaviour {
 			englishToggle.isOn = true;
 			frenchToggle.isOn = false;
 		}
-		else if (language == "fr")
+		if (language == "fr")
 		{
 			frenchToggle.isOn = true;
 			englishToggle.isOn = false;
-		}
-		else
-		{
-			englishToggle.isOn = true;
-			frenchToggle.isOn = false;
 		}
 		
 		languageManager= LanguageManager.Instance;
 		languageManager.ChangeLanguage(language);
 		
 		if(CheatC == "Yes")
+		{
+			cheatEnable=true;
 			cheatText.enabled=true;
+			cheatToggle.isOn=true;
+		}
 		else
+		{
+			cheatEnable=false;
 			cheatText.enabled=false;
+			cheatToggle.isOn=false;
+		}
 			
 	
 
@@ -86,19 +93,20 @@ public class MenuScript : MonoBehaviour {
 
 	public void CheatEnabled()
 	{
-		string CheatC = "No";
-		
-		if (PlayerPrefs.HasKey("Cheats_Enabled"))
-			CheatC=PlayerPrefs.GetString("Cheats_Enabled");
-		
-		string newCheatC="No";
-		
-		if (CheatC == "No")
-			newCheatC="Yes";
-		
-		PlayerPrefs.SetString("Cheats_Enabled",newCheatC);
+
+		if (cheatEnable == cheatToggle.isOn)
+			return;			
+		else 
+		{
+			string CheatO;
+			if (cheatToggle.isOn)
+				CheatO="Yes";
+			else
+				CheatO="No";
+
+		PlayerPrefs.SetString("Cheats_Enabled",CheatO);
 		PlayerPrefs.Save ();
-		Application.LoadLevel(Application.loadedLevelName);
+		}
 	}
 
 	public void SoundOn()
@@ -111,8 +119,13 @@ public class MenuScript : MonoBehaviour {
 		audioS.mute = true;
 	}
 
-	public void ChangeLanguage (string lang)
+	public void ChangeLang (string lang)
 	{
 		PlayerPrefs.SetString("Language", lang);
+	}
+	
+	public void ReloadLevel()
+	{
+		Application.LoadLevel(Application.loadedLevel);
 	}
 }
