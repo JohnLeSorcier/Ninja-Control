@@ -89,6 +89,8 @@ public class LevelController : MonoBehaviour {
 	string baseTime;
 	string baseCoin;
 	string baseAttempt;
+	
+	AudioSource gameOverSound;
 
 
 	void Start ()
@@ -194,6 +196,8 @@ public class LevelController : MonoBehaviour {
 		pieceText.text=baseCoin+": "+nbPieces;
 
 		MaJNbText ();
+		
+		gameOverSound=GetComponent<AudioSource>();
 	}
 
 	void Update()
@@ -399,6 +403,11 @@ public class LevelController : MonoBehaviour {
 			playerController.Dead(2);
 		else if (endType==3)
 			playerController.End();
+			
+		if (endType!=0)
+		{
+			sonGameOver();
+		}
 
 		end=true;
 		interfaceController.GameOver(endType, nbPan, nbTry, nbPieces, timer, total, nbStars, passed);
@@ -519,5 +528,17 @@ public class LevelController : MonoBehaviour {
 	{
 		AudioSource audioS=gameController.GetComponent<AudioSource>();
 		audioS.mute=!audioS.mute;
+	}
+	
+	public void sonGameOver()
+	{
+		gameController.suspendMusic();
+		StartCoroutine(waitforGameOverSound());
+	}
+	
+	IEnumerator waitforGameOverSound()
+	{
+		yield return new WaitForSeconds(0.3f);
+		gameOverSound.Play ();
 	}
 }

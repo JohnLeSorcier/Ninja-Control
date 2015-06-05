@@ -2,10 +2,11 @@
 (seuls les builds importantes sont notées)
 
 Remerciements pour les sprites et UI:
-licence CC0: pzUH, idoh40, CamTatz, bevouliin, mishonis -->OpenGameArt
-licence CC-BY 3.0: 2D Retrospectives, JM.Atencia
+licence CC0: pzUH (2dgameart?), idoh40, CamTatz, bevouliin, mishonis -->OpenGameArt
+licence CC-BY 3.0: 2D Retrospectives, JM.Atencia-->OpenGameArt
 Fonts: Gang of Three, (Knewave), survivant
 Musique: WrathGames Studio http://wrathgames.com/blog
+Sons: bradwesson, s, themusicalnomad, FunnyMan374 (CC0) -->freesound.org
 
 
 Version 1.0 et 1.X
@@ -30,6 +31,9 @@ Version 0.X: Alpha X
 
 Version 0.2 : Alpha 2
 ==========================
+0.2.4
+-Ajout de bruitages
+
 0.2.3
 -Le jeu est disponible en deux langues (français/anglais)
 -Modification du menu options

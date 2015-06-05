@@ -4,7 +4,10 @@ using System.Collections;
 public class EndController : MonoBehaviour {
 
 	private LevelController levelController;
-	// Use this for initialization
+	AudioSource endSound;
+	GameController gameController;
+	
+
 	void Start () 
 	{
 		GameObject levelControllerObject = GameObject.FindWithTag ("LevelController");
@@ -12,6 +15,15 @@ public class EndController : MonoBehaviour {
 			levelController = levelControllerObject.GetComponent <LevelController>();
 		else
 			Debug.Log ("Cannot find 'GameController' script");
+		
+		
+		GameObject gameControllerObject = GameObject.FindWithTag ("GameController");
+		if (gameControllerObject != null)
+			gameController = gameControllerObject.GetComponent <GameController>();
+		else
+			Debug.Log ("Cannot find 'GameController' script");
+		
+		endSound=GetComponent<AudioSource>();
 	}
 
 
@@ -22,6 +34,8 @@ public class EndController : MonoBehaviour {
 		if(other.CompareTag("Player"))
 		{
 			levelController.GameOver(0);
+			endSound.Play ();
+			gameController.suspendMusic();
 		}
 
 	}

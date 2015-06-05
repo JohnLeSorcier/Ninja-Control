@@ -6,6 +6,8 @@ public class CoinController : MonoBehaviour {
 	private LevelController levelController;
 	private bool invisible;
 	SpriteRenderer sprite;
+	
+	AudioSource coinSound;
 
 	void Start()
 	{
@@ -14,6 +16,8 @@ public class CoinController : MonoBehaviour {
 			levelController = levelControllerObject.GetComponent <LevelController>();
 		else
 			Debug.Log ("Cannot find 'LevelController' script");
+			
+		coinSound=GetComponent<AudioSource>();
 
 		sprite=GetComponent<SpriteRenderer>();
 
@@ -38,6 +42,7 @@ public class CoinController : MonoBehaviour {
 		{
 			levelController.RamassePiece();
 			invisible=true;
+			coinSound.Play();
 		}
 	}
 }

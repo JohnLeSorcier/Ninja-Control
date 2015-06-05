@@ -12,6 +12,15 @@ public class GameController : MonoBehaviour {
 	public int lastLevel;
 
 	public static GameController control;
+	
+	AudioSource music;
+	bool downMusic;
+	bool upMusic;
+	float volMax=0.1f;
+	bool initTime=false;
+	float startTime;
+	float deltaTime;
+	
 
 	void Awake()
 	{
@@ -25,7 +34,49 @@ public class GameController : MonoBehaviour {
 		{
 			Destroy(gameObject);
 		}
-
+	}
+	
+	void Start()
+	{
+		music=GetComponent<AudioSource>(); 
+		music.volume=volMax;
+		downMusic=false;
+		upMusic=false;
+	}
+	
+	void Update()
+	{	
+		if (downMusic)
+		{
+				if (!initTime)
+			{
+				startTime=Time.time;
+				initTime=true;				
+			}
+			deltaTime=Time.time-startTime;
+			music.volume=Mathf.Max(volMax-(deltaTime/5),0);
+			if (music.volume == 0)
+			{
+				downMusic=false;
+				StartCoroutine(waitforMusic());
+				initTime=false;
+			}			
+		}
+		if (upMusic)
+		{
+			if (!initTime)
+			{
+				startTime=Time.time;
+				initTime=true;				
+			}
+			deltaTime=Time.time-startTime;
+			music.volume=Mathf.Min((deltaTime/5),volMax);
+			if (music.volume == volMax)
+			{
+				upMusic=false;
+				initTime=false;
+			}			
+		}
 	}
 
 	public int Score(int nbPanel, int nbTry, int nbPieces, float timer)
@@ -39,4 +90,16 @@ public class GameController : MonoBehaviour {
 		lastLevel = Application.loadedLevel;
 		Application.LoadLevel("MenuPrincipal");
 	}
+	
+	public void suspendMusic()
+	{	
+		downMusic=true;
+	}
+	
+	IEnumerator waitforMusic()
+	{
+		yield return new WaitForSeconds(4f);
+		upMusic=true;
+	}
+
 }

@@ -5,6 +5,7 @@ public class JumpController : MonoBehaviour {
 
 	private LevelController levelController;
 	private CharacterControllerAuto playerController;
+	
 			
 	void Start()
 	{
