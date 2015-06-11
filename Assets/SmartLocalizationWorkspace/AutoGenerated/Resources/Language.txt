@@ -278,8 +278,14 @@
 	<data name="Menu.Credits.Title" xml:space="preserve">
 		<value>Credit Title</value>
 	</data>
+	<data name="Menu.FX" xml:space="preserve">
+		<value>FX</value>
+	</data>
 	<data name="Menu.Language" xml:space="preserve">
 		<value>Language:</value>
+	</data>
+	<data name="Menu.Music" xml:space="preserve">
+		<value>Music</value>
 	</data>
 	<data name="Menu.Options.Title" xml:space="preserve">
 		<value>Options Title</value>
@@ -289,6 +295,9 @@
 	</data>
 	<data name="Menu.Score.Title" xml:space="preserve">
 		<value>Score Title</value>
+	</data>
+	<data name="Menu.Volume" xml:space="preserve">
+		<value>Volume</value>
 	</data>
 	<data name="Options.Confirm.DelSave" xml:space="preserve">
 		<value>Delete Confirmation</value>
@@ -316,5 +325,8 @@
 	</data>
 	<data name="Tuto.Slide.Text" xml:space="preserve">
 		<value>Text Tuto Slide</value>
+	</data>
+	<data name="Level.TrnMln" xml:space="preserve">
+		<value>Tournez Moulin</value>
 	</data>
 </root>

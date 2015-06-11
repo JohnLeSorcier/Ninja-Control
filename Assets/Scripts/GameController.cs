@@ -16,7 +16,7 @@ public class GameController : MonoBehaviour {
 	AudioSource music;
 	bool downMusic;
 	bool upMusic;
-	float volMax=0.1f;
+	public float volMax=0.1f;
 	bool initTime=false;
 	float startTime;
 	float deltaTime;
@@ -100,6 +100,18 @@ public class GameController : MonoBehaviour {
 	{
 		yield return new WaitForSeconds(4f);
 		upMusic=true;
+	}
+	
+	public void GestMusic()
+	{
+		AudioSource audioS=GetComponent<AudioSource>();
+		
+		audioS.mute=!audioS.mute;
+		if (audioS.mute)
+			PlayerPrefs.SetString("Music", "Off");
+		else
+			PlayerPrefs.SetString("Music", "On");
+		PlayerPrefs.Save();
 	}
 
 }

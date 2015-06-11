@@ -91,8 +91,12 @@ public class LevelController : MonoBehaviour {
 	string baseAttempt;
 	
 	AudioSource gameOverSound;
-
-
+	
+	[HideInInspector] public bool StateFX;
+	float volMax=0.5f;
+	
+	bool alreadyDead;
+	
 	void Start ()
 	{
 		string language;
@@ -198,6 +202,29 @@ public class LevelController : MonoBehaviour {
 		MaJNbText ();
 		
 		gameOverSound=GetComponent<AudioSource>();
+		
+		string FXState;
+		
+		if(PlayerPrefs.HasKey("FXState"))
+			FXState=PlayerPrefs.GetString("FXState");
+		else
+			FXState= "On";
+		
+	
+		if (FXState == "On")
+			StateFX = true;
+		else
+			StateFX = false;
+			
+		float volume;
+		if (PlayerPrefs.HasKey("Volume"))
+			volume=PlayerPrefs.GetFloat("Volume");
+		else
+			volume=100f;
+		gameOverSound.volume=volMax*volume/100;
+		
+		alreadyDead=false;
+			
 	}
 
 	void Update()
@@ -404,13 +431,16 @@ public class LevelController : MonoBehaviour {
 		else if (endType==3)
 			playerController.End();
 			
-		if (endType!=0)
+		if (!alreadyDead)
+			interfaceController.GameOver(endType, nbPan, nbTry, nbPieces, timer, total, nbStars, passed);
+			
+		if (endType!=0 && !alreadyDead)
 		{
 			sonGameOver();
+			alreadyDead=true;
 		}
 
 		end=true;
-		interfaceController.GameOver(endType, nbPan, nbTry, nbPieces, timer, total, nbStars, passed);
 	}
 
 	public void ChangeMove()
@@ -453,6 +483,7 @@ public class LevelController : MonoBehaviour {
 		timer=timeAllowed;//éviter une bétise de vérif
 		playerController.ReturnToPosition();
 		end=false;
+		alreadyDead=false;
 		ResetInstruct();
 		nbPieces=0;
 		pieceText.text=baseCoin+": "+nbPieces;
@@ -526,13 +557,30 @@ public class LevelController : MonoBehaviour {
 
 	public void SoundGest()
 	{
-		AudioSource audioS=gameController.GetComponent<AudioSource>();
-		audioS.mute=!audioS.mute;
+		gameController.GestMusic();
 	}
 	
+	public void FXGestOn()
+	{
+		StateFX=true;
+		PlayerPrefs.SetString("FXState", "On");
+		PlayerPrefs.Save ();		
+	}
+	
+	public void FXGestOff()
+	{
+		StateFX=false;
+		PlayerPrefs.SetString("FXState", "Off");
+		PlayerPrefs.Save ();
+	}
+		
+		
 	public void sonGameOver()
 	{
-		gameController.suspendMusic();
+		gameOverSound.mute=!StateFX;
+		if (!gameOverSound.mute)
+			gameController.suspendMusic();
+			
 		StartCoroutine(waitforGameOverSound());
 	}
 	

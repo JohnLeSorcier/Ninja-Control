@@ -8,6 +8,7 @@ public class CoinController : MonoBehaviour {
 	SpriteRenderer sprite;
 	
 	AudioSource coinSound;
+	float volMax=0.5f;
 
 	void Start()
 	{
@@ -22,6 +23,16 @@ public class CoinController : MonoBehaviour {
 		sprite=GetComponent<SpriteRenderer>();
 
 		invisible=false;
+		
+		float volume;
+		if (PlayerPrefs.HasKey("Volume"))
+			volume=PlayerPrefs.GetFloat("Volume");
+		else
+			volume=100f;
+		coinSound.volume=volMax*volume/100;
+		
+		
+		coinSound.mute=!levelController.StateFX;
 	}
 
 	void Update()
@@ -42,6 +53,7 @@ public class CoinController : MonoBehaviour {
 		{
 			levelController.RamassePiece();
 			invisible=true;
+			coinSound.mute=!levelController.StateFX;
 			coinSound.Play();
 		}
 	}

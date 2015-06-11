@@ -17,8 +17,11 @@ public class InterfaceController : MonoBehaviour {
 
 	private GameController gameController;
 
-	public Button soundOn;
-	public Button soundOff;
+	public Button soundMusicOn;
+	public Button soundMusicOff;
+	
+	public Button soundFXOn;
+	public Button soundFXOff;
 
 	LanguageManager languageManager;
 	
@@ -27,6 +30,8 @@ public class InterfaceController : MonoBehaviour {
 	string baseLeftTime;
 	string baseUnusedPanel;
 	string baseTotalScore;
+	
+	AudioSource audioS;
 
 	void Start () 
 	{
@@ -55,14 +60,46 @@ public class InterfaceController : MonoBehaviour {
 			gameController = gameControllerObject.GetComponent <GameController>();
 		else
 			Debug.Log ("Cannot find 'GameController' script");
+		
 
-		AudioSource audioS=gameController.GetComponent<AudioSource>();
-
-		//activer ou desactiver les boutons de son
-		soundOff.gameObject.SetActive(audioS.mute);
-		soundOn.gameObject.SetActive(!audioS.mute);
-
-
+		AudioSource audioMusic=gameController.GetComponent<AudioSource>();
+	
+		string musicState;
+		if (PlayerPrefs.HasKey("Music"))
+			musicState=PlayerPrefs.GetString("Music");
+		else
+			musicState="On";
+					
+		if (musicState == "Off")
+			audioMusic.mute=true;
+		else
+			audioMusic.mute=false;
+			
+		soundMusicOff.gameObject.SetActive(audioMusic.mute);
+		soundMusicOn.gameObject.SetActive(!audioMusic.mute);
+		
+		
+		
+		audioS=GetComponent<AudioSource>();
+		
+		string FXState;
+		
+		if(PlayerPrefs.HasKey("FXState"))
+			FXState=PlayerPrefs.GetString("FXState");
+		else
+			FXState= "On";
+		
+		bool FXStateBool;
+			
+		if (FXState == "On")
+			FXStateBool = true;
+		else
+			FXStateBool = false;
+			
+		audioS.mute=!FXStateBool;
+		
+		soundFXOn.gameObject.SetActive(FXStateBool);
+		soundFXOff.gameObject.SetActive(!FXStateBool);
 	}
 
 

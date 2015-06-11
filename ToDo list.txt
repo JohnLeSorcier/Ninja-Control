@@ -1,9 +1,11 @@
 -Panneaux unidirectionnels (pour le saut, etc...)
 -Portes à casser, ennemis?
--Pièges qui bouge en tournant (comem un moulin)
 -Piège qui s'arrête quand on appuie sur un bouton
+-Ascenceur automatique/Ascenceur de la mort
+-Bouton qui permet de rapprocher une plateforme mouvante.
 -Commander un deuxième ninja (elle?)
--sable mouvant qui ralentit, rochers qui roulent, flèchettes déclenchés apr bouton
+-sable mouvant qui ralentit, rochers qui roulent, flèchettes déclenchés apr bouton, piège qu iavance (et détruit des obstacles?)
+-Moulins qu icahngent de vitesse/sens
 
 -panneau d'attaque (un au corps à corps, un en lancer)
 -panneau d'inversion de gravité (penser à mettre les panneaux à l'envers??)
@@ -14,11 +16,22 @@
 
 -Prendre en compte plus de try dans el score des niveaux difficiles?
 
+-Revoir le score total?
+
 
 -Niveau intermédiaire poru passer sous les pièges avant porte et plafond
 -Niveau où on doit faire le tour par le haut puis rentrer et remonter
 -Niveau tuto sur les boutons rouges et bleus
 -Niveau tuto sur le rebond sur le mur?
+-Niveau compliqué dans des mines (Mine de la Moria, etc...)
+-Niveau avec des slides dans la caverne (Spéléologie)
+-Niveau où on sort d'une caverne (escalade?)
+-Niveau où on plonge dans une caverne pour ressortir (en activant une porte?)
+-Niveau avec un moulin dont la vitesse du moulin est modifiée: un moulin qui va trop vite et demande un timing hyper-précis 
+(et chatteux) mais avoir la solution d'appuyer sur un bouton pour le ralentir (Meunier, tu dors)
+-Niveau avec  des stop'n go à régler selon des timings différents et comme indice le nombre de pièce (inatteignables) 
+au-dessus de l'endroit où tu mets le panneau
+-Niveau avec plusieurs moulins (appelé Nemesis)
 
 
 (si problème sur différents écrans mobiles: Fit to Screen Size sur le store)

@@ -31,6 +31,24 @@ Version 0.X: Alpha X
 
 Version 0.2 : Alpha 2
 ==========================
+0.2.6
+-Correction d'un bug d'affichage des boutons pour couper les sons
+-Correction d'un bug où deux morts étaient détectés à la suite
+-Correction d'un bug où on pouvait placer un panneau d'action sur le moulin
+-Correction d'un bug permettant de cliquer sur les boutons lorsqu'un tutoriel est affiché
+-Ajout d'un bouton pour couper els bruitages dans le menu principal
+-Modification de certains niveaux (noms, pièces, pièges, scores)
+-L'état de la music (On/Off) est enregistré
+-Le niveau de test a été converti en véritable niveau
+
+
+0.2.5
+-Ajout d'un bouton pour couper les bruitages
+-Détection automatique de la langue (français si système en français, anglais sinon)
+-Ajout du réglage du volume sonore.
+-Ajout d'un nouveau piège: le moulin (+niveau de test)
+
+
 0.2.4
 -Ajout de bruitages
 

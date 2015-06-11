@@ -6,7 +6,7 @@ public class EndController : MonoBehaviour {
 	private LevelController levelController;
 	AudioSource endSound;
 	GameController gameController;
-	
+	float volMax=0.3f;
 
 	void Start () 
 	{
@@ -24,6 +24,16 @@ public class EndController : MonoBehaviour {
 			Debug.Log ("Cannot find 'GameController' script");
 		
 		endSound=GetComponent<AudioSource>();
+		
+		float volume;
+		if (PlayerPrefs.HasKey("Volume"))
+			volume=PlayerPrefs.GetFloat("Volume");
+		else
+			volume=100f;
+		endSound.volume=volMax*volume/100;
+
+		
+		endSound.mute=!levelController.StateFX;
 	}
 
 
@@ -34,8 +44,10 @@ public class EndController : MonoBehaviour {
 		if(other.CompareTag("Player"))
 		{
 			levelController.GameOver(0);
+			endSound.mute=!levelController.StateFX;
 			endSound.Play ();
-			gameController.suspendMusic();
+			if (!endSound.mute)
+				gameController.suspendMusic();
 		}
 
 	}

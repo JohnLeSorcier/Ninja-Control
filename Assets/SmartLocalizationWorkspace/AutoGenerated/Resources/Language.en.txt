@@ -188,13 +188,13 @@ Collect coins but try to avoid spikes or falling in the water: both will kill yo
 		<value>Jump Right</value>
 	</data>
 	<data name="Interface.Knocked" xml:space="preserve">
-		<value>You are knocked...</value>
+		<value>You are KO...</value>
 	</data>
 	<data name="Interface.LeftTime" xml:space="preserve">
 		<value>Time Left</value>
 	</data>
 	<data name="Interface.OutofLevel" xml:space="preserve">
-		<value>You are out of level</value>
+		<value>You are out of the level</value>
 	</data>
 	<data name="Interface.ScoreLow" xml:space="preserve">
 		<value>Score too low...</value>
@@ -206,13 +206,13 @@ Collect coins but try to avoid spikes or falling in the water: both will kill yo
 		<value>Time</value>
 	</data>
 	<data name="Interface.TimeOver" xml:space="preserve">
-		<value>Time is over!</value>
+		<value>Time over!</value>
 	</data>
 	<data name="Interface.TotalScore" xml:space="preserve">
 		<value>Total Score</value>
 	</data>
 	<data name="Interface.UnusedPanel" xml:space="preserve">
-		<value>Unused Panel</value>
+		<value>Unused Panel(s)</value>
 	</data>
 	<data name="Interface.Wait" xml:space="preserve">
 		<value>Wait</value>
@@ -221,19 +221,19 @@ Collect coins but try to avoid spikes or falling in the water: both will kill yo
 		<value>You win!</value>
 	</data>
 	<data name="Level.2Mt" xml:space="preserve">
-		<value>Two climbs</value>
+		<value>Choose wisely</value>
 	</data>
 	<data name="Level.AbrTer" xml:space="preserve">
 		<value>Mud trees</value>
 	</data>
 	<data name="Level.Cavrn" xml:space="preserve">
-		<value>In the cavern</value>
+		<value>Down the rabbit hole</value>
 	</data>
 	<data name="Level.DmTrn" xml:space="preserve">
 		<value>U-turn</value>
 	</data>
 	<data name="Level.Engm" xml:space="preserve">
-		<value>Enigma</value>
+		<value>Riddle me this</value>
 	</data>
 	<data name="Level.Error" xml:space="preserve">
 		<value>Error!
@@ -241,25 +241,25 @@ Collect coins but try to avoid spikes or falling in the water: both will kill yo
 Level don't exist!</value>
 	</data>
 	<data name="Level.GdTsr" xml:space="preserve">
-		<value>A great treasure</value>
+		<value>Money money money</value>
 	</data>
 	<data name="Level.Idem" xml:space="preserve">
-		<value>The same</value>
+		<value>Déjà-vu</value>
 	</data>
 	<data name="Level.JstDess" xml:space="preserve">
-		<value>Just above</value>
+		<value>Floor 2</value>
 	</data>
 	<data name="Level.MiniSc" xml:space="preserve">
 		<value>Minimal Scene</value>
 	</data>
 	<data name="Level.ObstTll" xml:space="preserve">
-		<value>High obstacle</value>
+		<value>Over the wall</value>
 	</data>
 	<data name="Level.Plls" xml:space="preserve">
-		<value>Pillars</value>
+		<value>Giant's Causeway</value>
 	</data>
 	<data name="Level.Pqt" xml:space="preserve">
-		<value>Prickly</value>
+		<value>Spike strip</value>
 	</data>
 	<data name="Level.PrtPlfd" xml:space="preserve">
 		<value>Doors and ceiling</value>
@@ -268,13 +268,16 @@ Level don't exist!</value>
 		<value>Risks</value>
 	</data>
 	<data name="Level.SlPieg" xml:space="preserve">
-		<value>Trapped ground</value>
+		<value>It's a trap !</value>
 	</data>
 	<data name="Level.SrtDs" xml:space="preserve">
 		<value>Back Exit</value>
 	</data>
 	<data name="Level.StFoit" xml:space="preserve">
 		<value>Leap of Faith</value>
+	</data>
+	<data name="Level.TrnMln" xml:space="preserve">
+		<value>Hot Wheels</value>
 	</data>
 	<data name="Level.TutoPltfrm" xml:space="preserve">
 		<value>Platform Tuto</value>
@@ -294,8 +297,14 @@ Level don't exist!</value>
 	<data name="Menu.Credits.Title" xml:space="preserve">
 		<value>Credits</value>
 	</data>
+	<data name="Menu.FX" xml:space="preserve">
+		<value>Effects</value>
+	</data>
 	<data name="Menu.Language" xml:space="preserve">
 		<value>Language:</value>
+	</data>
+	<data name="Menu.Music" xml:space="preserve">
+		<value>Music</value>
 	</data>
 	<data name="Menu.Options.Title" xml:space="preserve">
 		<value>Options</value>
@@ -305,6 +314,9 @@ Level don't exist!</value>
 	</data>
 	<data name="Menu.Score.Title" xml:space="preserve">
 		<value>Scores</value>
+	</data>
+	<data name="Menu.Volume" xml:space="preserve">
+		<value>Volume</value>
 	</data>
 	<data name="Options.Confirm.DelSave" xml:space="preserve">
 		<value>Do you want to delete all saves, highscores, settings and unlocked levels? (Menu will be reloaded)</value>
@@ -322,7 +334,7 @@ Level don't exist!</value>
 		<value>Launch Button</value>
 	</data>
 	<data name="Tuto.Jump.Text" xml:space="preserve">
-		<value>Place action panel to jump over water and reach the end panel.
+		<value>Place an action panel to jump over the water and reach the end panel.
 
 Take coins to improve your score.
 
@@ -332,11 +344,11 @@ Launch the ninja with the launch button.</value>
 		<value>Moving Platform</value>
 	</data>
 	<data name="Tuto.Platform.Text" xml:space="preserve">
-		<value>use the Wait panel to time the jump on the moving platform
+		<value>Use the Wait panel to time your jump on the moving platform.
 
 Click to add seconds (0-5) to Wait Panel
 
-It only moves when you launch the ninja</value>
+Platforms only move when you launch the ninja</value>
 	</data>
 	<data name="Tuto.Slide.Text" xml:space="preserve">
 		<value>Use the slide panel to... slide under obstacles.</value>
