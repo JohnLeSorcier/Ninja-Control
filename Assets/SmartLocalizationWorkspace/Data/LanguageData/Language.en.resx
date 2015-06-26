@@ -128,11 +128,11 @@
 	<data name="HowToPlay.Score.Text" xml:space="preserve">
 		<value>Finish: 500 pts
 
-Unused Panel: 250 pts
+Unused Panel: 150 pts
 
-Time Left: 200 pts/second
+Time Left: 100 pts/second
 
-Coin: 100 pts
+Coin: 150 pts
 
 Attempt: -100 pts</value>
 	</data>
@@ -229,6 +229,9 @@ Collect coins but try to avoid spikes or falling in the water: both will kill yo
 	<data name="Level.Cavrn" xml:space="preserve">
 		<value>Down the rabbit hole</value>
 	</data>
+	<data name="Level.Cnc" xml:space="preserve">
+		<value>Stuck</value>
+	</data>
 	<data name="Level.DmTrn" xml:space="preserve">
 		<value>U-turn</value>
 	</data>
@@ -243,8 +246,14 @@ Level don't exist!</value>
 	<data name="Level.GdTsr" xml:space="preserve">
 		<value>Money money money</value>
 	</data>
+	<data name="Level.HtMrch" xml:space="preserve">
+		<value>High Step</value>
+	</data>
 	<data name="Level.Idem" xml:space="preserve">
 		<value>Déjà-vu</value>
+	</data>
+	<data name="Level.Insd" xml:space="preserve">
+		<value>Inside</value>
 	</data>
 	<data name="Level.JstDess" xml:space="preserve">
 		<value>Floor 2</value>
@@ -270,8 +279,14 @@ Level don't exist!</value>
 	<data name="Level.SlPieg" xml:space="preserve">
 		<value>It's a trap !</value>
 	</data>
+	<data name="Level.SlTrt" xml:space="preserve">
+		<value>Dangerous Ground</value>
+	</data>
 	<data name="Level.SrtDs" xml:space="preserve">
 		<value>Back Exit</value>
+	</data>
+	<data name="Level.SrtInf" xml:space="preserve">
+		<value>Infernal Exit</value>
 	</data>
 	<data name="Level.StFoit" xml:space="preserve">
 		<value>Leap of Faith</value>
@@ -352,5 +367,10 @@ Platforms only move when you launch the ninja</value>
 	</data>
 	<data name="Tuto.Slide.Text" xml:space="preserve">
 		<value>Use the slide panel to... slide under obstacles.</value>
+	</data>
+	<data name="Tuto.UTurn.Text" xml:space="preserve">
+		<value>Ninja must turn before going out the level.
+
+He turns automatically on wall.</value>
 	</data>
 </root>

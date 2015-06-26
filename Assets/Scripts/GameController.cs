@@ -4,10 +4,10 @@ using System.Collections;
 public class GameController : MonoBehaviour {
 
 	int finishScore=500;
-	int scorePanRest=250;
+	int scorePanRest=150;
 	int scoreTry=100;
-	int scoreTime=200;
-	int scorePiece=100;
+	int scoreTime=100;
+	int scorePiece=150;
 
 	public int lastLevel;
 

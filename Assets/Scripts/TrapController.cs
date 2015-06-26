@@ -8,12 +8,17 @@ public class TrapController : MonoBehaviour {
 	HazardController hazard;
 	Animator anim;
 	public bool gravitic;
+	public BoxCollider2D wallC;
 
 	void Start ()
 	{
 		rigidParent=hazardG.GetComponent<Rigidbody2D>();
 		hazard=hazardG.GetComponent<HazardController>();
 		anim=GetComponent<Animator>();
+	}
+	
+	void Update()
+	{
 	}
 
 	void OnTriggerEnter2D(Collider2D other)
@@ -25,6 +30,9 @@ public class TrapController : MonoBehaviour {
 				rigidParent.isKinematic=false;
 			else
 				hazard.nonGraviticMove();
+			
+			if (wallC != null)
+				wallC.isTrigger=false;
 		}
 	}
 
@@ -35,4 +43,5 @@ public class TrapController : MonoBehaviour {
 			anim.SetTrigger("SwitchOff");
 		}
 	}
+	
 }

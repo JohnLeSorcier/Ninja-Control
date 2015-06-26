@@ -8,6 +8,8 @@ public class MillController : MonoBehaviour {
 	float startTime;
 	public bool sensHoraire=false;
 	int sens;
+	public GameObject imgRot;
+
 
 	void Start () 
 	{
@@ -21,7 +23,11 @@ public class MillController : MonoBehaviour {
 		init=false;
 		
 		if (sensHoraire)
+		{
 			sens=-1;
+			imgRot.transform.rotation= new Quaternion (0,0,0,0);
+			imgRot.transform.localPosition=new Vector3 (-imgRot.transform.localPosition.x,imgRot.transform.localPosition.y,imgRot.transform.localPosition.z);
+		}
 		else
 			sens=1;
 	}

@@ -12,17 +12,16 @@
 
 -Penser à modifier els instructions pour la liste des pièges
 
--Faire des niveaux avec des panneaux déjà en place
-
 -Prendre en compte plus de try dans el score des niveaux difficiles?
 
--Revoir le score total?
+-Revoir le score total?+score total de pièces (à enregistrer par niveau?)
 
+-Faire des niveaux avec des panneaux déjà en place
 
--Niveau intermédiaire poru passer sous les pièges avant porte et plafond
 -Niveau où on doit faire le tour par le haut puis rentrer et remonter
--Niveau tuto sur les boutons rouges et bleus
+-Niveau tuto sur les boutons rouges et bleus (+passer sous les plafonds qui tombent)
 -Niveau tuto sur le rebond sur le mur?
+-Niveau tuto pour expliquer qu'on ne peut pas placer de panneau sur un piège ou tout près de lui.
 -Niveau compliqué dans des mines (Mine de la Moria, etc...)
 -Niveau avec des slides dans la caverne (Spéléologie)
 -Niveau où on sort d'une caverne (escalade?)
@@ -32,6 +31,10 @@
 -Niveau avec  des stop'n go à régler selon des timings différents et comme indice le nombre de pièce (inatteignables) 
 au-dessus de l'endroit où tu mets le panneau
 -Niveau avec plusieurs moulins (appelé Nemesis)
+
+Scénario: un apprenti ninja doit faire ses preuves en rejoignant son clan, en y ramenant de l'argent.
+
+-Vérifier que les time and go fonctionnent bien derrière les pièces (sur smartphone)
 
 
 (si problème sur différents écrans mobiles: Fit to Screen Size sur le store)

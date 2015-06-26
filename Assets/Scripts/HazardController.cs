@@ -9,6 +9,7 @@ public class HazardController : MonoBehaviour {
 	private Vector3 startPosition;
 	Rigidbody2D body;
 	SliderJoint2D slideJoint;
+	public BoxCollider2D wallC;
 
 	void Start () {
 		GameObject levelControllerObject = GameObject.FindWithTag ("LevelController");
@@ -38,6 +39,9 @@ public class HazardController : MonoBehaviour {
 			else
 				levelController.GameOver(1);
 			//en cas de noyade->gameOver 4, en cas d'écrasement par un truc qui tombe->gameOver 6, sinon gameOver 1
+			
+			if (wallC !=null)
+				wallC.isTrigger=true;
 		
 			StartCoroutine(waitForHazard());
 		}
@@ -59,13 +63,15 @@ public class HazardController : MonoBehaviour {
 
 	public void resetPosition()
 	{
+		if (wallC!=null)
+			wallC.isTrigger=true;	
 		if(body != null && slideJoint == null)
 		{
 			body.isKinematic=true;
 			transform.position=startPosition;
 		}
 		else if (slideJoint !=null)
-			StartCoroutine(waitForSlide()); //permet d'attendre que le slide ne bouge plus et éviter qu'il parte dans el vide
+			StartCoroutine(waitForSlide()); //permet d'attendre que le slide ne bouge plus et éviter qu'il parte dans el vide		
 	}
 
 	public void nonGraviticMove()

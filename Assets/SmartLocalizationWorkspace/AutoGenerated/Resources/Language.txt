@@ -215,6 +215,9 @@
 	<data name="Level.Cavrn" xml:space="preserve">
 		<value>Dans la caverne</value>
 	</data>
+	<data name="Level.Cnc" xml:space="preserve">
+		<value>Coincé</value>
+	</data>
 	<data name="Level.DmTrn" xml:space="preserve">
 		<value>Demi-Tour</value>
 	</data>
@@ -227,8 +230,14 @@
 	<data name="Level.GdTsr" xml:space="preserve">
 		<value>Un grand trésor</value>
 	</data>
+	<data name="Level.HtMrch" xml:space="preserve">
+		<value>Haute Marche</value>
+	</data>
 	<data name="Level.Idem" xml:space="preserve">
 		<value>Idem</value>
+	</data>
+	<data name="Level.Insd" xml:space="preserve">
+		<value>Inside</value>
 	</data>
 	<data name="Level.JstDess" xml:space="preserve">
 		<value>Juste au dessus</value>
@@ -257,8 +266,14 @@
 	<data name="Level.SrtDs" xml:space="preserve">
 		<value>Sortie de Dos</value>
 	</data>
+	<data name="Level.SrtInf" xml:space="preserve">
+		<value>Sortie Infernale</value>
+	</data>
 	<data name="Level.StFoit" xml:space="preserve">
 		<value>Saut de la foi</value>
+	</data>
+	<data name="Level.TrnMln" xml:space="preserve">
+		<value>Tournez Moulin</value>
 	</data>
 	<data name="Level.TutoPltfrm" xml:space="preserve">
 		<value>Tuto Plateforme</value>
@@ -326,7 +341,10 @@
 	<data name="Tuto.Slide.Text" xml:space="preserve">
 		<value>Text Tuto Slide</value>
 	</data>
-	<data name="Level.TrnMln" xml:space="preserve">
-		<value>Tournez Moulin</value>
+	<data name="Tuto.UTurn.Text" xml:space="preserve">
+		<value>Text Tuto turn sur le mur</value>
+	</data>
+	<data name="Level.SlTrt" xml:space="preserve">
+		<value>Sol Traitre</value>
 	</data>
 </root>

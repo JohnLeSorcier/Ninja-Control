@@ -128,11 +128,11 @@
 	<data name="HowToPlay.Score.Text" xml:space="preserve">
 		<value>Fin: 500 pts
 
-Panneau inutilisé: 250 pts
+Panneau inutilisé: 150 pts
 
-Temps restant: 200 pts/secondes
+Temps restant: 100 pts/secondes
 
- Pièce: 100 pts
+ Pièce: 150 pts
 
 Tentative: -100 pts</value>
 	</data>
@@ -229,6 +229,9 @@ Ramassez des pièces mais essayez d'éviter les pièges ou de tomber dans l'eau:
 	<data name="Level.Cavrn" xml:space="preserve">
 		<value>La caverne d'Ali Baba</value>
 	</data>
+	<data name="Level.Cnc" xml:space="preserve">
+		<value>Coincé</value>
+	</data>
 	<data name="Level.DmTrn" xml:space="preserve">
 		<value>Demi-Tour</value>
 	</data>
@@ -243,8 +246,14 @@ Le niveau n'existe pas!</value>
 	<data name="Level.GdTsr" xml:space="preserve">
 		<value>Money money money</value>
 	</data>
+	<data name="Level.HtMrch" xml:space="preserve">
+		<value>Haute Marche</value>
+	</data>
 	<data name="Level.Idem" xml:space="preserve">
 		<value>Déjà-vu</value>
+	</data>
+	<data name="Level.Insd" xml:space="preserve">
+		<value>A l'intérieur</value>
 	</data>
 	<data name="Level.JstDess" xml:space="preserve">
 		<value>Deuxième étage</value>
@@ -270,8 +279,14 @@ Le niveau n'existe pas!</value>
 	<data name="Level.SlPieg" xml:space="preserve">
 		<value>C'est un piège !</value>
 	</data>
+	<data name="Level.SlTrt" xml:space="preserve">
+		<value>Sol Traitre</value>
+	</data>
 	<data name="Level.SrtDs" xml:space="preserve">
 		<value>Sortie de Dos</value>
+	</data>
+	<data name="Level.SrtInf" xml:space="preserve">
+		<value>Sortie Infernale</value>
 	</data>
 	<data name="Level.StFoit" xml:space="preserve">
 		<value>Saut de la foi</value>
@@ -352,5 +367,10 @@ La plateforme ne bouge que lorsque le ninja est lancé.</value>
 	</data>
 	<data name="Tuto.Slide.Text" xml:space="preserve">
 		<value>Utilisez le panneau de glisse pour... glisser sous les obstacles</value>
+	</data>
+	<data name="Tuto.UTurn.Text" xml:space="preserve">
+		<value>Le ninja doit tourner avant d'atteindre la fin du niveau.
+
+Il tourne automatiquement contre un mur.</value>
 	</data>
 </root>

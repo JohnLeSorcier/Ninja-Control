@@ -27,6 +27,8 @@ public class CharacterControllerAuto : MonoBehaviour {
 	bool justSlide=false;
 	float offsetY=0f;
 	float offsetX=0f;
+	
+	float enregMove;
 
 	public float jumpForce;
 
@@ -207,6 +209,7 @@ public class CharacterControllerAuto : MonoBehaviour {
 	{
 		canIMove=false;
 		rigidbody2D.velocity = new Vector2 (0f, 0f);
+		enregMove=move;
 		move=0f;
 		if(alreadySlide)
 			Debout ();
@@ -214,6 +217,7 @@ public class CharacterControllerAuto : MonoBehaviour {
 
 	public void GoWait()
 	{
+		move=enregMove;
 		canIMove=true;
 	}
 

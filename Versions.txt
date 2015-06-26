@@ -29,6 +29,16 @@ Version 0.X: Alpha X
 0.X.x
 
 
+Version 0.3 : Alpha 3
+==========================
+0.3.0
+-Correction d'un bug où le ninja repartait toujours vers le droite sur une plateforme après un timer
+-Les pièges sortant du sol ou tombant bloquent comme des murs une fois au sol
+-Retouche cosmétique de la roue/moulin
+-Rééquilibrage du score
+-Ajout de 5 niveaux
+
+
 Version 0.2 : Alpha 2
 ==========================
 0.2.6
@@ -46,7 +56,7 @@ Version 0.2 : Alpha 2
 -Ajout d'un bouton pour couper les bruitages
 -Détection automatique de la langue (français si système en français, anglais sinon)
 -Ajout du réglage du volume sonore.
--Ajout d'un nouveau piège: le moulin (+niveau de test)
+-Ajout d'un nouveau piège: la roue/moulin (+niveau de test)
 
 
 0.2.4
