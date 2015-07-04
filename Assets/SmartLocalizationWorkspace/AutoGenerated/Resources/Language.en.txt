@@ -226,6 +226,9 @@ Collect coins but try to avoid spikes or falling in the water: both will kill yo
 	<data name="Level.AbrTer" xml:space="preserve">
 		<value>Mud trees</value>
 	</data>
+	<data name="Level.Atrvs" xml:space="preserve">
+		<value>Across</value>
+	</data>
 	<data name="Level.Cavrn" xml:space="preserve">
 		<value>Down the rabbit hole</value>
 	</data>
@@ -243,8 +246,17 @@ Collect coins but try to avoid spikes or falling in the water: both will kill yo
 
 Level don't exist!</value>
 	</data>
+	<data name="Level.EtDx" xml:space="preserve">
+		<value>Between Two</value>
+	</data>
+	<data name="Level.Fs1Chx" xml:space="preserve">
+		<value>Make a choice</value>
+	</data>
 	<data name="Level.GdTsr" xml:space="preserve">
 		<value>Money money money</value>
+	</data>
+	<data name="Level.GrtPrlls" xml:space="preserve">
+		<value>Perilous Cave</value>
 	</data>
 	<data name="Level.HtMrch" xml:space="preserve">
 		<value>High Step</value>
@@ -273,6 +285,12 @@ Level don't exist!</value>
 	<data name="Level.PrtPlfd" xml:space="preserve">
 		<value>Doors and ceiling</value>
 	</data>
+	<data name="Level.PsSVt" xml:space="preserve">
+		<value>Not so fast</value>
+	</data>
+	<data name="Level.Rcrc" xml:space="preserve">
+		<value>Short Cut</value>
+	</data>
 	<data name="Level.Rsq" xml:space="preserve">
 		<value>Risks</value>
 	</data>
@@ -293,6 +311,9 @@ Level don't exist!</value>
 	</data>
 	<data name="Level.TrnMln" xml:space="preserve">
 		<value>Hot Wheels</value>
+	</data>
+	<data name="Level.TrvCle" xml:space="preserve">
+		<value>Find teh key</value>
 	</data>
 	<data name="Level.TutoPltfrm" xml:space="preserve">
 		<value>Platform Tuto</value>

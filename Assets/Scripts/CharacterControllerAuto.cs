@@ -91,7 +91,12 @@ public class CharacterControllerAuto : MonoBehaviour {
 	void Update()
 	{
 		if (canIMove && move == 0f && !dead)
-			move=1f;
+		{
+			if (facingRight)
+				move=1f;
+			else
+				move=-1f;
+		}
 
 		if (grounded && !canIMove)
 		{	//pour qu'il suive la plateforme en idle (utile pour le système de pause)

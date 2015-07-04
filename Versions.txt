@@ -31,12 +31,20 @@ Version 0.X: Alpha X
 
 Version 0.3 : Alpha 3
 ==========================
+0.3.2
+-Modification de la profondeur de caméra afin de compenser un souci sur Android
+
+0.3.1
+-Correction d'un bug où le ninja se coinçait (encore) dans le décor
+-Correction d'un bug qui empêchait le ninja de commencer vers la gauche
+-Ajout de 7 niveaux
+
 0.3.0
 -Correction d'un bug où le ninja repartait toujours vers le droite sur une plateforme après un timer
 -Les pièges sortant du sol ou tombant bloquent comme des murs une fois au sol
 -Retouche cosmétique de la roue/moulin
 -Rééquilibrage du score
--Ajout de 5 niveaux
+-Ajout de 5 niveaux (26 au total)
 
 
 Version 0.2 : Alpha 2

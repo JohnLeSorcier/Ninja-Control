@@ -226,6 +226,9 @@ Ramassez des pièces mais essayez d'éviter les pièges ou de tomber dans l'eau:
 	<data name="Level.AbrTer" xml:space="preserve">
 		<value>Conker l'écureuil</value>
 	</data>
+	<data name="Level.Atrvs" xml:space="preserve">
+		<value>A Travers</value>
+	</data>
 	<data name="Level.Cavrn" xml:space="preserve">
 		<value>La caverne d'Ali Baba</value>
 	</data>
@@ -243,8 +246,17 @@ Ramassez des pièces mais essayez d'éviter les pièges ou de tomber dans l'eau:
 
 Le niveau n'existe pas!</value>
 	</data>
+	<data name="Level.EtDx" xml:space="preserve">
+		<value>Entre Deux</value>
+	</data>
+	<data name="Level.Fs1Chx" xml:space="preserve">
+		<value>Fais un choix</value>
+	</data>
 	<data name="Level.GdTsr" xml:space="preserve">
 		<value>Money money money</value>
+	</data>
+	<data name="Level.GrtPrlls" xml:space="preserve">
+		<value>Grotte Périlleuse</value>
 	</data>
 	<data name="Level.HtMrch" xml:space="preserve">
 		<value>Haute Marche</value>
@@ -273,6 +285,12 @@ Le niveau n'existe pas!</value>
 	<data name="Level.PrtPlfd" xml:space="preserve">
 		<value>Portes et Plafond</value>
 	</data>
+	<data name="Level.PsSVt" xml:space="preserve">
+		<value>Pas si vite</value>
+	</data>
+	<data name="Level.Rcrc" xml:space="preserve">
+		<value>Raccourci</value>
+	</data>
 	<data name="Level.Rsq" xml:space="preserve">
 		<value>Risques</value>
 	</data>
@@ -293,6 +311,9 @@ Le niveau n'existe pas!</value>
 	</data>
 	<data name="Level.TrnMln" xml:space="preserve">
 		<value>Hot Wheels</value>
+	</data>
+	<data name="Level.TrvCle" xml:space="preserve">
+		<value>Trouve la clé</value>
 	</data>
 	<data name="Level.TutoPltfrm" xml:space="preserve">
 		<value>Tuto Plateforme</value>

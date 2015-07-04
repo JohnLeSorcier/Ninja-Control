@@ -212,6 +212,9 @@
 	<data name="Level.AbrTer" xml:space="preserve">
 		<value>Arbres de Terre</value>
 	</data>
+	<data name="Level.Atrvs" xml:space="preserve">
+		<value>A Travers</value>
+	</data>
 	<data name="Level.Cavrn" xml:space="preserve">
 		<value>Dans la caverne</value>
 	</data>
@@ -226,6 +229,12 @@
 	</data>
 	<data name="Level.Error" xml:space="preserve">
 		<value>Level.Error</value>
+	</data>
+	<data name="Level.EtDx" xml:space="preserve">
+		<value>Entre Deux</value>
+	</data>
+	<data name="Level.Fs1Chx" xml:space="preserve">
+		<value>Fais un choix</value>
 	</data>
 	<data name="Level.GdTsr" xml:space="preserve">
 		<value>Un grand trésor</value>
@@ -257,11 +266,20 @@
 	<data name="Level.PrtPlfd" xml:space="preserve">
 		<value>Portes et Plafond</value>
 	</data>
+	<data name="Level.PsSVt" xml:space="preserve">
+		<value>Pas si vite</value>
+	</data>
+	<data name="Level.Rcrc" xml:space="preserve">
+		<value>Raccourci</value>
+	</data>
 	<data name="Level.Rsq" xml:space="preserve">
 		<value>Risques</value>
 	</data>
 	<data name="Level.SlPieg" xml:space="preserve">
 		<value>Sol Piégé</value>
+	</data>
+	<data name="Level.SlTrt" xml:space="preserve">
+		<value>Sol Traitre</value>
 	</data>
 	<data name="Level.SrtDs" xml:space="preserve">
 		<value>Sortie de Dos</value>
@@ -274,6 +292,9 @@
 	</data>
 	<data name="Level.TrnMln" xml:space="preserve">
 		<value>Tournez Moulin</value>
+	</data>
+	<data name="Level.TrvCle" xml:space="preserve">
+		<value>Trouve la clé</value>
 	</data>
 	<data name="Level.TutoPltfrm" xml:space="preserve">
 		<value>Tuto Plateforme</value>
@@ -344,7 +365,7 @@
 	<data name="Tuto.UTurn.Text" xml:space="preserve">
 		<value>Text Tuto turn sur le mur</value>
 	</data>
-	<data name="Level.SlTrt" xml:space="preserve">
-		<value>Sol Traitre</value>
+	<data name="Level.GrtPrlls" xml:space="preserve">
+		<value>Grotte Périlleuse</value>
 	</data>
 </root>
