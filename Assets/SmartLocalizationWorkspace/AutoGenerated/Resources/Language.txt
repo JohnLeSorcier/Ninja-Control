@@ -221,11 +221,23 @@
 	<data name="Level.Cnc" xml:space="preserve">
 		<value>Coincé</value>
 	</data>
+	<data name="Level.DHtDBs" xml:space="preserve">
+		<value>Des Hauts et des Bas</value>
+	</data>
 	<data name="Level.DmTrn" xml:space="preserve">
 		<value>Demi-Tour</value>
 	</data>
+	<data name="Level.DssDss" xml:space="preserve">
+		<value>Dessus Dessous</value>
+	</data>
+	<data name="Level.Encdr" xml:space="preserve">
+		<value>Encadré</value>
+	</data>
 	<data name="Level.Engm" xml:space="preserve">
 		<value>Enigma</value>
+	</data>
+	<data name="Level.Engrn" xml:space="preserve">
+		<value>Engrenage</value>
 	</data>
 	<data name="Level.Error" xml:space="preserve">
 		<value>Level.Error</value>
@@ -238,6 +250,9 @@
 	</data>
 	<data name="Level.GdTsr" xml:space="preserve">
 		<value>Un grand trésor</value>
+	</data>
+	<data name="Level.GrtPrlls" xml:space="preserve">
+		<value>Grotte Périlleuse</value>
 	</data>
 	<data name="Level.HtMrch" xml:space="preserve">
 		<value>Haute Marche</value>
@@ -254,6 +269,9 @@
 	<data name="Level.MiniSc" xml:space="preserve">
 		<value>Minimal Scene</value>
 	</data>
+	<data name="Level.MlnAO" xml:space="preserve">
+		<value>Moulin à eau</value>
+	</data>
 	<data name="Level.ObstTll" xml:space="preserve">
 		<value>Obstacle de Taille</value>
 	</data>
@@ -262,6 +280,12 @@
 	</data>
 	<data name="Level.Pqt" xml:space="preserve">
 		<value>Piquant</value>
+	</data>
+	<data name="Level.PrtFli" xml:space="preserve">
+		<value>Portes en Folie</value>
+	</data>
+	<data name="Level.PrtMstr" xml:space="preserve">
+		<value>Portes Mystères</value>
 	</data>
 	<data name="Level.PrtPlfd" xml:space="preserve">
 		<value>Portes et Plafond</value>
@@ -365,7 +389,7 @@
 	<data name="Tuto.UTurn.Text" xml:space="preserve">
 		<value>Text Tuto turn sur le mur</value>
 	</data>
-	<data name="Level.GrtPrlls" xml:space="preserve">
-		<value>Grotte Périlleuse</value>
+	<data name="Level.Nmss" xml:space="preserve">
+		<value>Nemesis</value>
 	</data>
 </root>

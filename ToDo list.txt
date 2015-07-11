@@ -43,8 +43,12 @@ Scénario: un apprenti ninja doit faire ses preuves en rejoignant son clan, en y 
 
 -Trouver un sprite d'os ou de cranes à metrte dans les grosses étendues de terre?
 
+-Revoir le placement du décor, certains éléments "volent" au dessus du sol
+
 
 -Vérifier si en plaçant un panneau prêt du ninja, il ne se lance pas
+
+quand on interrompt le niveau (avec le doube-clic), on pourrait avoir le choix comme quand on appuie sur le "retry" (+annuler?)
 
 
 (si problème sur différents écrans mobiles: Fit to Screen Size sur le store)

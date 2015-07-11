@@ -235,11 +235,23 @@ Ramassez des pièces mais essayez d'éviter les pièges ou de tomber dans l'eau:
 	<data name="Level.Cnc" xml:space="preserve">
 		<value>Coincé</value>
 	</data>
+	<data name="Level.DHtDBs" xml:space="preserve">
+		<value>Des Hauts et des Bas</value>
+	</data>
 	<data name="Level.DmTrn" xml:space="preserve">
 		<value>Demi-Tour</value>
 	</data>
+	<data name="Level.DssDss" xml:space="preserve">
+		<value>Dessus Dessous</value>
+	</data>
+	<data name="Level.Encdr" xml:space="preserve">
+		<value />
+	</data>
 	<data name="Level.Engm" xml:space="preserve">
 		<value>E. Nigma</value>
+	</data>
+	<data name="Level.Engrn" xml:space="preserve">
+		<value>Engrenage</value>
 	</data>
 	<data name="Level.Error" xml:space="preserve">
 		<value>Erreur!
@@ -273,6 +285,12 @@ Le niveau n'existe pas!</value>
 	<data name="Level.MiniSc" xml:space="preserve">
 		<value>Scene Minimale</value>
 	</data>
+	<data name="Level.MlnAO" xml:space="preserve">
+		<value>Moulin à eau</value>
+	</data>
+	<data name="Level.Nmss" xml:space="preserve">
+		<value>Nemesis</value>
+	</data>
 	<data name="Level.ObstTll" xml:space="preserve">
 		<value>Faire le mur</value>
 	</data>
@@ -281,6 +299,12 @@ Le niveau n'existe pas!</value>
 	</data>
 	<data name="Level.Pqt" xml:space="preserve">
 		<value>Herse</value>
+	</data>
+	<data name="Level.PrtFli" xml:space="preserve">
+		<value>Portes en Folie</value>
+	</data>
+	<data name="Level.PrtMstr" xml:space="preserve">
+		<value>Portes Mystères</value>
 	</data>
 	<data name="Level.PrtPlfd" xml:space="preserve">
 		<value>Portes et Plafond</value>
