@@ -33,11 +33,12 @@ Version 0.3 : Alpha 3
 ==========================
 0.3.3
 -Correction de l'affichage des noms des niveaux
+-Ajout de 6 niveaux (47 en tout)
 
 0.3.2
 -Modification de la profondeur de caméra afin de compenser un souci de cadrage sur Android
 -Modification de la roue/moulin
--Ajout de 8 niveaux
+-Ajout de 8 niveaux (41 en tout)
 
 0.3.1
 -Correction d'un bug où le ninja se coinçait (encore) dans le décor
@@ -158,7 +159,6 @@ Version 0.1 : Alpha 1
 Version 0.0 : Prototype
 ==========================
 
-
 0.0.6 (PreAlpha 3 et 4)
 -Deux niveaux de tutoriel
 -Enregistrement des scores
@@ -167,7 +167,7 @@ Version 0.0 : Prototype
 -Animations corrigées
 
 0.0.5 (PreAlpha 1 et 2)
--Compatibilité Web/PC/Android
+-Compatibilité Web/PC/Android/iOS
 -Nouvelle UI
 -Ajout d'un compteur d'essai et d'un timer
 -Nouveau calcul du score
@@ -181,14 +181,12 @@ Version 0.0 : Prototype
 -Optimisation du code
 -Création d'un menu général UI
 
-
 0.0.3
 -Placement des panneaux
 -Game Over et fin de niveau
 -Retour à zéro
 -Score temporaire
 -UI temporaire
-
 
 0.0.2
 -Jouabilité automatique
@@ -199,7 +197,6 @@ Version 0.0 : Prototype
 -Changement de sprites
 -Animation mort
 -Niveau prototype de test
-
 
 
 0.0.0

@@ -17,8 +17,7 @@ public class CloudScript : MonoBehaviour {
 	{
 		transform.position=new Vector3(transform.position.x-vitesse*Time.deltaTime,transform.position.y,transform.position.z);
 		
-		if(transform.position.x<endPos)
+		if((vitesse>0 && transform.position.x<endPos)||(vitesse<0 && transform.position.x>endPos))
 			transform.position=startPos;
-		
 	}
 }

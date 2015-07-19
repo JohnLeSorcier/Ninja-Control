@@ -266,17 +266,29 @@
 	<data name="Level.JstDess" xml:space="preserve">
 		<value>Juste au dessus</value>
 	</data>
+	<data name="Level.Lbyrth" xml:space="preserve">
+		<value>Labyrinthe</value>
+	</data>
+	<data name="Level.Menr" xml:space="preserve">
+		<value>Meunier</value>
+	</data>
 	<data name="Level.MiniSc" xml:space="preserve">
 		<value>Minimal Scene</value>
 	</data>
 	<data name="Level.MlnAO" xml:space="preserve">
 		<value>Moulin à eau</value>
 	</data>
+	<data name="Level.Nmss" xml:space="preserve">
+		<value>Nemesis</value>
+	</data>
 	<data name="Level.ObstTll" xml:space="preserve">
 		<value>Obstacle de Taille</value>
 	</data>
 	<data name="Level.Plls" xml:space="preserve">
 		<value>Piliers</value>
+	</data>
+	<data name="Level.PqEpq" xml:space="preserve">
+		<value>Piques Epiques</value>
 	</data>
 	<data name="Level.Pqt" xml:space="preserve">
 		<value>Piquant</value>
@@ -314,8 +326,14 @@
 	<data name="Level.StFoit" xml:space="preserve">
 		<value>Saut de la foi</value>
 	</data>
+	<data name="Level.TpsSpl" xml:space="preserve">
+		<value>Temps Simple</value>
+	</data>
 	<data name="Level.TrnMln" xml:space="preserve">
 		<value>Tournez Moulin</value>
+	</data>
+	<data name="Level.Trnqt" xml:space="preserve">
+		<value>Tourniquet</value>
 	</data>
 	<data name="Level.TrvCle" xml:space="preserve">
 		<value>Trouve la clé</value>
@@ -389,7 +407,7 @@
 	<data name="Tuto.UTurn.Text" xml:space="preserve">
 		<value>Text Tuto turn sur le mur</value>
 	</data>
-	<data name="Level.Nmss" xml:space="preserve">
-		<value>Nemesis</value>
+	<data name="Level.ERythm" xml:space="preserve">
+		<value>En Rythme</value>
 	</data>
 </root>

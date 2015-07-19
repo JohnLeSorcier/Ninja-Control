@@ -245,7 +245,7 @@ Ramassez des pièces mais essayez d'éviter les pièges ou de tomber dans l'eau:
 		<value>Dessus Dessous</value>
 	</data>
 	<data name="Level.Encdr" xml:space="preserve">
-		<value />
+		<value>Encadré</value>
 	</data>
 	<data name="Level.Engm" xml:space="preserve">
 		<value>E. Nigma</value>
@@ -257,6 +257,9 @@ Ramassez des pièces mais essayez d'éviter les pièges ou de tomber dans l'eau:
 		<value>Erreur!
 
 Le niveau n'existe pas!</value>
+	</data>
+	<data name="Level.ERythm" xml:space="preserve">
+		<value>En Rythme</value>
 	</data>
 	<data name="Level.EtDx" xml:space="preserve">
 		<value>Entre Deux</value>
@@ -282,6 +285,12 @@ Le niveau n'existe pas!</value>
 	<data name="Level.JstDess" xml:space="preserve">
 		<value>Deuxième étage</value>
 	</data>
+	<data name="Level.Lbyrth" xml:space="preserve">
+		<value>Labyrinthe</value>
+	</data>
+	<data name="Level.Menr" xml:space="preserve">
+		<value>Meunier, tu dors</value>
+	</data>
 	<data name="Level.MiniSc" xml:space="preserve">
 		<value>Scene Minimale</value>
 	</data>
@@ -296,6 +305,9 @@ Le niveau n'existe pas!</value>
 	</data>
 	<data name="Level.Plls" xml:space="preserve">
 		<value>Chaussée des géants</value>
+	</data>
+	<data name="Level.PqEpq" xml:space="preserve">
+		<value>Piques Epiques</value>
 	</data>
 	<data name="Level.Pqt" xml:space="preserve">
 		<value>Herse</value>
@@ -333,8 +345,14 @@ Le niveau n'existe pas!</value>
 	<data name="Level.StFoit" xml:space="preserve">
 		<value>Saut de la foi</value>
 	</data>
+	<data name="Level.TpsSpl" xml:space="preserve">
+		<value>Temps Simple</value>
+	</data>
 	<data name="Level.TrnMln" xml:space="preserve">
 		<value>Hot Wheels</value>
+	</data>
+	<data name="Level.Trnqt" xml:space="preserve">
+		<value>Tourniquet</value>
 	</data>
 	<data name="Level.TrvCle" xml:space="preserve">
 		<value>Trouve la clé</value>

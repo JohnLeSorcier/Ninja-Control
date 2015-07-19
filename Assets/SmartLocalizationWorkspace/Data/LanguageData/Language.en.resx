@@ -258,6 +258,9 @@ Collect coins but try to avoid spikes or falling in the water: both will kill yo
 
 Level don't exist!</value>
 	</data>
+	<data name="Level.ERythm" xml:space="preserve">
+		<value>On Pulse</value>
+	</data>
 	<data name="Level.EtDx" xml:space="preserve">
 		<value>Between Two</value>
 	</data>
@@ -282,6 +285,12 @@ Level don't exist!</value>
 	<data name="Level.JstDess" xml:space="preserve">
 		<value>Floor 2</value>
 	</data>
+	<data name="Level.Lbyrth" xml:space="preserve">
+		<value>Labyrinth</value>
+	</data>
+	<data name="Level.Menr" xml:space="preserve">
+		<value>Go, Mill, Go!</value>
+	</data>
 	<data name="Level.MiniSc" xml:space="preserve">
 		<value>Minimal Scene</value>
 	</data>
@@ -296,6 +305,9 @@ Level don't exist!</value>
 	</data>
 	<data name="Level.Plls" xml:space="preserve">
 		<value>Giant's Causeway</value>
+	</data>
+	<data name="Level.PqEpq" xml:space="preserve">
+		<value>Pikes Peak</value>
 	</data>
 	<data name="Level.Pqt" xml:space="preserve">
 		<value>Spike strip</value>
@@ -333,8 +345,14 @@ Level don't exist!</value>
 	<data name="Level.StFoit" xml:space="preserve">
 		<value>Leap of Faith</value>
 	</data>
+	<data name="Level.TpsSpl" xml:space="preserve">
+		<value>Simple Time</value>
+	</data>
 	<data name="Level.TrnMln" xml:space="preserve">
 		<value>Hot Wheels</value>
+	</data>
+	<data name="Level.Trnqt" xml:space="preserve">
+		<value>Turnstile</value>
 	</data>
 	<data name="Level.TrvCle" xml:space="preserve">
 		<value>Find teh key</value>
