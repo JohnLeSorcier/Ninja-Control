@@ -12,8 +12,6 @@
 
 -Penser à modifier els instructions pour la liste des pièges
 
--Prendre en compte plus de try dans el score des niveaux difficiles?
-
 -Revoir le score total?+score total de pièces (à enregistrer par niveau?)
 
 -Faire des niveaux avec des panneaux déjà en place
@@ -37,13 +35,12 @@ Scénario: un apprenti ninja doit faire ses preuves en rejoignant son clan, en y 
 -Vérifier que les time and go fonctionnent bien derrière les pièces (sur smartphone)
 -Faire un système de "tips" (bouton vers un screen?)
 -Baisser le malus d'essai et revoir les score poru donenr plus de possibilité d'essai pour obtenir une ou deux étoiles 
-(et quelques uns pour 3 étoiles) sur les niveaux difficile
+(et quelques uns pour 3 étoiles) sur les niveaux difficile. Revoir la valeur des secondes.
 
 -remplacer les 4 boutons par un menu déroulant
 
 -Trouver un sprite d'os ou de cranes à metrte dans les grosses étendues de terre?
 
--Revoir le placement du décor, certains éléments "volent" au dessus du sol
 
 
 -Vérifier si en plaçant un panneau prêt du ninja, il ne se lance pas

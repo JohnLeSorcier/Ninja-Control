@@ -5,6 +5,7 @@ public class TurnController : MonoBehaviour {
 
 	private LevelController levelController;
 	private CharacterControllerAuto playerController;
+	private PlaceController place;
 
 	void Start()
 	{
@@ -19,10 +20,15 @@ public class TurnController : MonoBehaviour {
 			levelController = levelControllerObject.GetComponent <LevelController>();
 		else
 			Debug.Log ("Cannot find 'LevelController' script");
+		
+		place=GetComponent<PlaceController>();
+		
 	}
 	
 	void OnTriggerEnter2D(Collider2D other)
 	{
+		if (!place.isOnGround())
+			return;		
 		if(other is BoxCollider2D && other.CompareTag("Player") && levelController.playerCanMove)
 		{
 			if (gameObject.tag == "GoRight" && !playerController.facingRight)

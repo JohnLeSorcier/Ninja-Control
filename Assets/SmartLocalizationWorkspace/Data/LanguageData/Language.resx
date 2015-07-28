@@ -218,6 +218,9 @@
 	<data name="Level.Cavrn" xml:space="preserve">
 		<value>Dans la caverne</value>
 	</data>
+	<data name="Level.CldChp" xml:space="preserve">
+		<value>Clé des Champs</value>
+	</data>
 	<data name="Level.Cnc" xml:space="preserve">
 		<value>Coincé</value>
 	</data>
@@ -242,17 +245,26 @@
 	<data name="Level.Error" xml:space="preserve">
 		<value>Level.Error</value>
 	</data>
+	<data name="Level.ERythm" xml:space="preserve">
+		<value>En Rythme</value>
+	</data>
 	<data name="Level.EtDx" xml:space="preserve">
 		<value>Entre Deux</value>
 	</data>
 	<data name="Level.Fs1Chx" xml:space="preserve">
 		<value>Fais un choix</value>
 	</data>
+	<data name="Level.FssOPc" xml:space="preserve">
+		<value>Fosse aux pièces</value>
+	</data>
 	<data name="Level.GdTsr" xml:space="preserve">
 		<value>Un grand trésor</value>
 	</data>
 	<data name="Level.GrtPrlls" xml:space="preserve">
 		<value>Grotte Périlleuse</value>
+	</data>
+	<data name="Level.HsdPt" xml:space="preserve">
+		<value>Hors de portée</value>
 	</data>
 	<data name="Level.HtMrch" xml:space="preserve">
 		<value>Haute Marche</value>
@@ -269,6 +281,9 @@
 	<data name="Level.Lbyrth" xml:space="preserve">
 		<value>Labyrinthe</value>
 	</data>
+	<data name="Level.LDxMds" xml:space="preserve">
+		<value>Les Deux Mondes</value>
+	</data>
 	<data name="Level.Menr" xml:space="preserve">
 		<value>Meunier</value>
 	</data>
@@ -278,11 +293,20 @@
 	<data name="Level.MlnAO" xml:space="preserve">
 		<value>Moulin à eau</value>
 	</data>
+	<data name="Level.Mstchs" xml:space="preserve">
+		<value>Moustachios</value>
+	</data>
 	<data name="Level.Nmss" xml:space="preserve">
 		<value>Nemesis</value>
 	</data>
 	<data name="Level.ObstTll" xml:space="preserve">
 		<value>Obstacle de Taille</value>
+	</data>
+	<data name="Level.OrEBr" xml:space="preserve">
+		<value>Or en barre</value>
+	</data>
+	<data name="Level.OvrBt" xml:space="preserve">
+		<value>Ouvre-Boite</value>
 	</data>
 	<data name="Level.Plls" xml:space="preserve">
 		<value>Piliers</value>
@@ -317,6 +341,9 @@
 	<data name="Level.SlTrt" xml:space="preserve">
 		<value>Sol Traitre</value>
 	</data>
+	<data name="Level.Splo" xml:space="preserve">
+		<value>Spelunky</value>
+	</data>
 	<data name="Level.SrtDs" xml:space="preserve">
 		<value>Sortie de Dos</value>
 	</data>
@@ -325,6 +352,15 @@
 	</data>
 	<data name="Level.StFoit" xml:space="preserve">
 		<value>Saut de la foi</value>
+	</data>
+	<data name="Level.SvrFl" xml:space="preserve">
+		<value>Suivre le fil</value>
+	</data>
+	<data name="Level.TmbRd" xml:space="preserve">
+		<value>Tomb Raider</value>
+	</data>
+	<data name="Level.Tmg" xml:space="preserve">
+		<value>Timing</value>
 	</data>
 	<data name="Level.TpsSpl" xml:space="preserve">
 		<value>Temps Simple</value>
@@ -337,6 +373,9 @@
 	</data>
 	<data name="Level.TrvCle" xml:space="preserve">
 		<value>Trouve la clé</value>
+	</data>
+	<data name="Level.TtOFd" xml:space="preserve">
+		<value>Tout au fond</value>
 	</data>
 	<data name="Level.TutoPltfrm" xml:space="preserve">
 		<value>Tuto Plateforme</value>
@@ -407,7 +446,7 @@
 	<data name="Tuto.UTurn.Text" xml:space="preserve">
 		<value>Text Tuto turn sur le mur</value>
 	</data>
-	<data name="Level.ERythm" xml:space="preserve">
-		<value>En Rythme</value>
+	<data name="Level.BnPlcmt" xml:space="preserve">
+		<value>Bon Placement</value>
 	</data>
 </root>

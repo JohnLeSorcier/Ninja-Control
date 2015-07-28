@@ -85,6 +85,8 @@ public class StopGoController : MonoBehaviour {
 	
 	void OnTriggerEnter2D(Collider2D other)
 	{
+		if (!placeControl.isOnGround())
+			return;
 		if(other is BoxCollider2D && other.CompareTag("Player") && levelController.playerCanMove && timeAllowed>0 && !used)
 		{
 			playerController.StopWait();

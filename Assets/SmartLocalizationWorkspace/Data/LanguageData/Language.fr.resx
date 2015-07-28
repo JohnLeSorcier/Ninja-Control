@@ -229,8 +229,14 @@ Ramassez des pièces mais essayez d'éviter les pièges ou de tomber dans l'eau:
 	<data name="Level.Atrvs" xml:space="preserve">
 		<value>A Travers</value>
 	</data>
+	<data name="Level.BnPlcmt" xml:space="preserve">
+		<value>Bon Placement</value>
+	</data>
 	<data name="Level.Cavrn" xml:space="preserve">
 		<value>La caverne d'Ali Baba</value>
+	</data>
+	<data name="Level.CldChp" xml:space="preserve">
+		<value>Clé des Champs</value>
 	</data>
 	<data name="Level.Cnc" xml:space="preserve">
 		<value>Coincé</value>
@@ -267,11 +273,17 @@ Le niveau n'existe pas!</value>
 	<data name="Level.Fs1Chx" xml:space="preserve">
 		<value>Fais un choix</value>
 	</data>
+	<data name="Level.FssOPc" xml:space="preserve">
+		<value>Fosse aux pièces</value>
+	</data>
 	<data name="Level.GdTsr" xml:space="preserve">
 		<value>Money money money</value>
 	</data>
 	<data name="Level.GrtPrlls" xml:space="preserve">
 		<value>Grotte Périlleuse</value>
+	</data>
+	<data name="Level.HsdPt" xml:space="preserve">
+		<value>Hors de portée</value>
 	</data>
 	<data name="Level.HtMrch" xml:space="preserve">
 		<value>Haute Marche</value>
@@ -288,6 +300,9 @@ Le niveau n'existe pas!</value>
 	<data name="Level.Lbyrth" xml:space="preserve">
 		<value>Labyrinthe</value>
 	</data>
+	<data name="Level.LDxMds" xml:space="preserve">
+		<value>Deux Mondes</value>
+	</data>
 	<data name="Level.Menr" xml:space="preserve">
 		<value>Meunier, tu dors</value>
 	</data>
@@ -297,11 +312,20 @@ Le niveau n'existe pas!</value>
 	<data name="Level.MlnAO" xml:space="preserve">
 		<value>Moulin à eau</value>
 	</data>
+	<data name="Level.Mstchs" xml:space="preserve">
+		<value>Moustachios</value>
+	</data>
 	<data name="Level.Nmss" xml:space="preserve">
 		<value>Nemesis</value>
 	</data>
 	<data name="Level.ObstTll" xml:space="preserve">
 		<value>Faire le mur</value>
+	</data>
+	<data name="Level.OrEBr" xml:space="preserve">
+		<value>Or en barre</value>
+	</data>
+	<data name="Level.OvrBt" xml:space="preserve">
+		<value>Ouvre-Boite</value>
 	</data>
 	<data name="Level.Plls" xml:space="preserve">
 		<value>Chaussée des géants</value>
@@ -336,6 +360,9 @@ Le niveau n'existe pas!</value>
 	<data name="Level.SlTrt" xml:space="preserve">
 		<value>Sol Traitre</value>
 	</data>
+	<data name="Level.Splo" xml:space="preserve">
+		<value>Spelunky</value>
+	</data>
 	<data name="Level.SrtDs" xml:space="preserve">
 		<value>Sortie de Dos</value>
 	</data>
@@ -344,6 +371,15 @@ Le niveau n'existe pas!</value>
 	</data>
 	<data name="Level.StFoit" xml:space="preserve">
 		<value>Saut de la foi</value>
+	</data>
+	<data name="Level.SvrFl" xml:space="preserve">
+		<value>Suivre le fil</value>
+	</data>
+	<data name="Level.TmbRd" xml:space="preserve">
+		<value>Tomb Raider</value>
+	</data>
+	<data name="Level.Tmg" xml:space="preserve">
+		<value>Timing</value>
 	</data>
 	<data name="Level.TpsSpl" xml:space="preserve">
 		<value>Temps Simple</value>
@@ -356,6 +392,9 @@ Le niveau n'existe pas!</value>
 	</data>
 	<data name="Level.TrvCle" xml:space="preserve">
 		<value>Trouve la clé</value>
+	</data>
+	<data name="Level.TtOFd" xml:space="preserve">
+		<value>Tout au fond</value>
 	</data>
 	<data name="Level.TutoPltfrm" xml:space="preserve">
 		<value>Tuto Plateforme</value>

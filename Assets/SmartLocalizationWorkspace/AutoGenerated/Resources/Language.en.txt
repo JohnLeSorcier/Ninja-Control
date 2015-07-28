@@ -229,8 +229,14 @@ Collect coins but try to avoid spikes or falling in the water: both will kill yo
 	<data name="Level.Atrvs" xml:space="preserve">
 		<value>Across</value>
 	</data>
+	<data name="Level.BnPlcmt" xml:space="preserve">
+		<value>Good Placing</value>
+	</data>
 	<data name="Level.Cavrn" xml:space="preserve">
 		<value>Down the rabbit hole</value>
+	</data>
+	<data name="Level.CldChp" xml:space="preserve">
+		<value>Key fields</value>
 	</data>
 	<data name="Level.Cnc" xml:space="preserve">
 		<value>Stuck</value>
@@ -267,11 +273,17 @@ Level don't exist!</value>
 	<data name="Level.Fs1Chx" xml:space="preserve">
 		<value>Make a choice</value>
 	</data>
+	<data name="Level.FssOPc" xml:space="preserve">
+		<value>Money pit</value>
+	</data>
 	<data name="Level.GdTsr" xml:space="preserve">
 		<value>Money money money</value>
 	</data>
 	<data name="Level.GrtPrlls" xml:space="preserve">
 		<value>Perilous Cave</value>
+	</data>
+	<data name="Level.HsdPt" xml:space="preserve">
+		<value>Out of range</value>
 	</data>
 	<data name="Level.HtMrch" xml:space="preserve">
 		<value>High Step</value>
@@ -288,6 +300,9 @@ Level don't exist!</value>
 	<data name="Level.Lbyrth" xml:space="preserve">
 		<value>Labyrinth</value>
 	</data>
+	<data name="Level.LDxMds" xml:space="preserve">
+		<value>Two Worlds</value>
+	</data>
 	<data name="Level.Menr" xml:space="preserve">
 		<value>Go, Mill, Go!</value>
 	</data>
@@ -297,11 +312,20 @@ Level don't exist!</value>
 	<data name="Level.MlnAO" xml:space="preserve">
 		<value>Water Mill</value>
 	</data>
+	<data name="Level.Mstchs" xml:space="preserve">
+		<value>Moustachios</value>
+	</data>
 	<data name="Level.Nmss" xml:space="preserve">
 		<value>Nemesis</value>
 	</data>
 	<data name="Level.ObstTll" xml:space="preserve">
 		<value>Over the wall</value>
+	</data>
+	<data name="Level.OrEBr" xml:space="preserve">
+		<value>Gold bar</value>
+	</data>
+	<data name="Level.OvrBt" xml:space="preserve">
+		<value>Opener</value>
 	</data>
 	<data name="Level.Plls" xml:space="preserve">
 		<value>Giant's Causeway</value>
@@ -336,6 +360,9 @@ Level don't exist!</value>
 	<data name="Level.SlTrt" xml:space="preserve">
 		<value>Dangerous Ground</value>
 	</data>
+	<data name="Level.Splo" xml:space="preserve">
+		<value>Spelunky</value>
+	</data>
 	<data name="Level.SrtDs" xml:space="preserve">
 		<value>Back Exit</value>
 	</data>
@@ -344,6 +371,15 @@ Level don't exist!</value>
 	</data>
 	<data name="Level.StFoit" xml:space="preserve">
 		<value>Leap of Faith</value>
+	</data>
+	<data name="Level.SvrFl" xml:space="preserve">
+		<value>Follow the wire</value>
+	</data>
+	<data name="Level.TmbRd" xml:space="preserve">
+		<value>Tomb Raider</value>
+	</data>
+	<data name="Level.Tmg" xml:space="preserve">
+		<value>Timing</value>
 	</data>
 	<data name="Level.TpsSpl" xml:space="preserve">
 		<value>Simple Time</value>
@@ -355,7 +391,10 @@ Level don't exist!</value>
 		<value>Turnstile</value>
 	</data>
 	<data name="Level.TrvCle" xml:space="preserve">
-		<value>Find teh key</value>
+		<value>Find the key</value>
+	</data>
+	<data name="Level.TtOFd" xml:space="preserve">
+		<value>Deepest</value>
 	</data>
 	<data name="Level.TutoPltfrm" xml:space="preserve">
 		<value>Platform Tuto</value>

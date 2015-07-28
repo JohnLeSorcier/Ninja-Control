@@ -251,7 +251,7 @@ public class CharacterControllerAuto : MonoBehaviour {
 
 	IEnumerator WaitForSlide()
 	{
-		yield return new WaitForSeconds(0.6f);
+		yield return new WaitForSeconds(0.65f);
 		if (!jumpSignal)
 		{
 			Debout();
