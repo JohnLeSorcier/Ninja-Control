@@ -200,4 +200,5 @@ public class MenuScript : MonoBehaviour {
 		PlayerPrefs.SetString("FXState", "Off");
 		PlayerPrefs.Save ();		
 	}
+
 }

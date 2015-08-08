@@ -24,15 +24,32 @@ Version 0.5: Beta 1
 0.5.x
 
 
-Version 0.X: Alpha X
+Version 0.4: Alpha 4
 ==========================
-0.X.x
+0.4.0
+-Correction d'un bug permettant de placer deux panneaux au même endroit
+-Correction d'un bug permettant de placer un panneau sur le panneau de fin
+-Correction d'un bug permettant de placer un panneau en dehors de l'écran
+-Correction d'un bug de mort lorsqu'un piège tombe du plafond
+-Correction d'un bug de mort lorsque le ninja retombe sur un panneau de saut
+-Correction d'un bug cosmétique des boutons de pièges/portes lors d'un slide
+-Corrections de bugs concernant le slide (problème d'enchainements des slides, 
+problèmes de détection des collisions contre les murs et les plafonds, problème d'animation)
+-Corrections de bugs concernant le timer (disparition lorsque le décompte est actif, disparition
+du texte du temps lorsqu'on n'arrive pas à le placer. texte non visible derrière le décor, 
+temps ajouté lorsqu'on le déplace)
+-Les panneaux sont désormais affichés devant les pièces
+-Menu Principal agrandi
+-Traduction de menus qui ne l'étaient pas encore
+-Affichage des scores sur les boutons de sélection
+-Affichage du score général et autres dans le menu score
+-Correction de bugs de niveau
 
 
 Version 0.3 : Alpha 3
 ==========================
 0.3.4
--le slide dure légèrement plus lontemps
+-Le slide dure légèrement plus lontemps
 -Les panneaux ne sont plus actifs dans le menu
 -Ajout de 13 niveaux
 

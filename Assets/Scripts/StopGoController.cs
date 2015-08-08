@@ -16,6 +16,8 @@ public class StopGoController : MonoBehaviour {
 	private float timerTime;
 	
 	private bool used;
+	
+	private Vector3 positionInit;
 
 	Animator anim;
 	
@@ -39,7 +41,7 @@ public class StopGoController : MonoBehaviour {
 		placeControl=GetComponent<PlaceController>();
 
 		SGText.text="";
-		timeAllowed=0;
+		timeAllowed=1;
 		waitingPlayer=false;
 		startTime=0f;
 		used=false;
@@ -74,13 +76,29 @@ public class StopGoController : MonoBehaviour {
 
 	void OnMouseDown()
 	{
-		if (placeControl.isOnGround() && !levelController.playerCanMove)
+		if (levelController.playerCanMove)
+			return;	
+		
+		positionInit=transform.position;
+	
+	}
+	
+
+	
+	void OnMouseUp()
+	{
+		if (levelController.playerCanMove)
+			return;
+			
+
+		if (placeControl.isOnGround() && transform.position==positionInit)
 		{
 			timeAllowed++;
 			if(timeAllowed>5)
-				timeAllowed=0;
+				timeAllowed=1;
 			SGText.text=""+Mathf.FloorToInt(timeAllowed);
 		}
+
 	}
 	
 	void OnTriggerEnter2D(Collider2D other)

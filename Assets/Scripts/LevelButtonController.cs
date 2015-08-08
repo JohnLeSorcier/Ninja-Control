@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using SmartLocalization;
 
 public class LevelButtonController : MonoBehaviour {
 
@@ -11,8 +12,11 @@ public class LevelButtonController : MonoBehaviour {
 	public Image cash;
 	public GameObject ErrorPanel;
 	string cheatC;
+	LanguageManager languageManager;
+	
 
 	int stars=0;
+	int score=0;
 
 	void Start() 
 	{
@@ -20,6 +24,16 @@ public class LevelButtonController : MonoBehaviour {
 			cheatC=PlayerPrefs.GetString("Cheats_Enabled");
 		else
 			cheatC="No";
+		
+		string language;
+		if(PlayerPrefs.HasKey("Language"))
+			language=PlayerPrefs.GetString("Language");
+		else
+			language = "en";
+		
+		languageManager= LanguageManager.Instance;
+		languageManager.ChangeLanguage(language);	
+		
 
 		DisplayButton ();
 	}
@@ -27,6 +41,7 @@ public class LevelButtonController : MonoBehaviour {
 	public void DisplayButton()
 	{
 		Button button=GetComponent<Button>();
+		Text buttonText=GetComponentInChildren<Text>();
 
 		
 		for(int i=0;i<3;i++)
@@ -43,11 +58,19 @@ public class LevelButtonController : MonoBehaviour {
 		}
 		else
 			button.interactable=false;
+			
+		string levelTxt=languageManager.GetTextValue("Menu.Lvl");
+			
+		string bTxt=levelTxt+" "+levelIndex+"\n";
 		
 		if(PlayerPrefs.HasKey(levelIndex+"_stars"))
 		{
 			stars=PlayerPrefs.GetInt(levelIndex+"_stars");
+			score=PlayerPrefs.GetInt(levelIndex+"_score");
+			bTxt+=score+" pts";
 		}
+		
+		buttonText.text=bTxt;
 		
 		if(stars>0)
 		{

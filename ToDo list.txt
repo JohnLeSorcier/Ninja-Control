@@ -6,46 +6,36 @@
 -Commander un deuxième ninja (elle?)
 -sable mouvant qui ralentit, rochers qui roulent, flèchettes déclenchés apr bouton, piège qu iavance (et détruit des obstacles?)
 -Moulins qu icahngent de vitesse/sens
-
 -panneau d'attaque (un au corps à corps, un en lancer)
--panneau d'inversion de gravité (penser à mettre les panneaux à l'envers??)
+-panneau d'inversion de gravité 
+-Faire des niveaux avec des panneaux déjà en place
+-Faire un système de "tips" (bouton vers un screen?)
+
+
 
 -Penser à modifier els instructions pour la liste des pièges
-
 -Revoir le score total?+score total de pièces (à enregistrer par niveau?)
-
--Faire des niveaux avec des panneaux déjà en place
-
--Niveau où on doit faire le tour par le haut puis rentrer et remonter
--Niveau tuto sur les boutons rouges et bleus (+passer sous les plafonds qui tombent)
--Niveau tuto sur le rebond sur le mur?
--Niveau tuto pour expliquer qu'on ne peut pas placer de panneau sur un piège ou tout près de lui.
--Niveau compliqué dans des mines (Mine de la Moria, etc...)
--Niveau avec des slides dans la caverne (Spéléologie)
--Niveau où on sort d'une caverne (escalade?)
--Niveau où on plonge dans une caverne pour ressortir (en activant une porte?)
--Niveau avec un moulin dont la vitesse du moulin est modifiée: un moulin qui va trop vite et demande un timing hyper-précis 
-(et chatteux) mais avoir la solution d'appuyer sur un bouton pour le ralentir (Meunier, tu dors)
--Niveau avec  des stop'n go à régler selon des timings différents et comme indice le nombre de pièce (inatteignables) 
-au-dessus de l'endroit où tu mets le panneau
--Niveau avec plusieurs moulins (appelé Nemesis)
-
-Scénario: un apprenti ninja doit faire ses preuves en rejoignant son clan, en y ramenant de l'argent.
-
--Vérifier que les time and go fonctionnent bien derrière les pièces (sur smartphone)
--Faire un système de "tips" (bouton vers un screen?)
 -Baisser le malus d'essai et revoir les score poru donenr plus de possibilité d'essai pour obtenir une ou deux étoiles 
 (et quelques uns pour 3 étoiles) sur les niveaux difficile. Revoir la valeur des secondes.
 
--remplacer les 4 boutons par un menu déroulant
 
--Trouver un sprite d'os ou de cranes à metrte dans les grosses étendues de terre?
+-Niveau tuto sur les boutons rouges et bleus (+passer sous les plafonds qui tombent)
+-Niveau tuto sur le rebond sur le mur?
+-Niveau tuto pour expliquer qu'on ne peut pas placer de panneau sur un piège ou tout près de lui.
+
+
+-remplacer les 4 boutons par un menu déroulant
 
 
 
 -Vérifier si en plaçant un panneau prêt du ninja, il ne se lance pas
 
-quand on interrompt le niveau (avec le doube-clic), on pourrait avoir le choix comme quand on appuie sur le "retry" (+annuler?)
+-quand on interrompt le niveau (avec le doube-clic), on pourrait avoir le choix comme quand on appuie sur le "retry" (+annuler?)
+
+-VERIFIER LE NIVEAU 47 SUR SMARTPHONE (le panenau tout à gauche)
+
+
+Scénario: un apprenti ninja doit faire ses preuves en rejoignant son clan, en y ramenant de l'argent.
 
 
 (si problème sur différents écrans mobiles: Fit to Screen Size sur le store)
@@ -53,7 +43,7 @@ quand on interrompt le niveau (avec le doube-clic), on pourrait avoir le choix c
 Stockage dans le save:
 indexniveau_time (float en seconde)
 indexniveau_total (int)
-indexniveau_stars (int
+indexniveau_stars (int)
 
 
 

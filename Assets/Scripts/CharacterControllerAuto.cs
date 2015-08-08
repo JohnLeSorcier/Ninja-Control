@@ -11,20 +11,31 @@ public class CharacterControllerAuto : MonoBehaviour {
 	
 	bool grounded = false;//est-il au sol?
 	bool wall = false; // vérification du mur
+	bool knocked;
 	public Transform groundCheck; //composant pour vérifier le sol
 	public Transform playerCheckOne;
 	public Transform playerCheckTwo;//composant pour vérifier la position du joueur
+	public Transform playerCheckThree;
 	public float groundRadius = 0.2f; //à quelle distance on vérifie le sol
 	public float playerRadius = 0.5f;//vérification du joueur
 	public float hazardRadius = 0.1f;
 	public LayerMask whatIsGround;
 	public LayerMask whatIsWall;
+	
+	float circleRadius;
+	Vector2 circleCenter;
+	Vector3 playerCheckOneOrigin;
+	Vector3 playerCheckTwoOrigin;
+	Vector3 playerCheckThreeOrigin;
+	Vector2 boxColCenter;
+	Vector2 boxColSize;
+	
+	CircleCollider2D circleOrigin;
 
 	bool alreadyFlip=false;
 	//bool alreadyJump=false;
 	bool alreadySlide=false;
-	bool jumpSignal=false;
-	bool justSlide=false;
+	int nbSlide=0;
 	float offsetY=0f;
 	float offsetX=0f;
 	
@@ -60,6 +71,14 @@ public class CharacterControllerAuto : MonoBehaviour {
 		circleCol = GetComponent<CircleCollider2D>();
 		boxCol = GetComponent<BoxCollider2D>();
 		facingRightInit = facingRight;
+				
+		circleRadius=circleCol.radius;
+		circleCenter=circleCol.center;
+		playerCheckOneOrigin=playerCheckOne.localPosition;
+		playerCheckTwoOrigin=playerCheckTwo.localPosition;
+		playerCheckThreeOrigin=playerCheckThree.localPosition;
+		boxColCenter=boxCol.center;
+		boxColSize=boxCol.size;
 
 	}
 		
@@ -70,6 +89,15 @@ public class CharacterControllerAuto : MonoBehaviour {
 
 		grounded = Physics2D.OverlapCircle(groundCheck.position, groundRadius, whatIsGround); 		
 		wall=Physics2D.OverlapArea(playerCheckOne.position,playerCheckTwo.position,whatIsWall);
+		knocked=Physics2D.OverlapArea(playerCheckOne.position,playerCheckThree.position,whatIsWall);
+		
+		
+		if (knocked)
+		{
+			Assome();
+			return;
+		}
+			
 
 		if (wall && !alreadyFlip)
 			Flip ();
@@ -83,8 +111,6 @@ public class CharacterControllerAuto : MonoBehaviour {
 		if (canIMove)
 			rigidbody2D.velocity = new Vector2 (maxSpeed * move, rigidbody2D.velocity.y);
 
-		if (wall && justSlide)
-			Assome();
 	}
 
 
@@ -115,41 +141,54 @@ public class CharacterControllerAuto : MonoBehaviour {
 
 	public void Jump()
 	{
-		rigidbody2D.velocity=new Vector2(rigidbody2D.velocity.x,0);
-
-		anim.SetBool("Ground", false);
-		rigidbody2D.AddForce(new Vector2 (0, jumpForce));
+		if (canIMove && !dead)
+		{
+			if (alreadySlide)
+				Debout();
+			
+			rigidbody2D.velocity=new Vector2(rigidbody2D.velocity.x,0);
+			anim.SetBool("Ground", false);
+			rigidbody2D.AddForce(new Vector2 (0, jumpForce));
+		}
 	
 	}
 	
 	public void Flip()
 	{
-		facingRight = !facingRight;
-		Vector3 theScale = transform.localScale;
-		theScale.x *=-1;
-		transform.localScale = theScale;
-		move *=-1;
-		alreadyFlip=true;
-		StartCoroutine(waitForFlip());
+		if (canIMove && !dead)
+		{
+			facingRight = !facingRight;
+			Vector3 theScale = transform.localScale;
+			theScale.x *=-1;
+			transform.localScale = theScale;
+			move *=-1;
+			alreadyFlip=true;
+			StartCoroutine(waitForFlip());
+		}
 	}
 
 	public void ReturnToPosition()
 	{
-		rigidbody2D.isKinematic=false;
-		rigidbody2D.velocity = new Vector2 (0, 0);
-		circleCol.enabled=true;
-		boxCol.enabled=true;
-		if (facingRight != facingRightInit)
-			Flip ();
-		gameObject.transform.position=playerOrigin;
 		canIMove=false;
-		//alreadyJump=false;
-		if(alreadySlide)
-			Debout ();
-		end=false;
 		move=0f;
 		if (dead)
 			Reanim ();
+		rigidbody2D.isKinematic=false;
+		rigidbody2D.velocity = new Vector2 (0, 0);
+		circleCol.radius=circleRadius;
+		circleCol.center=circleCenter;
+		boxCol.enabled=true;
+		boxCol.size=boxColSize;
+		boxCol.center=boxColCenter;		
+		playerCheckOne.localPosition=playerCheckOneOrigin;
+		playerCheckTwo.localPosition=playerCheckTwoOrigin;
+		playerCheckThree.localPosition=playerCheckThreeOrigin;			
+		if (facingRight != facingRightInit)
+			Flip ();
+		gameObject.transform.position=playerOrigin;
+		if(alreadySlide)
+			Debout ();
+		end=false;
 	}
 	
 	public void End()
@@ -173,9 +212,8 @@ public class CharacterControllerAuto : MonoBehaviour {
 		rigidbody2D.velocity = new Vector2 (0f, 0f);
 		if (type == 2)
 		{
-			rigidbody2D.isKinematic=true;
-			circleCol.enabled=false;
 			boxCol.enabled=false;
+			circleCol.radius=0.0f;
 		}
 	}
 
@@ -228,55 +266,58 @@ public class CharacterControllerAuto : MonoBehaviour {
 
 	public void Slide()
 	{
-
 		if (!alreadySlide)
 		{
 			anim.SetTrigger("isSlideTrigger");
-			circleCol.radius=0.01f;
+			circleCol.center=new Vector2 (boxCol.center.x, -0.35f);
+			circleCol.radius=0.1f;
 			boxCol.center = new Vector2 (boxCol.center.x, -0.35f);
 			boxCol.size = new Vector2 (2.7f,2.2f);
 			playerCheckOne.transform.localPosition=new Vector2(-1.33f, 0.76f);
-			playerCheckTwo.transform.localPosition=new Vector2(1.37f, -1.2f);
+			playerCheckTwo.transform.localPosition=new Vector2(1.67f, -1.2f);
+			playerCheckThree.transform.localPosition=new Vector2(0.6f, 0.34f);
 			alreadySlide=true;
-			StartCoroutine(WaitForSlide());
 		}
 		else
 		{
 			//continuer le slide plus longtemps
-			jumpSignal=true;
-			StartCoroutine(WaitForSlide());
+			nbSlide++;
 		}
+		StartCoroutine(WaitForDebout());
 
 	}
 
-	IEnumerator WaitForSlide()
+	IEnumerator WaitForDebout()
 	{
-		yield return new WaitForSeconds(0.65f);
-		if (!jumpSignal)
+		int nbSlideInit;
+		nbSlideInit=nbSlide;
+		yield return new WaitForSeconds(0.7f);
+		if (alreadySlide && nbSlideInit==nbSlide)
 		{
 			Debout();
 		}
-		jumpSignal=false;
 	}
+	
 
 	void Debout()
 	{
 		anim.SetBool("endSlide", true);
-		circleCol.radius=0.7f;
-		playerCheckOne.transform.localPosition=new Vector2(-0.68f, 1.94f);
-		playerCheckTwo.transform.localPosition=new Vector2(0.79f, -1.2f);
-		boxCol.center = new Vector2 (boxCol.center.x, 0.43f);
-		boxCol.size = new Vector2 (1.4f,3.15f);
+		circleCol.radius=circleRadius;
+		circleCol.center=circleCenter;
+		boxCol.size=boxColSize;
+		boxCol.center=boxColCenter;		
 		alreadySlide=false;
-		justSlide=true;
-		StartCoroutine(WaitForVerifSlide());
+		nbSlide=0;
+		StartCoroutine(WaitForCheck());
 	}
-
-	IEnumerator WaitForVerifSlide()
+	
+	IEnumerator WaitForCheck()
 	{
 		yield return new WaitForSeconds(0.1f);
 		anim.SetBool("endSlide", false);
-		justSlide=false;
+		playerCheckOne.localPosition=playerCheckOneOrigin;
+		playerCheckTwo.localPosition=playerCheckTwoOrigin;
+		playerCheckThree.localPosition=playerCheckThreeOrigin;		
 	}
 
 	IEnumerator WaitForDeath()

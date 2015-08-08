@@ -18,6 +18,9 @@ public class PlaceController : MonoBehaviour {
 
 	public float playerRadius;
 	public LayerMask whatIsPlayer;
+	
+	public float invRadius;
+	public LayerMask whatIsInv;
 
 	private float hazardRadius=0.3f;
 	public LayerMask whatIsHazard;
@@ -105,18 +108,21 @@ public class PlaceController : MonoBehaviour {
 	
 	void OnMouseUp()
 	{
+		if (!levelController.panelCanMove)
+			return;
+			
 		Collider2D solTemp = Physics2D.OverlapCircle(groundCheck.position, groundRadius, whatIsGround);
 		Collider2D[] panelCollider = Physics2D.OverlapCircleAll(groundCheck.position, panelRadius, whatIsPanel);
 		bool playerCollider = Physics2D.OverlapCircle(playerCheck.position, playerRadius, whatIsPlayer);
 		bool hazardCollider =Physics2D.OverlapCircle(groundCheck.position, hazardRadius, whatIsHazard);
 		bool waterCollider =Physics2D.OverlapCircle(groundCheck.position, waterRadius, whatIsWater) || Physics2D.OverlapCircle(playerCheck.position, waterRadius, whatIsWater);
-
-
+		bool invCollider;
+		
 		foreach (Collider2D panelC in panelCollider)
 		{
-			if (!onGround && panelC.gameObject != gameObject)
+			if (panelC.gameObject != gameObject)
 				otherPanel=true;
-		}
+		}		
 
 		if(solTemp == null || otherPanel || playerCollider || hazardCollider || waterCollider)
 			Enlever();
@@ -134,7 +140,18 @@ public class PlaceController : MonoBehaviour {
 			//revérifier el placement derrière le ninja ou un bouton ou un piège
 			playerCollider = Physics2D.OverlapCircle(playerCheck.position, playerRadius, whatIsPlayer);
 			hazardCollider =Physics2D.OverlapCircle(playerCheck.position, hazardRadius, whatIsHazard);
-			if (playerCollider || hazardCollider)
+			panelCollider = Physics2D.OverlapCircleAll(groundCheck.position, panelRadius, whatIsPanel);
+			invCollider= Physics2D.OverlapCircle(playerCheck.position, invRadius,whatIsInv);
+			
+			if (!invCollider)
+				Enlever();
+							
+			foreach (Collider2D panelC in panelCollider)
+			{
+				if (panelC.gameObject != gameObject)
+					otherPanel=true;
+			}
+			if (playerCollider || hazardCollider || otherPanel)
 				Enlever ();
 		}
 	}
@@ -156,9 +173,9 @@ public class PlaceController : MonoBehaviour {
 		if (!levelController.VerifPanel(gameObject.tag))
 		{
 			newbie=false;
-			transform.position= new Vector3(transform.position.x, transform.position.y, -2);//remetrte l'obejet devant
-			CerclePlacement.enabled=true;
-			Instantiate(gameObject, originPoint,transform.rotation);
+			GameObject newFO=(GameObject) GameObject.Instantiate(gameObject,originPoint,transform.rotation);
+			newFO.transform.parent=gameObject.transform.parent;
+			newFO.transform.localScale=gameObject.transform.localScale;
 		}
 		Destroy(gameObject);
 		levelController.AddPanel(gameObject.tag);

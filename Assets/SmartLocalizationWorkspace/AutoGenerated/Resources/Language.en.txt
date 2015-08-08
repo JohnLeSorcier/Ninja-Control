@@ -116,6 +116,35 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+	<data name="AffSc.Lvl" xml:space="preserve">
+		<value>Unlocked level(s)</value>
+	</data>
+	<data name="AffSc.Score" xml:space="preserve">
+		<value>Total Score</value>
+	</data>
+	<data name="AffSc.Stars" xml:space="preserve">
+		<value>Stars</value>
+	</data>
+	<data name="AffSc.Time" xml:space="preserve">
+		<value>Total Time</value>
+	</data>
+	<data name="Credit.Credits" xml:space="preserve">
+		<value>Graphics: pzUH (CC0)
+
+Additionnal graphics :
+(CC0) idoh40, bevouliin, mishonis
+(CC-BY 3.0) 2D Retrospectives, JM.Atencia 
+
+Graphic UI: Camtaz
+
+Music: WrathGames Studio
+
+Fonts: Vic Fieger, Tyler Finck, 
+Tepid Monkey</value>
+	</data>
+	<data name="Credit.JLS" xml:space="preserve">
+		<value>Developped By Nicolas Joannes</value>
+	</data>
 	<data name="HowToPlay.EndPanel" xml:space="preserve">
 		<value>End Panel</value>
 	</data>
@@ -420,6 +449,9 @@ Level don't exist!</value>
 	<data name="Menu.Language" xml:space="preserve">
 		<value>Language:</value>
 	</data>
+	<data name="Menu.Lvl" xml:space="preserve">
+		<value>Level</value>
+	</data>
 	<data name="Menu.Music" xml:space="preserve">
 		<value>Music</value>
 	</data>
@@ -440,6 +472,17 @@ Level don't exist!</value>
 	</data>
 	<data name="Options.DelSave" xml:space="preserve">
 		<value>Delete Save</value>
+	</data>
+	<data name="Reload.Reload" xml:space="preserve">
+		<value>Reload all 
+(remove all panels, replace the ninja and reset attempts)</value>
+	</data>
+	<data name="Reload.Replace" xml:space="preserve">
+		<value>Just Replace the Ninja and let panels
+(Add One Attempt)</value>
+	</data>
+	<data name="Reload.Text" xml:space="preserve">
+		<value>What do you want to do?</value>
 	</data>
 	<data name="Tuto.Jump.ActionPanel" xml:space="preserve">
 		<value>Action Panel</value>

@@ -116,6 +116,35 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+	<data name="AffSc.Lvl" xml:space="preserve">
+		<value>Niveau(x) débloqué(s)</value>
+	</data>
+	<data name="AffSc.Score" xml:space="preserve">
+		<value>Score total</value>
+	</data>
+	<data name="AffSc.Stars" xml:space="preserve">
+		<value>Etoiles</value>
+	</data>
+	<data name="AffSc.Time" xml:space="preserve">
+		<value>Temps total</value>
+	</data>
+	<data name="Credit.Credits" xml:space="preserve">
+		<value>Graphiques: pzUH (CC0)
+
+Graphiques additionnels :
+(CC0) idoh40, bevouliin, mishonis
+(CC-BY 3.0) 2D Retrospectives, JM.Atencia 
+
+Eléments d'Interface: Camtaz
+
+Musique: WrathGames Studio
+
+Police d'écriture: Vic Fieger, Tyler Finck, 
+Tepid Monkey</value>
+	</data>
+	<data name="Credit.JLS" xml:space="preserve">
+		<value>Développé par Nicolas Joannes</value>
+	</data>
 	<data name="HowToPlay.EndPanel" xml:space="preserve">
 		<value>Panneau de fin</value>
 	</data>
@@ -420,6 +449,9 @@ Le niveau n'existe pas!</value>
 	<data name="Menu.Language" xml:space="preserve">
 		<value>Langue:</value>
 	</data>
+	<data name="Menu.Lvl" xml:space="preserve">
+		<value>Niveau</value>
+	</data>
 	<data name="Menu.Music" xml:space="preserve">
 		<value>Musique</value>
 	</data>
@@ -440,6 +472,17 @@ Le niveau n'existe pas!</value>
 	</data>
 	<data name="Options.DelSave" xml:space="preserve">
 		<value>Suppr. Save</value>
+	</data>
+	<data name="Reload.Reload" xml:space="preserve">
+		<value>Tout recommencer
+(Enlève les panneaux et les essais et replace le ninja)</value>
+	</data>
+	<data name="Reload.Replace" xml:space="preserve">
+		<value>Replacer le ninja et laisser les panneaux
+(Ajoute un essai)</value>
+	</data>
+	<data name="Reload.Text" xml:space="preserve">
+		<value>Que voulez-vous faire?</value>
 	</data>
 	<data name="Tuto.Jump.ActionPanel" xml:space="preserve">
 		<value>Panneau d'action</value>
