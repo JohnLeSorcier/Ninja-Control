@@ -374,7 +374,7 @@ Le niveau n'existe pas!</value>
 	<data name="Level.PrtPlfd" xml:space="preserve">
 		<value>Portes et Plafond</value>
 	</data>
-	<data name="Level.PsSVt" xml:space="preserve">
+	<data name="Level.PsSvt" xml:space="preserve">
 		<value>Pas si vite</value>
 	</data>
 	<data name="Level.Rcrc" xml:space="preserve">
@@ -483,6 +483,9 @@ Le niveau n'existe pas!</value>
 	</data>
 	<data name="Reload.Text" xml:space="preserve">
 		<value>Que voulez-vous faire?</value>
+	</data>
+	<data name="ReturnMenu.Text" xml:space="preserve">
+		<value>Voulez-vous revenir au menu?</value>
 	</data>
 	<data name="Tuto.Jump.ActionPanel" xml:space="preserve">
 		<value>Panneau d'action</value>

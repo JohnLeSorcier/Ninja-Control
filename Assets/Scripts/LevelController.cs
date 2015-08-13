@@ -99,6 +99,15 @@ public class LevelController : MonoBehaviour {
 	
 	void Start ()
 	{
+	
+		GameObject gameControllerObject = GameObject.FindWithTag ("GameController");
+		if (gameControllerObject != null)
+			gameController = gameControllerObject.GetComponent <GameController>();
+		else
+			Debug.Log ("Cannot find 'GameController' script");
+			
+		gameController.affichAd();	
+	
 		string language;
 		if(PlayerPrefs.HasKey("Language"))
 			language=PlayerPrefs.GetString("Language");
@@ -110,7 +119,9 @@ public class LevelController : MonoBehaviour {
 		
 		string levelTxt=languageManager.GetTextValue("Menu.Lvl");
 		
-		levelName.text=levelTxt+" "+Application.loadedLevel+": "+languageManager.GetTextValue("Level."+levelNameIndex);
+		Debug.Log (languageManager.GetTextValue("Level."+levelNameIndex));
+		
+		levelName.text=levelTxt+" "+Application.loadedLevel+":\n"+languageManager.GetTextValue("Level."+levelNameIndex);
 	
 		baseTime=languageManager.GetTextValue("Interface.Time");
 		baseCoin=languageManager.GetTextValue("Interface.Coin");
@@ -166,11 +177,6 @@ public class LevelController : MonoBehaviour {
 				DoorControllers.SetValue(DoorObject[i].GetComponent<DoorController>(),i);
 		}
 
-		GameObject gameControllerObject = GameObject.FindWithTag ("GameController");
-		if (gameControllerObject != null)
-			gameController = gameControllerObject.GetComponent <GameController>();
-		else
-			Debug.Log ("Cannot find 'GameController' script");
 
 		if (PlayerPrefs.HasKey(Application.loadedLevel+"_score"))
 			scoreBefore=PlayerPrefs.GetInt(Application.loadedLevel+"_score");
@@ -588,7 +594,7 @@ public class LevelController : MonoBehaviour {
 	
 	IEnumerator waitforGameOverSound()
 	{
-		yield return new WaitForSeconds(0.3f);
+		yield return new WaitForSeconds(0.5f);
 		gameOverSound.Play ();
 	}
 }

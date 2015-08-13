@@ -26,6 +26,16 @@ Version 0.5: Beta 1
 
 Version 0.4: Alpha 4
 ==========================
+0.4.1
+-Ajout de la publicité (Android et iOS)
+-Retouche de l'affichage du nom des niveaux
+-Correction d'un bug mettant le ninja dans le mauvais sens lorsuqu'on le replaçait au départ
+-Correction de l'affichage du bord des niveaux sur Android
+-Modification de l'ordre de spanneaux dans le menu
+-Amélioration du glisser/déposer sur smartphones
+-Corrections de bugs cosmétiques de niveau
+
+
 0.4.0
 -Correction d'un bug permettant de placer deux panneaux au même endroit
 -Correction d'un bug permettant de placer un panneau sur le panneau de fin

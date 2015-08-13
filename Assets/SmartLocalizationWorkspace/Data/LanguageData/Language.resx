@@ -347,7 +347,7 @@
 	<data name="Level.PrtPlfd" xml:space="preserve">
 		<value>Portes et Plafond</value>
 	</data>
-	<data name="Level.PsSVt" xml:space="preserve">
+	<data name="Level.PsSvt" xml:space="preserve">
 		<value>Pas si vite</value>
 	</data>
 	<data name="Level.Rcrc" xml:space="preserve">
@@ -422,6 +422,9 @@
 	<data name="Menu.Language" xml:space="preserve">
 		<value>Language:</value>
 	</data>
+	<data name="Menu.Lvl" xml:space="preserve">
+		<value>Niveau</value>
+	</data>
 	<data name="Menu.Music" xml:space="preserve">
 		<value>Music</value>
 	</data>
@@ -453,6 +456,9 @@
 	<data name="Reload.Text" xml:space="preserve">
 		<value>Que voulez-vous faire?</value>
 	</data>
+	<data name="ReturnMenu.Text" xml:space="preserve">
+		<value>Retour Menu</value>
+	</data>
 	<data name="Tuto.Jump.ActionPanel" xml:space="preserve">
 		<value>Action Panel</value>
 	</data>
@@ -476,8 +482,5 @@
 	</data>
 	<data name="Tuto.UTurn.Text" xml:space="preserve">
 		<value>Text Tuto turn sur le mur</value>
-	</data>
-	<data name="Menu.Lvl" xml:space="preserve">
-		<value>Niveau</value>
 	</data>
 </root>

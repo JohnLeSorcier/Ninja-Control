@@ -49,6 +49,8 @@ public class CharacterControllerAuto : MonoBehaviour {
 	private bool canIMove;
 
 	private Vector3 playerOrigin;
+	
+	public CircleCollider2D touchCircle;
 
 	CircleCollider2D circleCol;
 	BoxCollider2D boxCol;
@@ -169,10 +171,12 @@ public class CharacterControllerAuto : MonoBehaviour {
 
 	public void ReturnToPosition()
 	{
-		canIMove=false;
 		move=0f;
 		if (dead)
 			Reanim ();
+		if (facingRight != facingRightInit)
+			Flip ();
+		canIMove=false;
 		rigidbody2D.isKinematic=false;
 		rigidbody2D.velocity = new Vector2 (0, 0);
 		circleCol.radius=circleRadius;
@@ -182,13 +186,14 @@ public class CharacterControllerAuto : MonoBehaviour {
 		boxCol.center=boxColCenter;		
 		playerCheckOne.localPosition=playerCheckOneOrigin;
 		playerCheckTwo.localPosition=playerCheckTwoOrigin;
-		playerCheckThree.localPosition=playerCheckThreeOrigin;			
-		if (facingRight != facingRightInit)
-			Flip ();
+		playerCheckThree.localPosition=playerCheckThreeOrigin;	
+				
+		
 		gameObject.transform.position=playerOrigin;
 		if(alreadySlide)
 			Debout ();
 		end=false;
+		touchCircle.enabled=true;
 	}
 	
 	public void End()
@@ -334,7 +339,10 @@ public class CharacterControllerAuto : MonoBehaviour {
 	void OnMouseUp()
 	{
 		if (!canIMove)
+		{
 			levelController.ChangeMove ();
+			touchCircle.enabled=false;
+		}
 	}
 	
 }

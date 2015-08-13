@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.Advertisements;
 
 public class GameController : MonoBehaviour {
 
@@ -16,10 +17,11 @@ public class GameController : MonoBehaviour {
 	AudioSource music;
 	bool downMusic;
 	bool upMusic;
-	public float volMax=0.1f;
+	public float volMax=1f;
 	bool initTime=false;
 	float startTime;
 	float deltaTime;
+	[HideInInspector] public bool adReady=false;
 	
 
 	void Awake()
@@ -42,13 +44,24 @@ public class GameController : MonoBehaviour {
 		music.volume=volMax;
 		downMusic=false;
 		upMusic=false;
+		
+		
+		#if UNITY_ANDROID
+			Advertisement.Initialize("61148",true);
+		#elif UNITY_IOS
+			Advertisement.Initialize("61149");
+		#endif
+		
+		StartCoroutine(waitForAd());
+		
+		
 	}
 	
 	void Update()
 	{	
 		if (downMusic)
 		{
-				if (!initTime)
+			if (!initTime)
 			{
 				startTime=Time.time;
 				initTime=true;				
@@ -112,6 +125,23 @@ public class GameController : MonoBehaviour {
 		else
 			PlayerPrefs.SetString("Music", "On");
 		PlayerPrefs.Save();
+	}
+	
+	IEnumerator waitForAd()
+	{
+		yield return new WaitForSeconds(300f);
+		adReady=true;
+	}
+	
+	public void affichAd()
+	{
+		if(adReady && Advertisement.IsReady())
+		{
+			Advertisement.Show();
+			adReady=false;
+			StartCoroutine(waitForAd());
+		}
+			
 	}
 
 }
