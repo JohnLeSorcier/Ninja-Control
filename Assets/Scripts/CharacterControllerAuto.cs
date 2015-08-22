@@ -33,6 +33,7 @@ public class CharacterControllerAuto : MonoBehaviour {
 	CircleCollider2D circleOrigin;
 
 	bool alreadyFlip=false;
+	bool wasSliding=false;
 	//bool alreadyJump=false;
 	bool alreadySlide=false;
 	int nbSlide=0;
@@ -91,7 +92,7 @@ public class CharacterControllerAuto : MonoBehaviour {
 
 		grounded = Physics2D.OverlapCircle(groundCheck.position, groundRadius, whatIsGround); 		
 		wall=Physics2D.OverlapArea(playerCheckOne.position,playerCheckTwo.position,whatIsWall);
-		knocked=Physics2D.OverlapArea(playerCheckOne.position,playerCheckThree.position,whatIsWall);
+		knocked=(wasSliding && Physics2D.OverlapArea(playerCheckOne.position,playerCheckThree.position,whatIsWall));
 		
 		
 		if (knocked)
@@ -175,8 +176,12 @@ public class CharacterControllerAuto : MonoBehaviour {
 		if (dead)
 			Reanim ();
 		if (facingRight != facingRightInit)
+		{
+			canIMove=true; //pour éviter un bug avec le timer
 			Flip ();
+		}
 		canIMove=false;
+		wasSliding=false;
 		rigidbody2D.isKinematic=false;
 		rigidbody2D.velocity = new Vector2 (0, 0);
 		circleCol.radius=circleRadius;
@@ -186,9 +191,7 @@ public class CharacterControllerAuto : MonoBehaviour {
 		boxCol.center=boxColCenter;		
 		playerCheckOne.localPosition=playerCheckOneOrigin;
 		playerCheckTwo.localPosition=playerCheckTwoOrigin;
-		playerCheckThree.localPosition=playerCheckThreeOrigin;	
-				
-		
+		playerCheckThree.localPosition=playerCheckThreeOrigin;		
 		gameObject.transform.position=playerOrigin;
 		if(alreadySlide)
 			Debout ();
@@ -255,12 +258,12 @@ public class CharacterControllerAuto : MonoBehaviour {
 
 	public void StopWait()
 	{
+		if(alreadySlide)
+			Debout ();
 		canIMove=false;
 		rigidbody2D.velocity = new Vector2 (0f, 0f);
 		enregMove=move;
 		move=0f;
-		if(alreadySlide)
-			Debout ();
 	}
 
 	public void GoWait()
@@ -282,6 +285,7 @@ public class CharacterControllerAuto : MonoBehaviour {
 			playerCheckTwo.transform.localPosition=new Vector2(1.67f, -1.2f);
 			playerCheckThree.transform.localPosition=new Vector2(0.6f, 0.34f);
 			alreadySlide=true;
+			wasSliding=true;
 		}
 		else
 		{
@@ -311,9 +315,16 @@ public class CharacterControllerAuto : MonoBehaviour {
 		circleCol.center=circleCenter;
 		boxCol.size=boxColSize;
 		boxCol.center=boxColCenter;		
-		alreadySlide=false;
 		nbSlide=0;
+		alreadySlide=false;
 		StartCoroutine(WaitForCheck());
+		StartCoroutine(WaitForWasSlide());
+	}
+	
+	IEnumerator WaitForWasSlide()
+	{
+		yield return new WaitForSeconds(0.2f);
+		wasSliding=false;
 	}
 	
 	IEnumerator WaitForCheck()

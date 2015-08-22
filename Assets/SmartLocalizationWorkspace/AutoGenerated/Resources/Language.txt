@@ -371,7 +371,7 @@
 	<data name="Level.SrtInf" xml:space="preserve">
 		<value>Sortie Infernale</value>
 	</data>
-	<data name="Level.StFoit" xml:space="preserve">
+	<data name="Level.StFoi" xml:space="preserve">
 		<value>Saut de la foi</value>
 	</data>
 	<data name="Level.SvrFl" xml:space="preserve">

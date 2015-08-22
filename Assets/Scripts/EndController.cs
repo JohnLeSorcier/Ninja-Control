@@ -41,7 +41,7 @@ public class EndController : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D other)
 	{
-		if(other.CompareTag("Player"))
+		if(other.CompareTag("Player") && other is BoxCollider2D)
 		{
 			levelController.GameOver(0);
 			endSound.mute=!levelController.StateFX;

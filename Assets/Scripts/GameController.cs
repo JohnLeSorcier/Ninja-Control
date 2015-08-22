@@ -44,6 +44,7 @@ public class GameController : MonoBehaviour {
 		music.volume=volMax;
 		downMusic=false;
 		upMusic=false;
+		StartCoroutine(waitForLaunchMusic());
 		
 		
 		#if UNITY_ANDROID
@@ -131,6 +132,12 @@ public class GameController : MonoBehaviour {
 	{
 		yield return new WaitForSeconds(300f);
 		adReady=true;
+	}
+	
+	IEnumerator waitForLaunchMusic()
+	{
+		yield return new WaitForSeconds(1f);
+		music.Play();
 	}
 	
 	public void affichAd()

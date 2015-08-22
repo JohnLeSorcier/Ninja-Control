@@ -54,7 +54,8 @@ public class CoinController : MonoBehaviour {
 			levelController.RamassePiece();
 			invisible=true;
 			coinSound.mute=!levelController.StateFX;
-			coinSound.Play();
+			if(!coinSound.isPlaying)
+				coinSound.Play();
 		}
 	}
 }

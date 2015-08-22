@@ -118,9 +118,7 @@ public class LevelController : MonoBehaviour {
 		languageManager.ChangeLanguage(language);	
 		
 		string levelTxt=languageManager.GetTextValue("Menu.Lvl");
-		
-		Debug.Log (languageManager.GetTextValue("Level."+levelNameIndex));
-		
+				
 		levelName.text=levelTxt+" "+Application.loadedLevel+":\n"+languageManager.GetTextValue("Level."+levelNameIndex);
 	
 		baseTime=languageManager.GetTextValue("Interface.Time");

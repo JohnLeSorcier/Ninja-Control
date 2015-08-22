@@ -21,15 +21,29 @@ Version 0.X: Beta X
 
 Version 0.5: Beta 1
 ==========================
-0.5.x
+0.5.1
+-Retouche de plusieurs niveaux (noms, scores,...)
+-Modification de la camera pour qu’elle s'adapte à différentes résolutions
+
+0.5.0
+-Correction d'un bug sonore de fin de niveau
+-Correction d'un bug sonor lors de la collecte de pièces
+-Correction de bugs de niveaux
+-Modification mineure du trigger de fin
+-Modification de plusieurs niveaux (pièces, scores,...)
 
 
 Version 0.4: Alpha 4
 ==========================
+0.4.2
+-Correction d'un bug mettant le ninja dans le mauvais sens à la réinitialisation lorsqu'il attendait le timer
+-Correction d'un bug de musique au lancement du jeu lorsqu'elle est désactivée
+-Correction de bugs de niveaux
+
 0.4.1
 -Ajout de la publicité (Android et iOS)
 -Retouche de l'affichage du nom des niveaux
--Correction d'un bug mettant le ninja dans le mauvais sens lorsuqu'on le replaçait au départ
+-Correction d'un bug mettant le ninja dans le mauvais sens lorsqu'on le replaçait au départ
 -Correction de l'affichage du bord des niveaux sur Android
 -Modification de l'ordre de spanneaux dans le menu
 -Amélioration du glisser/déposer sur smartphones

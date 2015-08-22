@@ -161,7 +161,7 @@ Panneau inutilisé: 150 pts
 
 Temps restant: 100 pts/secondes
 
- Pièce: 150 pts
+Pièce: 150 pts
 
 Tentative: -100 pts</value>
 	</data>
@@ -256,31 +256,31 @@ Ramassez des pièces mais essayez d'éviter les pièges ou de tomber dans l'eau:
 		<value>Conker l'écureuil</value>
 	</data>
 	<data name="Level.Atrvs" xml:space="preserve">
-		<value>A Travers</value>
+		<value>Sortie Secrète</value>
 	</data>
 	<data name="Level.BnPlcmt" xml:space="preserve">
-		<value>Bon Placement</value>
+		<value>Baton sauteur</value>
 	</data>
 	<data name="Level.Cavrn" xml:space="preserve">
-		<value>La caverne d'Ali Baba</value>
+		<value>Suis le lapin blanc</value>
 	</data>
 	<data name="Level.CldChp" xml:space="preserve">
-		<value>Clé des Champs</value>
+		<value>La fouine bondissante</value>
 	</data>
 	<data name="Level.Cnc" xml:space="preserve">
-		<value>Coincé</value>
+		<value>...on sort</value>
 	</data>
 	<data name="Level.DHtDBs" xml:space="preserve">
-		<value>Des Hauts et des Bas</value>
+		<value>Parkour</value>
 	</data>
 	<data name="Level.DmTrn" xml:space="preserve">
 		<value>Demi-Tour</value>
 	</data>
 	<data name="Level.DssDss" xml:space="preserve">
-		<value>Dessus Dessous</value>
+		<value>Saut dans le temps</value>
 	</data>
 	<data name="Level.Encdr" xml:space="preserve">
-		<value>Encadré</value>
+		<value>Roue de Catherine</value>
 	</data>
 	<data name="Level.Engm" xml:space="preserve">
 		<value>E. Nigma</value>
@@ -294,25 +294,25 @@ Ramassez des pièces mais essayez d'éviter les pièges ou de tomber dans l'eau:
 Le niveau n'existe pas!</value>
 	</data>
 	<data name="Level.ERythm" xml:space="preserve">
-		<value>En Rythme</value>
+		<value>Un, deux, trois</value>
 	</data>
 	<data name="Level.EtDx" xml:space="preserve">
-		<value>Entre Deux</value>
+		<value>Macuahuitl</value>
 	</data>
 	<data name="Level.Fs1Chx" xml:space="preserve">
-		<value>Fais un choix</value>
+		<value>Daffy ou Bunny</value>
 	</data>
 	<data name="Level.FssOPc" xml:space="preserve">
-		<value>Fosse aux pièces</value>
+		<value>La racine du mal</value>
 	</data>
 	<data name="Level.GdTsr" xml:space="preserve">
 		<value>Money money money</value>
 	</data>
 	<data name="Level.GrtPrlls" xml:space="preserve">
-		<value>Grotte Périlleuse</value>
+		<value>Temple Run</value>
 	</data>
 	<data name="Level.HsdPt" xml:space="preserve">
-		<value>Hors de portée</value>
+		<value>Stargate</value>
 	</data>
 	<data name="Level.HtMrch" xml:space="preserve">
 		<value>Haute Marche</value>
@@ -321,13 +321,13 @@ Le niveau n'existe pas!</value>
 		<value>Déjà-vu</value>
 	</data>
 	<data name="Level.Insd" xml:space="preserve">
-		<value>A l'intérieur</value>
+		<value>On entre...</value>
 	</data>
 	<data name="Level.JstDess" xml:space="preserve">
 		<value>Deuxième étage</value>
 	</data>
 	<data name="Level.Lbyrth" xml:space="preserve">
-		<value>Labyrinthe</value>
+		<value>Boing</value>
 	</data>
 	<data name="Level.LDxMds" xml:space="preserve">
 		<value>Deux Mondes</value>
@@ -351,34 +351,34 @@ Le niveau n'existe pas!</value>
 		<value>Faire le mur</value>
 	</data>
 	<data name="Level.OrEBr" xml:space="preserve">
-		<value>Or en barre</value>
+		<value>Goldfinger</value>
 	</data>
 	<data name="Level.OvrBt" xml:space="preserve">
-		<value>Ouvre-Boite</value>
+		<value>Lapin Crétin</value>
 	</data>
 	<data name="Level.Plls" xml:space="preserve">
 		<value>Chaussée des géants</value>
 	</data>
 	<data name="Level.PqEpq" xml:space="preserve">
-		<value>Piques Epiques</value>
+		<value>Pikes Peak</value>
 	</data>
 	<data name="Level.Pqt" xml:space="preserve">
-		<value>Herse</value>
+		<value>A la pointe</value>
 	</data>
 	<data name="Level.PrtFli" xml:space="preserve">
-		<value>Portes en Folie</value>
+		<value>Haute Sécurité</value>
 	</data>
 	<data name="Level.PrtMstr" xml:space="preserve">
-		<value>Portes Mystères</value>
+		<value>Ouvrez la porte</value>
 	</data>
 	<data name="Level.PrtPlfd" xml:space="preserve">
-		<value>Portes et Plafond</value>
+		<value>Cours Indy, Cours!</value>
 	</data>
 	<data name="Level.PsSvt" xml:space="preserve">
 		<value>Pas si vite</value>
 	</data>
 	<data name="Level.Rcrc" xml:space="preserve">
-		<value>Raccourci</value>
+		<value>Pari Risqué</value>
 	</data>
 	<data name="Level.Rsq" xml:space="preserve">
 		<value>Risques</value>
@@ -387,55 +387,55 @@ Le niveau n'existe pas!</value>
 		<value>C'est un piège !</value>
 	</data>
 	<data name="Level.SlTrt" xml:space="preserve">
-		<value>Sol Traitre</value>
+		<value>Prendre du recul</value>
 	</data>
 	<data name="Level.Splo" xml:space="preserve">
 		<value>Spelunky</value>
 	</data>
 	<data name="Level.SrtDs" xml:space="preserve">
-		<value>Sortie de Dos</value>
+		<value>Abri sous roche</value>
 	</data>
 	<data name="Level.SrtInf" xml:space="preserve">
-		<value>Sortie Infernale</value>
+		<value>Fuyez, pauvres fous!</value>
 	</data>
-	<data name="Level.StFoit" xml:space="preserve">
+	<data name="Level.StFoi" xml:space="preserve">
 		<value>Saut de la foi</value>
 	</data>
 	<data name="Level.SvrFl" xml:space="preserve">
-		<value>Suivre le fil</value>
+		<value>Fil d'Ariane</value>
 	</data>
 	<data name="Level.TmbRd" xml:space="preserve">
 		<value>Tomb Raider</value>
 	</data>
 	<data name="Level.Tmg" xml:space="preserve">
-		<value>Timing</value>
+		<value>Feux pour piétons</value>
 	</data>
 	<data name="Level.TpsSpl" xml:space="preserve">
-		<value>Temps Simple</value>
+		<value>Classique mais efficace</value>
 	</data>
 	<data name="Level.TrnMln" xml:space="preserve">
 		<value>Hot Wheels</value>
 	</data>
 	<data name="Level.Trnqt" xml:space="preserve">
-		<value>Tourniquet</value>
+		<value>De l'autre coté</value>
 	</data>
 	<data name="Level.TrvCle" xml:space="preserve">
-		<value>Trouve la clé</value>
+		<value>La diagonale du ninja</value>
 	</data>
 	<data name="Level.TtOFd" xml:space="preserve">
-		<value>Tout au fond</value>
+		<value>Cache Secrète</value>
 	</data>
 	<data name="Level.TutoPltfrm" xml:space="preserve">
-		<value>Tuto Plateforme</value>
+		<value>Et... Maintenant!</value>
 	</data>
 	<data name="Level.TutoSld" xml:space="preserve">
-		<value>Tuto Slide</value>
+		<value>Benzai!</value>
 	</data>
 	<data name="Level.TutoSt" xml:space="preserve">
-		<value>Tuto Saut</value>
+		<value>Et que çà saute!</value>
 	</data>
 	<data name="Level.VlHt" xml:space="preserve">
-		<value>Vol Haut</value>
+		<value>Triple saut</value>
 	</data>
 	<data name="Menu.Cheat.Enable" xml:space="preserve">
 		<value>Cheat Activé</value>
@@ -509,7 +509,7 @@ Lancez le ninja avec le bouton de lancement.</value>
 	<data name="Tuto.Platform.Text" xml:space="preserve">
 		<value>Utilisez le panneau d'attente pour minuter le saut sur la plateforme mobile.
 
-Cliquez pour ajouter des secondes (0-5) au panneau.
+Cliquez pour ajouter des secondes (1-5) au panneau.
 
 La plateforme ne bouge que lorsque le ninja est lancé.</value>
 	</data>

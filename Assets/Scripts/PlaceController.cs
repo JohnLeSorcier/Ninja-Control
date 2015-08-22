@@ -43,11 +43,7 @@ public class PlaceController : MonoBehaviour {
 	
 	void Start()
 	{
-		transform.position= new Vector3 (transform.position.x, transform.position.y, -2);//rester devant le menu
-
-		originPoint=gameObject.transform.position;
-		posePoint=originPoint;
-
+		transform.localPosition= new Vector3 (transform.localPosition.x, transform.localPosition.y,-50);//rester devant le menu
 		
 		GameObject levelControllerObject = GameObject.FindWithTag ("LevelController");
 		if (levelControllerObject != null)
@@ -58,6 +54,8 @@ public class PlaceController : MonoBehaviour {
 		CerclePlacement=GetComponent<CircleCollider2D>();
 
 		CerclePlacement.enabled=true;
+		originPoint=gameObject.transform.position;
+		posePoint=originPoint;
 	}
 
 	void Update()
@@ -84,6 +82,7 @@ public class PlaceController : MonoBehaviour {
 
 		screenPoint = Camera.main.WorldToScreenPoint(gameObject.transform.position);
 		offset = gameObject.transform.position - Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z));
+		originPoint=gameObject.transform.position;
 	}
 	
 	void OnMouseDrag()
@@ -97,6 +96,7 @@ public class PlaceController : MonoBehaviour {
 		Vector3 curScreenPoint = new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z);
 		Vector3 curPosition = Camera.main.ScreenToWorldPoint(curScreenPoint) + offset;
 		transform.position = curPosition;
+		transform.position= new Vector3 (transform.position.x, transform.position.y,-2);
 
 		onGround=false;
 		
@@ -161,7 +161,9 @@ public class PlaceController : MonoBehaviour {
 		levelController.TakePanel(gameObject.tag);
 		if (levelController.VerifPanel(gameObject.tag))
 		{
-			GameObject newFO=(GameObject) GameObject.Instantiate(gameObject,originPoint,transform.rotation);
+			GameObject newFO=(GameObject) GameObject.Instantiate(gameObject);
+			newFO.transform.rotation=gameObject.transform.rotation;
+			newFO.transform.position=originPoint;
 			newFO.transform.parent=gameObject.transform.parent;
 			newFO.transform.localScale=gameObject.transform.localScale;
 		}
@@ -173,7 +175,9 @@ public class PlaceController : MonoBehaviour {
 		if (!levelController.VerifPanel(gameObject.tag))
 		{
 			newbie=false;
-			GameObject newFO=(GameObject) GameObject.Instantiate(gameObject,originPoint,transform.rotation);
+			GameObject newFO=(GameObject) GameObject.Instantiate(gameObject);
+			newFO.transform.rotation=gameObject.transform.rotation;
+			newFO.transform.position=originPoint;
 			newFO.transform.parent=gameObject.transform.parent;
 			newFO.transform.localScale=gameObject.transform.localScale;
 		}
