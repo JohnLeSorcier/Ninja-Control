@@ -251,7 +251,6 @@ public class LevelController : MonoBehaviour {
 
 		if(timer<0 && !end)
 		{
-			end=true;
 			timeText.text=baseTime+": 0\'\'00" ;
 			GameOver(3);
 		}
@@ -401,52 +400,54 @@ public class LevelController : MonoBehaviour {
 		int total=0;
 		int nbStars=0;
 		bool passed=false;
-
-		if (endType==0)
+		if (!end)
 		{
-			passed=true;
-			playerController.End();
-			nbPan=PanRest();
-			total = gameController.Score(nbPan,nbTry,nbPieces,timer);
-
-			if (total>scoreStars3)
-				nbStars=3;
-			else if (total>scoreStars2)
-				nbStars=2;
-			else if (total>scoreStars1)
-				nbStars=1;
-			else
-				passed=false;
-
-			if (total>scoreBefore)
+			if (endType==0)
 			{
-				bestScore.text=""+total;
-				PlayerPrefs.SetFloat(Application.loadedLevel+"_time", timeAllowed-timer);
-				PlayerPrefs.SetInt(Application.loadedLevel+"_score", total);
-				PlayerPrefs.SetInt(Application.loadedLevel+"_stars", nbStars);
-				PlayerPrefs.Save();
+				passed=true;
+				playerController.End();
+				nbPan=PanRest();
+				total = gameController.Score(nbPan,nbTry,nbPieces,timer);
+	
+				if (total>scoreStars3)
+					nbStars=3;
+				else if (total>scoreStars2)
+					nbStars=2;
+				else if (total>scoreStars1)
+					nbStars=1;
+				else
+					passed=false;
+	
+				if (total>scoreBefore)
+				{
+					bestScore.text=""+total;
+					PlayerPrefs.SetFloat(Application.loadedLevel+"_time", timeAllowed-timer);
+					PlayerPrefs.SetInt(Application.loadedLevel+"_score", total);
+					PlayerPrefs.SetInt(Application.loadedLevel+"_stars", nbStars);
+					PlayerPrefs.Save();
+				}
+				nextButton.interactable=true;
 			}
-			nextButton.interactable=true;
+			else if (endType==1 || endType==2 || endType==5)
+				playerController.Dead(0);
+			else if (endType==4)
+				playerController.Dead(1);
+			else if (endType==6)
+				playerController.Dead(2);
+			else if (endType==3)
+				playerController.End();
+				
+			if (!alreadyDead)
+				interfaceController.GameOver(endType, nbPan, nbTry, nbPieces, timer, total, nbStars, passed);
+				
+			if (endType!=0 && !alreadyDead)
+			{
+				sonGameOver();
+				alreadyDead=true;
+			}
+	
+			end=true;
 		}
-		else if (endType==1 || endType==2 || endType==5)
-			playerController.Dead(0);
-		else if (endType==4)
-			playerController.Dead(1);
-		else if (endType==6)
-			playerController.Dead(2);
-		else if (endType==3)
-			playerController.End();
-			
-		if (!alreadyDead)
-			interfaceController.GameOver(endType, nbPan, nbTry, nbPieces, timer, total, nbStars, passed);
-			
-		if (endType!=0 && !alreadyDead)
-		{
-			sonGameOver();
-			alreadyDead=true;
-		}
-
-		end=true;
 	}
 
 	public void ChangeMove()

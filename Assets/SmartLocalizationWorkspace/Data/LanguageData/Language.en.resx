@@ -145,6 +145,25 @@ Tepid Monkey</value>
 	<data name="Credit.JLS" xml:space="preserve">
 		<value>Developped By Nicolas Joannes</value>
 	</data>
+	<data name="Fin.Free.Button" xml:space="preserve">
+		<value>Download Support Version</value>
+	</data>
+	<data name="Fin.Free.Txt" xml:space="preserve">
+		<value>Thanks for playing the free version of Ninja Control !
+
+If you want to support us, you can buy the "Support" version
+
+-Ads free
+-More levels</value>
+	</data>
+	<data name="Fin.Support.Txt" xml:space="preserve">
+		<value>Congratulations, you overcame every obstacle on your way and have proven yourself worthy of the clan.
+
+Thanks to you, the ninja will live other interesting adventures !
+
+Visit our website and keep supporting us !
+</value>
+	</data>
 	<data name="HowToPlay.EndPanel" xml:space="preserve">
 		<value>End Panel</value>
 	</data>
@@ -487,6 +506,23 @@ Level don't exist!</value>
 	<data name="ReturnMenu.Text" xml:space="preserve">
 		<value>Do you want to return to the menu?</value>
 	</data>
+	<data name="Story.Text" xml:space="preserve">
+		<value>Welcome, ninja apprentice
+
+The Clan needs agile and fast ninjas. You must finish each stage as quick as possible.
+
+Our clan also needs money to survive. Collect it as much as you can.
+
+Good Luck !</value>
+	</data>
+	<data name="Tuto.AutoDoor.Text" xml:space="preserve">
+		<value>The doors will open an close rythmically: find the perfect time window to pass !</value>
+	</data>
+	<data name="Tuto.Coins.Text" xml:space="preserve">
+		<value>You can't always collect all the coins.
+
+Some might be a trap...</value>
+	</data>
 	<data name="Tuto.Jump.ActionPanel" xml:space="preserve">
 		<value>Action Panel</value>
 	</data>
@@ -503,18 +539,45 @@ Take coins to improve your score.
 
 Launch the ninja with the launch button.</value>
 	</data>
+	<data name="Tuto.Moulin.Text" xml:space="preserve">
+		<value>The pikes on the wheels are lethal... if that was not obvious enough.
+
+The arrow indicates the direction of rotation.</value>
+	</data>
 	<data name="Tuto.Platform.LaunchText" xml:space="preserve">
 		<value>Moving Platform</value>
 	</data>
 	<data name="Tuto.Platform.Text" xml:space="preserve">
-		<value>Use the Wait panel to time your jump on the moving platform.
+		<value>Use the "Wait" panel to time your jump on the moving platform.
 
-Click to add seconds (1-5) to Wait Panel
+Nothing will move before the ninja is.</value>
+	</data>
+	<data name="Tuto.Portes.Text" xml:space="preserve">
+		<value>Blue boutons open doors.
 
-Platforms only move when you launch the ninja</value>
+The arrow indicates the way the door will open.</value>
+	</data>
+	<data name="Tuto.Precision.Text" xml:space="preserve">
+		<value>Jumping requires precision, so the pannels needs to be perfectly placed to reach the end.</value>
+	</data>
+	<data name="Tuto.RedB.Text" xml:space="preserve">
+		<value>Red buttons trigger traps.</value>
+	</data>
+	<data name="Tuto.Risk.Text" xml:space="preserve">
+		<value>The panels can't be placed on the traps.
+
+But remember that the risk pays off !</value>
 	</data>
 	<data name="Tuto.Slide.Text" xml:space="preserve">
 		<value>Use the slide panel to... slide under obstacles.</value>
+	</data>
+	<data name="Tuto.SlidPl.Text" xml:space="preserve">
+		<value>When the sky falls, you can let slide.</value>
+	</data>
+	<data name="Tuto.Timer.Text" xml:space="preserve">
+		<value>You can ask the ninja to stop and wait.
+
+Click to add seconds (1-5) to the panel.</value>
 	</data>
 	<data name="Tuto.UTurn.Text" xml:space="preserve">
 		<value>Ninja must turn before going out the level.

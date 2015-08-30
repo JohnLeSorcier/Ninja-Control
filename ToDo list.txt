@@ -11,36 +11,18 @@
 -Faire des niveaux avec des panneaux déjà en place
 -Faire un système de "tips" (bouton vers un screen?)
 -Revoir  menu du haut (avec menu déroulant?)
--Des coefficients de diffculté (par niveau) pour le score
+-Des coefficients de difficulté (par niveau) pour le score
 
+
+Avis mith: arrêter al version gratuite au 45
 
 
 -Penser à modifier els instructions pour la liste des pièges
--Revoir le score total?+score total de pièces (à enregistrer par niveau?)
--Baisser le malus d'essai et revoir les score pour donner plus de possibilités d'essais pour obtenir une ou deux étoiles 
-(et quelques uns pour 3 étoiles) sur les niveaux difficile. Revoir la valeur des secondes.
-
-
--Niveau tuto sur les boutons rouges et bleus (+passer sous les plafonds qui tombent)-->le premier qui utilise le bleu, puis le rouge
--Niveau tuto sur le rebond sur le mur?
--Niveau tuto pour expliquer qu'on ne peut pas placer de panneau sur un piège ou tout près de lui.
--Niveau tuto poru dire que le ninja demande de la précision dans les enchainements
--Niveau Enigma: tuto "parfois, il faudra faire des choix et sacrifier des pièces" ou un truc du genre
--Niveau Deux montée: tuto "Le risque paie"
--Niveau portes et plafond: tuto "glisser sous un piège"
--Niveau inside et coincé se suivent (coincé introduit le moulin)
-
-
-REVOIR LE NIVEAU "RISQUES"
-REVOIR LE NIVEAU SORTIE INFERNALE (plateforme partent du mauvais coté)
-
-
 
 
 Scénario: un apprenti ninja doit faire ses preuves en rejoignant son clan, en y ramenant de l'argent.
 
 
-(si problème sur différents écrans mobiles: Fit to Screen Size sur le store)
 
 Stockage dans le save:
 indexniveau_time (float en seconde)

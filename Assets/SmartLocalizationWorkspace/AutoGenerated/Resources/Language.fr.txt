@@ -145,6 +145,24 @@ Tepid Monkey</value>
 	<data name="Credit.JLS" xml:space="preserve">
 		<value>Développé par Nicolas Joannes</value>
 	</data>
+	<data name="Fin.Free.Button" xml:space="preserve">
+		<value>Télécharger la version Soutien</value>
+	</data>
+	<data name="Fin.Free.Txt" xml:space="preserve">
+		<value>Merci d'avoir jouer à la version gratuite de Ninja Control !
+
+Si vous voulez nous soutenir, vous pouvez télécharger la version "soutien".
+
+-Pas de publicités
+-De nouveaux niveaux disponibles</value>
+	</data>
+	<data name="Fin.Support.Txt" xml:space="preserve">
+		<value>Bravo, vous avez franchi tous les obstacles et vous êtes montré digne d'intégrer le clan.
+
+Grâce à vous, le ninja pourra vivre de nouvelles aventures!
+
+Visitez notre site et continuez à nous soutenir !</value>
+	</data>
 	<data name="HowToPlay.EndPanel" xml:space="preserve">
 		<value>Panneau de fin</value>
 	</data>
@@ -432,7 +450,7 @@ Le niveau n'existe pas!</value>
 		<value>Benzai!</value>
 	</data>
 	<data name="Level.TutoSt" xml:space="preserve">
-		<value>Et que çà saute!</value>
+		<value>Et que ça saute!</value>
 	</data>
 	<data name="Level.VlHt" xml:space="preserve">
 		<value>Triple saut</value>
@@ -487,6 +505,25 @@ Le niveau n'existe pas!</value>
 	<data name="ReturnMenu.Text" xml:space="preserve">
 		<value>Voulez-vous revenir au menu?</value>
 	</data>
+	<data name="Story.Text" xml:space="preserve">
+		<value>Bienvenue, Apprenti Ninja.
+
+Afin d'intégrer définitivement le clan, vous allez devoir prouver votre valeur.
+
+Le clan a besoin de ninjas agiles et rapides. Finissez chaque épreuve le plus rapidement possible.
+
+Le clan a également besoin d'argent pour survivre. Récoltez-en un maximum.
+
+Bonne chance !</value>
+	</data>
+	<data name="Tuto.AutoDoor.Text" xml:space="preserve">
+		<value>Les portes s'ouvrent et se ferment selon un rythme particulier: calculez votre coup pour passer !</value>
+	</data>
+	<data name="Tuto.Coins.Text" xml:space="preserve">
+		<value>Vous ne pouvez pas toujours prendre toutes les pièces.
+
+Certaines pourraient être un piège...</value>
+	</data>
 	<data name="Tuto.Jump.ActionPanel" xml:space="preserve">
 		<value>Panneau d'action</value>
 	</data>
@@ -503,21 +540,48 @@ Ramassez des pièces pour améliorer votre score.
 
 Lancez le ninja avec le bouton de lancement.</value>
 	</data>
+	<data name="Tuto.Moulin.Text" xml:space="preserve">
+		<value>Les moulins à piques sont mortels... si ce n'était pas clair.
+
+La flèche indique le sens de rotation.</value>
+	</data>
 	<data name="Tuto.Platform.LaunchText" xml:space="preserve">
 		<value>Plateforme mobile</value>
 	</data>
 	<data name="Tuto.Platform.Text" xml:space="preserve">
 		<value>Utilisez le panneau d'attente pour minuter le saut sur la plateforme mobile.
 
-Cliquez pour ajouter des secondes (1-5) au panneau.
+Les objets mobiles ne bougent que lorsque le ninja est lancé.</value>
+	</data>
+	<data name="Tuto.Portes.Text" xml:space="preserve">
+		<value>Les boutons bleus ouvrent les portes.
 
-La plateforme ne bouge que lorsque le ninja est lancé.</value>
+La flèche sur la porte indique le sens d'ouverture. </value>
+	</data>
+	<data name="Tuto.Precision.Text" xml:space="preserve">
+		<value>Les sauts doivent être précis et les panneaux parfaitement placés pour atteindre l'arrivée.</value>
+	</data>
+	<data name="Tuto.RedB.Text" xml:space="preserve">
+		<value>Les boutons rouges déclenchent des pièges.</value>
+	</data>
+	<data name="Tuto.Risk.Text" xml:space="preserve">
+		<value>Les panneaux ne peuvent pas être placé sur les pièges.
+
+Mais souvenez-vous que le risque paye !</value>
 	</data>
 	<data name="Tuto.Slide.Text" xml:space="preserve">
 		<value>Utilisez le panneau de glisse pour... glisser sous les obstacles</value>
 	</data>
+	<data name="Tuto.SlidPl.Text" xml:space="preserve">
+		<value>Lorsque le ciel vous tombe sur la tête, il faut parfois laisser glisser...</value>
+	</data>
+	<data name="Tuto.Timer.Text" xml:space="preserve">
+		<value>Vous pouvez demander au ninja de s'arrêter et d'attendre.
+
+Cliquez pour ajouter des secondes (1-5) au panneau.</value>
+	</data>
 	<data name="Tuto.UTurn.Text" xml:space="preserve">
-		<value>Le ninja doit tourner avant d'atteindre la fin du niveau.
+		<value>Le ninja doit tourner avant d'atteindre le bord du niveau.
 
 Il tourne automatiquement contre un mur.</value>
 	</data>

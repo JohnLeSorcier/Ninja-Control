@@ -21,7 +21,22 @@ Version 0.X: Beta X
 
 Version 0.5: Beta 1
 ==========================
-0.5.1
+0.5.3
+-Ajout de plusieurs tutoriaux
+-Correction d'un bug qui empêchait le game over lorsque le timer atteignait 0
+-Création d'un bouton pour télécharger la version payante dans le menu principal
+-Création d'un menu final
+-Création d'un écran d'histoire.
+
+0.5.2
+-Correction d'un bug d'emplacements des panneaux dans le menu du haut lors d'un rechargement
+-Correction d'un bug qui empêchait d'enlever des panneaux placés
+-Correction d'un bug qui permettait de passer si on touchait le panneau de fin en étant mort
+-Correction d'un bug qui empêchait de passer si on mourrait après avoir touché le panneau de fin
+-Retouche de plusieurs niveaux
+-Modification de l'ordre des niveaux
+
+0.5.1 (Android Only)
 -Retouche de plusieurs niveaux (noms, scores,...)
 -Modification de la camera pour qu’elle s'adapte à différentes résolutions
 

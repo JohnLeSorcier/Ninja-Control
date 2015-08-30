@@ -39,6 +39,8 @@ public class PlaceController : MonoBehaviour {
 	private CircleCollider2D CerclePlacement;
 	
 	private LevelController levelController;
+	
+	private bool hasMove=false;
 
 	
 	void Start()
@@ -82,7 +84,8 @@ public class PlaceController : MonoBehaviour {
 
 		screenPoint = Camera.main.WorldToScreenPoint(gameObject.transform.position);
 		offset = gameObject.transform.position - Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z));
-		originPoint=gameObject.transform.position;
+		if (!hasMove)
+			originPoint=gameObject.transform.position;
 	}
 	
 	void OnMouseDrag()
@@ -96,9 +99,11 @@ public class PlaceController : MonoBehaviour {
 		Vector3 curScreenPoint = new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z);
 		Vector3 curPosition = Camera.main.ScreenToWorldPoint(curScreenPoint) + offset;
 		transform.position = curPosition;
-		transform.position= new Vector3 (transform.position.x, transform.position.y,-2);
+		transform.position= new Vector3 (transform.position.x, transform.position.y,1);
 
 		onGround=false;
+		
+		hasMove=true;
 		
 		//if (curPosition.y!=originPoint.y && !newbie)
 		if(!newbie)
@@ -187,7 +192,8 @@ public class PlaceController : MonoBehaviour {
 
 	public void Replace()
 	{
-		transform.position=posePoint;
+		if (hasMove)
+			transform.position=posePoint;
 	}
 
 	public bool isOnGround()

@@ -9,6 +9,8 @@ public class GameController : MonoBehaviour {
 	int scoreTry=100;
 	int scoreTime=100;
 	int scorePiece=150;
+	
+	float delayAd=300f;
 
 	public int lastLevel;
 
@@ -130,7 +132,7 @@ public class GameController : MonoBehaviour {
 	
 	IEnumerator waitForAd()
 	{
-		yield return new WaitForSeconds(300f);
+		yield return new WaitForSeconds(delayAd);
 		adReady=true;
 	}
 	

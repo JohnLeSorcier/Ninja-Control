@@ -134,6 +134,15 @@
 	<data name="Credit.JLS" xml:space="preserve">
 		<value>Game By Nicolas Joannes</value>
 	</data>
+	<data name="Fin.Free.Button" xml:space="preserve">
+		<value>Texte du bouton de download</value>
+	</data>
+	<data name="Fin.Free.Txt" xml:space="preserve">
+		<value>Texte de fin version gratuite</value>
+	</data>
+	<data name="Fin.Support.Txt" xml:space="preserve">
+		<value>Texte de fin version support</value>
+	</data>
 	<data name="HowToPlay.EndPanel" xml:space="preserve">
 		<value>End Panel</value>
 	</data>
@@ -459,6 +468,15 @@
 	<data name="ReturnMenu.Text" xml:space="preserve">
 		<value>Retour Menu</value>
 	</data>
+	<data name="Story.Text" xml:space="preserve">
+		<value>Story Text</value>
+	</data>
+	<data name="Tuto.AutoDoor.Text" xml:space="preserve">
+		<value>Text Tuto portes auto</value>
+	</data>
+	<data name="Tuto.Coins.Text" xml:space="preserve">
+		<value>Text Tuto pièces à choisir</value>
+	</data>
 	<data name="Tuto.Jump.ActionPanel" xml:space="preserve">
 		<value>Action Panel</value>
 	</data>
@@ -471,14 +489,35 @@
 	<data name="Tuto.Jump.Text" xml:space="preserve">
 		<value>Text Tuto Jump</value>
 	</data>
+	<data name="Tuto.Moulin.Text" xml:space="preserve">
+		<value>Text Tuto Moulin</value>
+	</data>
 	<data name="Tuto.Platform.LaunchText" xml:space="preserve">
 		<value>Moving Platform</value>
 	</data>
 	<data name="Tuto.Platform.Text" xml:space="preserve">
 		<value>Text Tuto Platform</value>
 	</data>
+	<data name="Tuto.Portes.Text" xml:space="preserve">
+		<value>Text Toto bouton portes</value>
+	</data>
+	<data name="Tuto.Precision.Text" xml:space="preserve">
+		<value>Text tuto saut de précision</value>
+	</data>
+	<data name="Tuto.RedB.Text" xml:space="preserve">
+		<value>Text Tuto bouton rouge</value>
+	</data>
+	<data name="Tuto.Risk.Text" xml:space="preserve">
+		<value>Texte Tuto risque paye</value>
+	</data>
 	<data name="Tuto.Slide.Text" xml:space="preserve">
 		<value>Text Tuto Slide</value>
+	</data>
+	<data name="Tuto.SlidPl.Text" xml:space="preserve">
+		<value>Text tuto glisser sous piège</value>
+	</data>
+	<data name="Tuto.Timer.Text" xml:space="preserve">
+		<value>Text tuto timer</value>
 	</data>
 	<data name="Tuto.UTurn.Text" xml:space="preserve">
 		<value>Text Tuto turn sur le mur</value>
