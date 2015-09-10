@@ -10,7 +10,7 @@ public class GameController : MonoBehaviour {
 	int scoreTime=100;
 	int scorePiece=150;
 	
-	float delayAd=300f;
+	float delayAd=210f;
 
 	public int lastLevel;
 
@@ -48,12 +48,14 @@ public class GameController : MonoBehaviour {
 		upMusic=false;
 		StartCoroutine(waitForLaunchMusic());
 		
-		
-		#if UNITY_ANDROID
-			Advertisement.Initialize("61148",true);
-		#elif UNITY_IOS
-			Advertisement.Initialize("61149");
-		#endif
+		if (Application.levelCount<55)
+		{
+			#if UNITY_ANDROID
+				Advertisement.Initialize("61148");
+			#elif UNITY_IOS
+				Advertisement.Initialize("61149");
+			#endif
+		}
 		
 		StartCoroutine(waitForAd());
 		
@@ -70,7 +72,7 @@ public class GameController : MonoBehaviour {
 				initTime=true;				
 			}
 			deltaTime=Time.time-startTime;
-			music.volume=Mathf.Max(volMax-(deltaTime/5),0);
+			music.volume=Mathf.Max(volMax-(deltaTime),0);
 			if (music.volume == 0)
 			{
 				downMusic=false;
@@ -86,7 +88,7 @@ public class GameController : MonoBehaviour {
 				initTime=true;				
 			}
 			deltaTime=Time.time-startTime;
-			music.volume=Mathf.Min((deltaTime/5),volMax);
+			music.volume=Mathf.Min(deltaTime,volMax);
 			if (music.volume == volMax)
 			{
 				upMusic=false;
@@ -144,7 +146,7 @@ public class GameController : MonoBehaviour {
 	
 	public void affichAd()
 	{
-		if(adReady && Advertisement.IsReady())
+		if(Application.levelCount<55 && adReady && Advertisement.IsReady())
 		{
 			Advertisement.Show();
 			adReady=false;

@@ -11,6 +11,7 @@ public class LevelButtonController : MonoBehaviour {
 	public Image[] nStarsImage;
 	public Image cash;
 	public GameObject ErrorPanel;
+	public Text supportText;
 	string cheatC;
 	LanguageManager languageManager;
 	
@@ -79,6 +80,14 @@ public class LevelButtonController : MonoBehaviour {
 				starsImage[i].enabled=true;
 				nStarsImage[i].enabled=false;
 			}
+		}
+		
+		supportText.enabled=false;
+		if (levelIndex>Application.levelCount-2)
+		{
+			supportText.enabled=true;
+			cash.enabled=true;
+			button.enabled=false;
 		}	
 	}
 

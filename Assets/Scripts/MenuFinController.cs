@@ -13,7 +13,7 @@ public class MenuFinController : MonoBehaviour {
 	
 	void Start () 
 	{
-		nbLevel = Application.levelCount - 1;
+		nbLevel = Application.levelCount - 2;
 		
 		string language;
 		if(PlayerPrefs.HasKey("Language"))
@@ -26,7 +26,7 @@ public class MenuFinController : MonoBehaviour {
 		
 		string endKey;	
 		
-		if (nbLevel<55)
+		if (nbLevel>10 && nbLevel<55)
 		{
 			endKey="Free";
 			dwnldButton.gameObject.SetActive(true);
@@ -44,9 +44,9 @@ public class MenuFinController : MonoBehaviour {
 	
 	public void ouvrirLien()
 	{	
-		string link="http://www.google.fr";
+		string link="http://www.cmasyndrome.com";
 		#if UNITY_ANDROID
-			link="http://www.lienplaystore.com";
+			link="https://play.google.com/store/apps/details?id=cma.CMASyndrome.NinjaControl";
 		#elif UNITY_IOS
 			link="http://www.lienapplestore.com";
 		#endif

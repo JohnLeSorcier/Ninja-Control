@@ -128,12 +128,16 @@
 	<data name="AffSc.Time" xml:space="preserve">
 		<value>Temps total</value>
 	</data>
+	<data name="Button.Support.Text" xml:space="preserve">
+		<value>Disponible
+Version Soutien</value>
+	</data>
 	<data name="Credit.Credits" xml:space="preserve">
 		<value>Graphiques: pzUH (CC0)
 
 Graphiques additionnels :
 (CC0) idoh40, bevouliin, mishonis
-(CC-BY 3.0) 2D Retrospectives, JM.Atencia 
+(CC-BY 3.0) 2D Retrosperspectives, JM.Atencia 
 
 Eléments d'Interface: Camtaz
 

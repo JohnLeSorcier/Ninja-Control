@@ -277,7 +277,7 @@ public class CharacterControllerAuto : MonoBehaviour {
 		if (!alreadySlide)
 		{
 			anim.SetTrigger("isSlideTrigger");
-			circleCol.center=new Vector2 (boxCol.center.x, -0.35f);
+			circleCol.center=new Vector2 (boxCol.center.x, -1.35f);
 			circleCol.radius=0.1f;
 			boxCol.center = new Vector2 (boxCol.center.x, -0.35f);
 			boxCol.size = new Vector2 (2.7f,2.2f);
